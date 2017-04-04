@@ -1,0 +1,74 @@
+.posts-navigation {
+  flex: 0 0 100%;
+  padding: 0 1em;
+}
+
+.post-navigation {
+	margin: 0 auto 1.5em;
+  width: 100%;
+  max-width: 45rem;
+}
+
+.nav-links {
+
+  background-color: $gray_ll;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+
+    & > div { 
+      display: flex;
+      flex-direction: column;}
+
+    & > div a {
+      background-color: $gray_ll;
+      border: solid 1px $gray_l;
+      padding: 0.5em;
+      color: $text2;
+      text-decoration: none;}
+
+    & > div a:hover,
+      > div a:focus {
+        background-color: $gray_l;
+      }
+
+}
+
+.nav-previous {margin-bottom: 1em;
+	&:before {content: "Prev";}}
+
+.nav-next:before {content: "Next";}
+
+.nav-previous:before,
+.nav-next:before {font-weight: bold; padding: 0 0.5em;}
+
+@media only screen and (min-width:550px) {
+
+  .nav-links {flex-direction: row;}
+
+  .nav-links > div {
+    flex: 0 0 50%;
+    align-items: stretch;
+
+    & a {
+      height: 100%;
+    }
+  }
+
+  .nav-previous {padding-right: 0.5em; margin-bottom: 0;}
+  .nav-next {padding-left: 0.5em; text-align: right;}
+
+}
+
+@media only screen and (min-width:768px) {
+
+  .nav-links {padding: 2em;}
+  .nav-previous {padding-right: 1em; }
+  .nav-next {padding-left: 1em;}
+
+}
+
+
+@media only screen and (min-width:1300px) {
+  .post-navigation {margin: 0 auto 1.5em;}
+}

@@ -1,0 +1,23 @@
+.footer {flex-wrap: wrap; padding-top: 2em; padding-bottom: 2em;}
+
+.footer, .footer a {color: #555;}
+
+.footer h5 {
+  font-size: 1em;
+  text-transform: uppercase;
+  font-family: verdana;
+  letter-spacing: 0.05em;
+  color: $brand1;
+  font-weight: bold;
+  margin-bottom: 0.75em;
+}
+
+.left-menus, .right-menus {width: 50%;}
+.left-menus {padding-right: 1em;}
+.right-menus {padding-left: 1em;}
+.footer-contact {width: 100%;}
+
+@media only screen and (min-width:768px) {
+  .left-menus, .right-menus {width: 25%;}
+  .footer-contact {width: 50%;}
+}

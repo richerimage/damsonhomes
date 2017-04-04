@@ -1,0 +1,30 @@
+html {font-family: sans-serif; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; box-sizing: border-box;}
+*, *:before, *:after {box-sizing: inherit;}
+body {margin: 0; padding: 0; background-color: $body; font: normal 10px/1.5em $main_ff}
+body, button, input, select, textarea {color: $text1;}
+article, aside, details, figcaption, figure, footer, header, main, menu, nav, section, summary {display: block;}
+img { border: 0; }
+svg:not(:root) { overflow: hidden; }
+
+a {
+  color: $brand1;
+  -webkit-transition: all 0350ms ease; 
+  -moz-transition: all 0350ms ease; 
+  -o-transition: all 0350ms ease; 
+  transition: all 0350ms ease;
+  background-color: transparent;
+  text-decoration: underline;
+
+  &:visited {
+    color: inherit;
+  }
+  &:focus {
+    outline: thin dotted;
+  }
+  &:hover,
+  &:focus,
+  &:active {
+    text-decoration: none;
+    outline: 0;
+  }
+}

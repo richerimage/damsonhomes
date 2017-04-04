@@ -1,0 +1,29 @@
+/* - - DNA CSS - dna_image_manager (start) - - */
+.alignnone {float: none;}
+.alignright {float: right; margin-left: 15px;}
+.aligncenter {margin-right: auto; margin-left: auto;}
+.alignleft {float: left; margin-right: 15px;}
+.size-medium {width: 50%; max-width: 300px; margin-bottom: 0;}
+.wp-caption {background: #eee; border: solid 1px #ccc; padding: 3px;}
+figcaption p {text-align: center; margin-top: 3px; margin-bottom: 0;}
+.gallery {margin-left: -2px; margin-right: -2px; margin-bottom: 1.5rem;}
+.gallery.flickity-enabled {margin-bottom: 3rem;}
+.gallery-item {
+  // width: 33.333%; 
+  // display: inline-block; 
+  background: $gray_ll; 
+  padding: 3px;}
+
+// @media only screen and (min-width: 768px) {
+//   .gallery-columns-1 .gallery-item {width: 100%;}
+//   .gallery-columns-2 .gallery-item {width: 50%;}
+//   .gallery-columns-3 .gallery-item {width: 33.333%;}
+//   .gallery-columns-4 .gallery-item {width: 25%;}
+//   .gallery-columns-5 .gallery-item {width: 20%;}
+//   .gallery-columns-6 .gallery-item {width: 16.666%;}
+//   .gallery-columns-7 .gallery-item {width: 14.285%;}
+//   .gallery-columns-8 .gallery-item {width: 12.5%;}
+//   .gallery-columns-9 .gallery-item {width: 11.111%;}
+//   .gallery-columns-10 .gallery-item {width: 10%;}
+//   .gallery-columns-11 .gallery-item {width: 9.090%;}
+//   .gallery-columns-12 .gallery-item {width: 8.333%;}}

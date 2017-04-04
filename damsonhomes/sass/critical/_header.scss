@@ -1,0 +1,63 @@
+.header {
+  padding-top: 1em; 
+  padding-bottom: 1em; 
+  position: relative; 
+  align-items: center;
+}
+
+.site-title {
+
+  margin: 0;
+  font-size: 2em; 
+  font-family: "times new roman", serif;
+  order: 2;
+
+  & a {
+    color: $brand1; 
+    font-weight: normal; 
+    text-transform: lowercase; 
+    text-decoration: none; 
+    line-height: 1.2em;
+  }
+
+  & span.homes {
+    color: $brand2;
+  }
+
+}
+
+.dna-social-wrapper {opacity: 0; height: 0; order: 3;}
+
+.dna-logo-width {width: 3em; margin-right: 1em; order: 1;}
+.dna-logo {z-index: 1;}
+.dna-logo a {display: block; padding-top: 162.602%; margin-top: -162.602%;}
+
+@media only screen and (min-width:500px) {
+  .header {padding-top: 1.5em; padding-bottom: 1.5em;}
+  .site-title {font-size: 2.5em;  }
+}
+
+
+@media only screen and (min-width:768px) {
+  .header {height: 7em; justify-content: space-between;}
+
+  .dna-logo-width {
+    align-self: flex-start;
+    width: 6.5em;
+    margin-right: 0;
+    order: 2;
+    position: absolute;
+    left: calc(50% - 3.25em);
+    top: 1em;}
+
+}
+
+@media only screen and (min-width:1300px) {
+  .header {height: 8em;}
+  .site-title {font-size: 3em;}
+  .dna-logo-width {
+    width: 8.6em;
+    left: calc(50% - 4.3em);}
+}
+
+@media only screen and (min-width:1280px) {}
