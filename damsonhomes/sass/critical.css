@@ -43,7 +43,7 @@ a {
     outline: 0; }
 
 h1, .h1 {
-  font-size: 2.5em;
+  font-size: 2.25em;
   line-height: 1.2em; }
 
 h2, .h2 {
@@ -74,7 +74,7 @@ p, .entry-content ul, .entry-content ol {
   margin-bottom: 1rem;
   line-height: 1.6em; }
 
-p.intro {
+.intro {
   font-size: 1.6em;
   font-family: georgia, serif;
   color: #222; }
@@ -111,7 +111,7 @@ li {
     font-size: 12px; }
 
   h1, .h1 {
-    font-size: 3em; }
+    font-size: 3.6em; }
 
   h2, .h2 {
     font-size: 2.5em; }
@@ -127,7 +127,7 @@ li {
 .aside {
   font-size: 0.8em; }
 
-.page {
+.container {
   display: flex;
   width: 100%;
   margin: 0 auto;
@@ -138,8 +138,11 @@ li {
   padding-top: 2em;
   padding-bottom: 2em; }
 
+.blog .content-area {
+  padding-top: 0em; }
+
 @media only screen and (min-width: 500px) {
-  .page {
+  .container {
     padding: 0 2em; } }
 @media only screen and (min-width: 768px) {
   .content-area {
@@ -149,47 +152,49 @@ li {
   .hero-area,
   .sans-hero .content-area {
     padding-top: 6em;
-    padding-bottom: 4em; }
+    padding-bottom: 2em; }
 
   .blog .content-area {
     padding-top: 2em;
     padding-bottom: 4em; } }
 @media only screen and (min-width: 900px) {
-  .page {
+  .container {
     padding: 0 3em; } }
 @media only screen and (min-width: 960px) {
-  .page {
+  .container {
     max-width: 960px; } }
 @media only screen and (min-width: 1300px) {
-  .page {
+  .container {
     max-width: 1200px; }
 
   .hero-area,
   .content-area {
-    padding-top: 6em;
-    padding-bottom: 6em; }
+    padding-top: 10em;
+    padding-bottom: 2em; }
 
   .sans-hero .content-area {
     padding-top: 10em;
-    padding-bottom: 4em; }
+    padding-bottom: 2em; }
 
   .blog .content-area {
     padding-top: 2em;
-    padding-bottom: 4em; } }
+    padding-bottom: 2em; } }
 @media only screen and (min-width: 2000px) {
-  .page {
+  .container {
     max-width: 1600px; } }
 @media only screen and (min-width: 2400px) {
-  .page {
+  .container {
     max-width: 1800px; } }
 /* Text meant only for screen readers. */
-.screen-reader-text, .svg {
+.screen-reader-text,
+.svg {
   clip: rect(1px, 1px, 1px, 1px);
   position: absolute !important;
   height: 1px;
   width: 1px;
   overflow: hidden; }
-  .screen-reader-text:focus, .svg:focus {
+  .screen-reader-text:focus,
+  .svg:focus {
     background-color: #EEE;
     border-radius: 3px;
     box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
@@ -214,10 +219,29 @@ li {
 .nbm {
   margin-bottom: 0; }
 
+.ilb {
+  display: inline-block; }
+
+a.button {
+  background-color: #777777;
+  color: white;
+  text-decoration: none;
+  padding: 0.5em 1em;
+  border: solid 1px #444; }
+  a.button:hover, a.button:focus {
+    background-color: #444; }
+
+a.cta {
+  background-color: #6b1c56;
+  border-color: #601929; }
+  a.cta:hover, a.cta:focus {
+    background-color: #601929; }
+
 .block-link {
   text-decoration: none;
   border: solid 1px #EEEEEE;
-  padding: 1em; }
+  padding: 1em;
+  color: #444; }
   .block-link:hover, .block-link:focus {
     background-color: #EEEEEE; }
 
@@ -279,7 +303,13 @@ li {
     position: absolute;
     left: calc(50% - 3.25em);
     top: 1em; } }
+@media only screen and (min-width: 900px) {
+  .header-area {
+    padding-top: 1em; } }
 @media only screen and (min-width: 1300px) {
+  .header-area {
+    padding-top: 1.5em; }
+
   .header {
     height: 8em; }
 
@@ -292,11 +322,11 @@ li {
 .nav-area {
   background-color: #6b1c56; }
 
-.nav-area .page {
+.nav-area .container {
   flex-direction: column;
   position: relative;
   padding: 0 2em 0 0.9em;
-  font-size: 0.9em; }
+  font-size: 1.05em; }
 
 .nav-area li {
   margin-bottom: 0;
@@ -309,7 +339,7 @@ li {
   list-style: none; }
 
 .nav-area .menu a {
-  color: ghostwhite;
+  color: #EEEEEE;
   font-weight: bold;
   padding: 0.75em 1em;
   display: block;
@@ -369,7 +399,7 @@ li {
   transform: rotate(-45deg);
   transition: bottom 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1); }
 
-.menu-item-has-children {
+.nav-area .menu-item-has-children {
   position: relative; }
 
 .nav-area .menu {
@@ -390,7 +420,8 @@ li {
 
 .dna-nav.active {
   opacity: 1;
-  height: auto; }
+  height: auto;
+  overflow: visible; }
 
 .dna-nav ul a {
   width: auto; }
@@ -461,13 +492,13 @@ li {
 
 .dna-nav li .more {
   position: absolute;
-  color: ghostwhite;
+  color: #EEEEEE;
   width: 2em;
   height: 2em;
   cursor: pointer;
   z-index: 200;
-  right: 2em;
-  top: 1em;
+  right: 0em;
+  top: 0.75em;
   vertical-align: middle; }
 
 .dna-nav li .more:before {
@@ -490,11 +521,12 @@ li {
 .dna-nav li li.hover ul {
   position: static; }
 
-@media only screen and (min-width: 550px) {
-  .nav-area .page {
+@media only screen and (min-width: 600px) {
+  .nav-area .container {
     flex-direction: row;
     justify-content: flex-start;
-    padding: 0 1.05em; }
+    padding: 0 1em;
+    font-size: 1.1em; }
 
   .hamburger-menu {
     display: none; }
@@ -508,7 +540,27 @@ li {
 
   .dna-nav {
     opacity: 1;
-    height: auto; }
+    height: auto;
+    overflow: visible; }
+
+  .nav-area .menu-item-has-children {
+    padding-right: 2em; } }
+@media only screen and (min-width: 768px) {
+  .nav-area .container {
+    justify-content: space-between;
+    font-size: 0.85em;
+    letter-spacing: 0.025em; }
+
+  .dna-nav {
+    flex-direction: row;
+    flex-wrap: wrap; }
+
+  .nav-area .menu a {
+    padding: 1em 1.25em;
+    font-weight: normal; }
+
+  .dna-nav > li > .parent {
+    padding-right: 2.5em; }
 
   .dna-nav li {
     border: none; }
@@ -540,22 +592,12 @@ li {
     top: calc(50% - 0.5em);
     bottom: 0;
     right: 1em; } }
-@media only screen and (min-width: 768px) {
-  .nav-area .page {
-    justify-content: space-between; }
-
-  .dna-nav {
-    flex-direction: row;
-    flex-wrap: wrap; }
-
-  .nav-area .menu a {
-    padding: 1em 1.25em; }
-
-  .dna-nav > li > .parent {
-    padding-right: 2.5em; } }
 @media only screen and (min-width: 900px) {
-  .nav-area .page {
+  .nav-area .container {
     padding: 0 2em; } }
+@media only screen and (min-width: 1300px) {
+  .nav-area .container {
+    font-size: 1em; } }
 .hero-box {
   display: flex;
   flex-direction: column; }
@@ -571,6 +613,31 @@ li {
 
 .card {
   max-width: 45rem; }
+
+.card-social {
+  flex: 0 0 100%;
+  width: 100%;
+  flex: 1; }
+  .card-social a.block-link {
+    align-items: center;
+    justify-content: center;
+    padding: 2em;
+    text-align: center; }
+  .card-social .dh-svg {
+    width: 7em;
+    height: 7em;
+    display: inline-flex; }
+  .card-social .dh-svg svg {
+    width: 100%;
+    height: 100%; }
+  .card-social h5 {
+    color: white;
+    text-align: center;
+    margin-top: 2em; }
+  .card-social .fb-cta {
+    width: 66%;
+    max-width: 16em;
+    display: inline-block; }
 
 .hentry {
   margin: 0 auto 1.5em;
@@ -613,18 +680,25 @@ li {
 .post-results .card-11 {
   order: 11; }
 
+.post-results .card-11 {
+  order: 12; }
+
 .post-results .card-facebook {
   order: 2; }
 
-.post-results .card-twitter {
+.post-results .card-instagram {
   order: 5; }
 
-.post-results .card-instagram {
+.post-results .card-twitter {
+  order: 11; }
+
+.post-results .card-subscribe {
   order: 8; }
 
 .post-results .card a {
   background-color: white;
-  border-color: #CCCCCC; }
+  border-color: #CCCCCC;
+  flex: 1; }
 
 .post-results .card-facebook a {
   background-color: #3b5998;
@@ -633,6 +707,12 @@ li {
 .post-results .card-twitter a {
   background-color: #1da1f2;
   color: white; }
+
+.post-results .card-subscribe {
+  text-align: center; }
+  .post-results .card-subscribe a {
+    background-color: #6b1c56;
+    color: white; }
 
 .post-results .entry-title {
   margin: 0; }
@@ -672,23 +752,37 @@ li {
   .post-results .card-facebook {
     order: 2; }
 
-  .post-results .card-twitter {
-    order: 4; } }
-@media only screen and (min-width: 768px) {
+  .post-results .card-subscribe {
+    order: 4; }
+
+  .post-results .card-instagram {
+    order: 8; } }
+@media only screen and (min-width: 730px) {
   .post-results .card {
     flex: 0 0 33.3333%; }
 
   .post-results .card-1 {
     flex: 0 0 66.6666%; }
 
+  .post-results .card-instagram {
+    order: 8; }
+
   .post-results .card-twitter {
-    order: 5; } }
+    order: 12; } }
+@media only screen and (min-width: 730px) and (max-width: 1299px) {
+  .post-results .card-subscribe {
+    order: 7;
+    flex: 0 0 100%;
+    max-width: 100%; } }
 @media only screen and (min-width: 1300px) {
   .post-results .card {
     flex: 0 0 25%; }
 
   .post-results .card-1 {
-    flex: 0 0 50%; } }
+    flex: 0 0 50%; }
+
+  .post-results .card-subscribe {
+    order: 5; } }
 .entry-header {
   margin-bottom: 1.5em; }
 

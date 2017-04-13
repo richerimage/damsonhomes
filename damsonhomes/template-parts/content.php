@@ -16,7 +16,7 @@
 			<span class="title-intro">From the Blog&hellip;</span>
 			<?php the_title( '<h1 class="entry-title h2 ntm">', '</h1>' );
 		else :
-			the_title( '<h2 class="entry-title ntm"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+			the_title( '<h2 class="entry-title ntm">', '</h2>' );
 		endif; ?>
 	</header><!-- .entry-header -->
 

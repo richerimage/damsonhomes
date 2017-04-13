@@ -17,9 +17,14 @@ class dh_custom_functions {
 
     define('DH_CF_PATH', DH_PATH . 'classes/damson_homes_custom_functions/');
 
-    // Enqueue Scripts
+    // Enqueue Scripts and Styles
+
+
+    add_action('admin_enqueue_scripts', array($this , 'dh_admin_styles'));
 
     add_action('wp_enqueue_scripts', array($this , 'dh_load_scripts'));
+
+    add_action( 'dh_critical_css', array($this, 'dh_critical_css'));
 
     // add footer css file
 
@@ -78,6 +83,23 @@ class dh_custom_functions {
 
   }
 
+
+  public function dh_critical_css() {
+
+    $css_source = get_template_directory_uri() . '/sass/critical.css';
+    $css = file_get_contents($css_source); 
+
+    $css_temp_site_source = get_template_directory_uri() . '/sass/critical-template-site.css';
+    $css_temp_site = file_get_contents($css_temp_site_source); 
+
+    echo "\n" . $css;
+
+    if (is_page_template( 'template-site.php' )) {
+      echo "\n" . $css_temp_site;
+    }
+
+  }
+
   public function delete_transients_live_site() {
     global $post;
       delete_transient('live_site_query');
@@ -106,12 +128,23 @@ class dh_custom_functions {
 
   public function dh_deferred_styles() {
 
-    $dh_css = get_template_directory_uri() . '/sass/style.css';
+    $dh_css = '  <link rel="stylesheet" type="text/css" href="' . get_template_directory_uri() . '/sass/style.css"/>' . "\n";
+
+    if (is_page_template( 'template-site.php' )) {
+
+      $dh_css_temp_site = '  <link rel="stylesheet" type="text/css" href="' . get_template_directory_uri() . '/sass/style-template-site.css"/>' . "\n";
+
+    } else {
+
+      $dh_css_temp_site = '';
+
+    }
 
     echo
 
     "<noscript id=\"dna_deferred_styles\">\n".
-    "  <link rel=\"stylesheet\" type=\"text/css\" href=\"$dh_css\"/>\n".
+      $dh_css . 
+      $dh_css_temp_site .
     "</noscript>\n\n".
 
     "<script id=\"load_deferred_styles\">\n".
@@ -128,6 +161,17 @@ class dh_custom_functions {
     "</script>\n";
 
   }
+
+
+  public function dh_admin_styles() {
+
+    $admin_css = get_template_directory_uri() . '/sass/admin/dh-admin.css';
+
+    wp_register_style( 'dh_admin_mb', $admin_css, array( 'cmb2-styles' ), false );
+    wp_enqueue_style( 'dh_admin_mb' );
+
+  }
+  
 
   public function remove_jquery_migrate($scripts) {
      if (is_admin()) return;
@@ -154,6 +198,7 @@ class dh_custom_functions {
     wp_enqueue_script( 'dh-scripts', DH_URL . '/js/dh_scripts.js', 'jquery', false, true );
 
   }
+
 
 
   public function dh_antispam_email($attr) {

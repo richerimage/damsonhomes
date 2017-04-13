@@ -87,6 +87,15 @@ function damsonhomes_content_width() {
 }
 add_action( 'after_setup_theme', 'damsonhomes_content_width', 0 );
 
+/* Add Exceprt for pages */
+
+
+function add_excerpt_pages() {
+	add_post_type_support( 'page', 'excerpt' );
+}
+
+add_action('init', 'add_excerpt_pages');
+
 /**
  * Register widget area.
  *
@@ -105,20 +114,6 @@ function damsonhomes_widgets_init() {
 }
 add_action( 'widgets_init', 'damsonhomes_widgets_init' );
 
-/**
- * Enqueue scripts and styles.
- */
-function damsonhomes_scripts() {
-
-	// wp_enqueue_style( 'damsonhomes-style', get_template_directory_uri() . '/sass/style.css' );
-	// wp_enqueue_script( 'damsonhomes-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
-	// wp_enqueue_script( 'damsonhomes-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
-
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
-}
-add_action( 'wp_enqueue_scripts', 'damsonhomes_scripts' );
 
 /**
  * Implement the Custom Header feature.
@@ -145,12 +140,27 @@ require get_template_directory() . '/inc/customizer.php';
  */
 require get_template_directory() . '/inc/tax_site_status.php';
 
+/**
+ * Register Custom Post Types
+ */
+require get_template_directory() . '/inc/cpt_areas.php';
+require get_template_directory() . '/inc/cpt_spec.php';
+require get_template_directory() . '/inc/cpt_team.php';
+
 
 /**
  * Social Share Box
  */
 
 require get_template_directory() . '/inc/dh_social_share.php';
+
+
+
+/**
+ * MetaBoxes
+ */
+
+require get_template_directory() . '/inc/metaboxes/dh-mb-sites.php';
 
 
 

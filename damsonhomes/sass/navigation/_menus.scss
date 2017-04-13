@@ -1,6 +1,6 @@
 .posts-navigation {
   flex: 0 0 100%;
-  padding: 0 1em;
+  padding: 2em 0em;
 }
 
 .post-navigation {
@@ -34,6 +34,15 @@
 
 }
 
+.posts-navigation .nav-links {
+  background-color: $gray_l;
+  
+  & > div a:hover,
+      > div a:focus {
+        background-color: white;
+      }
+}
+
 .nav-previous {margin-bottom: 1em;
 	&:before {content: "Prev";}}
 
@@ -41,6 +50,12 @@
 
 .nav-previous:before,
 .nav-next:before {font-weight: bold; padding: 0 0.5em;}
+
+@media screen and (min-width: 500px) {
+  
+  .posts-navigation {padding: 2em 1em;} 
+
+}
 
 @media only screen and (min-width:550px) {
 

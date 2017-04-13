@@ -52,7 +52,14 @@
 
 }
 
+@media only screen and (min-width:900px) {
+  .header-area {padding-top: 1em;}
+}
+
+
+
 @media only screen and (min-width:1300px) {
+  .header-area {padding-top: 1.5em;}
   .header {height: 8em;}
   .site-title {font-size: 3em;}
   .dna-logo-width {

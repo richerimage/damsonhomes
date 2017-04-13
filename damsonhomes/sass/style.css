@@ -228,11 +228,13 @@ table {
   list-style: none;
   display: flex;
   margin-left: auto; }
+  .dna-social-wrapper li {
+    margin-bottom: 0; }
   .dna-social-wrapper a {
     color: #777777;
     display: block;
-    height: 1.6em;
-    width: 1.6em;
+    height: 1.8em;
+    width: 1.8em;
     margin: 0.25em;
     background: white; }
 
@@ -390,7 +392,7 @@ textarea {
 --------------------------------------------------------------*/
 .posts-navigation {
   flex: 0 0 100%;
-  padding: 0 1em; }
+  padding: 2em 0em; }
 
 .post-navigation {
   margin: 0 auto 1.5em;
@@ -415,6 +417,12 @@ textarea {
   .nav-links > div a:focus {
     background-color: #CCCCCC; }
 
+.posts-navigation .nav-links {
+  background-color: #CCCCCC; }
+  .posts-navigation .nav-links > div a:hover,
+  .posts-navigation .nav-links > div a:focus {
+    background-color: white; }
+
 .nav-previous {
   margin-bottom: 1em; }
   .nav-previous:before {
@@ -428,6 +436,9 @@ textarea {
   font-weight: bold;
   padding: 0 0.5em; }
 
+@media screen and (min-width: 500px) {
+  .posts-navigation {
+    padding: 2em 1em; } }
 @media only screen and (min-width: 550px) {
   .nav-links {
     flex-direction: row; }
@@ -563,24 +574,8 @@ textarea {
 /*--------------------------------------------------------------
 ## Archives
 --------------------------------------------------------------*/
-.card-social a.block-link {
-  align-items: center;
-  justify-content: center; }
-.card-social .dh-svg {
-  width: 7em;
-  height: 7em; }
-.card-social .dh-svg svg {
-  width: 100%;
-  height: 100%; }
-.card-social h5 {
-  color: white;
-  text-align: center;
-  margin-top: 2em; }
-.card-social .fb-cta {
-  width: 66%;
-  max-width: 300px; }
-
-.card-twitter h5 {
+.card-twitter h5,
+.card-instagram h5 {
   line-height: 2.5em; }
 
 .card-instagram a.block-link {

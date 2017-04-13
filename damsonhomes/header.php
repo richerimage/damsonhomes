@@ -14,14 +14,14 @@
 require get_template_directory() . '/atoms/dh_logo.php';
 // require get_template_directory() . '/atoms/dh_svg.php';
 
-$css_source = get_template_directory_uri() . '/sass/critical.css';
+// $css_source = get_template_directory_uri() . '/sass/critical.css';
 
-$css = file_get_contents($css_source); 
+// $css = file_get_contents($css_source); 
 
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-<style id="critical_css"><?php echo "\n" . $css . "\n"; ?></style>
+<style id="critical_css"><?php do_action('dh_critical_css'); ?></style>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="profile" href="http://gmpg.org/xfn/11">
@@ -31,7 +31,7 @@ $css = file_get_contents($css_source);
 <body <?php body_class('xv');?>>
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'damsonhomes' ); ?></a>
 	<header id="masthead" class="header-area" role="banner">
-		<div class="header page">
+		<div class="header container">
       <p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><span class="damson">damson</span><span class="homes">homes</span></a></p>
 			<div class="dna-logo-width">
 				<div class="dna-logo" itemscope="" itemtype="http://schema.org/Organization/">
@@ -93,7 +93,7 @@ $css = file_get_contents($css_source);
 		</div><!-- .header.page -->
 
 		<nav id="site-navigation" class="nav-area" role="navigation">
-      <div class="page">
+      <div class="container">
         <?php wp_nav_menu( 
           array( 
             'theme_location' => 'menu-1', 

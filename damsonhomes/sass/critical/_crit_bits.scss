@@ -1,5 +1,13 @@
+@import "../variables-site/variables-site";
+
 /* Text meant only for screen readers. */
-.screen-reader-text, .svg { clip: rect(1px, 1px, 1px, 1px); position: absolute !important; height: 1px; width: 1px; overflow: hidden;
+.screen-reader-text, 
+.svg { 
+  clip: rect(1px, 1px, 1px, 1px); 
+  position: absolute !important; 
+  height: 1px; 
+  width: 1px; 
+  overflow: hidden;
 
   &:focus {
     background-color: #EEE;
@@ -23,11 +31,34 @@
 
 .ntm {margin-top: 0;}
 .nbm {margin-bottom: 0;}
+.ilb {display: inline-block;}
+
+a.button {
+  background-color: $text2;
+  color: white;
+  text-decoration: none;
+  padding: 0.5em 1em;
+  border: solid 1px $text1;
+
+  &:hover, &:focus {
+    background-color: $text1;
+  }
+}
+
+a.cta {
+  background-color: $brand1;
+  border-color: $brand1_d1;
+
+  &:hover, &:focus {
+    background-color: $brand1_d1;
+  }
+}
 
 .block-link {
     text-decoration: none; 
     border: solid 1px $gray_ll;
     padding: 1em;
+    color: $text1;
 
     &:hover,
     &:focus {

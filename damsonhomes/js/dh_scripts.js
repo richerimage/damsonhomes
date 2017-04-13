@@ -22,8 +22,6 @@ var t=this.getRestingPosition(),e=Math.abs(this.getSlideDistance(-t,this.selecte
 jQuery(document).ready(function($) {
   $('body').removeClass('no-jq');
 
-  var ww = document.body.clientWidth;
-
 
   var ww = document.body.clientWidth;
   $(document).ready(function($) {
@@ -45,7 +43,7 @@ jQuery(document).ready(function($) {
     adjustMenu();
   });
   var adjustMenu = function() {
-    if (ww < 550) {
+    if (ww < 768) {
       // if 'more' link not in DOM, add it
       if (!$('.more')[0]) {
         $('<div class="more">&nbsp;</div>').insertBefore($('.parent')); 
@@ -55,7 +53,7 @@ jQuery(document).ready(function($) {
       $('.dna-nav li .more').unbind('click').bind('click', function() {
         $(this).parent('li').toggleClass('hover');
       });
-    } else if (ww >= 550) {
+    } else if (ww >= 768) {
       // remove .more link in desktop view
       $('.more').remove();
       $('.dna-nav').show();

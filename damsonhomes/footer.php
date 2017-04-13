@@ -12,7 +12,7 @@
 global $post; ?>
 
 	<footer id="colophon" class="footer-area" role="contentinfo">
-		<div class="footer page">
+		<div class="footer container">
 
       <div class="left-menus columns">
         <h5 class="ntm">Current New Home Sites</h5>

@@ -1,43 +1,45 @@
 
-.page {display: flex; width: 100%; margin: 0 auto; padding: 0 2em;}
+.container {display: flex; width: 100%; margin: 0 auto; padding: 0 2em;}
 
 .hero-area,
 .content-area {padding-top: 2em; padding-bottom: 2em;}
+
+.blog .content-area {padding-top: 0em;}
 
 
 // @media #{$bear_lil_sis} { .page {max-width: 460px;}}
 
 @media only screen and (min-width:500px) {
-  .page {padding: 0 2em;}
+  .container {padding: 0 2em;}
 }
 
 @media only screen and (min-width:768px) {
   .content-area {padding-top: 4em; padding-bottom: 4em;}
   .hero-area,
-  .sans-hero .content-area {padding-top: 6em; padding-bottom: 4em;}
+  .sans-hero .content-area {padding-top: 6em; padding-bottom: 2em;}
   .blog .content-area {padding-top: 2em; padding-bottom: 4em;}
 }
 
 @media only screen and (min-width:900px) {
-  .page {padding: 0 3em;}
+  .container {padding: 0 3em;}
 }
 
 @media only screen and (min-width:960px) {
-  .page {max-width: 960px}
+  .container {max-width: 960px}
 }
 
 @media only screen and (min-width:1300px) {
-  .page {max-width: 1200px;}
+  .container {max-width: 1200px;}
   .hero-area,
-  .content-area {padding-top: 6em; padding-bottom: 6em;}
-  .sans-hero .content-area {padding-top: 10em; padding-bottom: 4em;}
-  .blog .content-area {padding-top: 2em; padding-bottom: 4em;}
+  .content-area {padding-top: 10em; padding-bottom: 2em;}
+  .sans-hero .content-area {padding-top: 10em; padding-bottom: 2em;}
+  .blog .content-area {padding-top: 2em; padding-bottom: 2em;}
 }
 
 @media only screen and (min-width:2000px) {
-  .page {max-width: 1600px}
+  .container {max-width: 1600px}
 }
 
 @media only screen and (min-width:2400px) {
-  .page {max-width: 1800px}
+  .container {max-width: 1800px}
 }

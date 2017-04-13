@@ -14,7 +14,7 @@ $counter = 0; ?>
 <?php if ( have_posts() ) : ?>
 
 <section id="hero" class="hero-area">
-	<header class="page-header page hero-box">
+	<header class="page-header container hero-box">
 		<h1 class="page-title">You’re reading the Damson Homes Blog&hellip;</h1>
 		<div class="archive-description">
 			<p>Never miss a brick being laid and be the first to hear about our new and exclusive, award-winning developments. Join fellow readers by subscribing today!</p>
@@ -23,7 +23,7 @@ $counter = 0; ?>
 </section>
 
 <section id="primary" class="content-area">
-	<main id="main" class="site-main page post-results" role="main">
+	<main id="main" class="site-main container post-results" role="main">
 
 		<?php /* Start the Loop */ while ( have_posts() ) : the_post();
 
@@ -73,23 +73,29 @@ $counter = 0; ?>
 
 		<?php endwhile; ?>
 
-			<article id="facebook_link" <?php post_class($facebook_class); ?>>
+			<article id="facebook_link" class="hentry card card-social card-facebook">
 				<a class="block-link" href="https://facebook.com/damsonnewbuild/" target="_blank" rel="bookmark">
 					<?php get_template_part( 'template-parts/modules/card-facebook', get_post_format() ); ?>
 				</a>
 			</article><!-- #post-## -->
 
-			<article id="twitter_link" <?php post_class($twitter_class); ?>>
+			<article id="twitter_link" class="hentry card card-social card-twitter">
 					<a class="block-link" href="https://twitter.com/damsonhomes/" target="_blank" rel="bookmark">
 						<?php get_template_part( 'template-parts/modules/card-twitter', get_post_format() ); ?>
 					</a>
 				</article><!-- #post-## -->
 
-			<article id="instagram_link" <?php post_class($instagram_class); ?>>
-					<a class="block-link" href="https://instagram.com/damsonhomes/" target="_blank" rel="bookmark">
-						<?php get_template_part( 'template-parts/modules/card-instagram', get_post_format() ); ?>
-					</a>
-				</article><!-- #instagram_link -->
+			<article id="instagram_link" class="hentry card card-social card-instagram">
+				<a class="block-link" href="https://instagram.com/damsonhomes/" target="_blank" rel="bookmark">
+					<?php get_template_part( 'template-parts/modules/card-instagram', get_post_format() ); ?>
+				</a>
+			</article><!-- #instagram_link -->
+
+			<article id="subscibe_link" class="hentry card card-social card-subscribe">
+				<a class="block-link modal-launch" href="#0">
+					<?php get_template_part( 'template-parts/modules/card-subscribe', get_post_format() ); ?>
+				</a>
+			</article><!-- #instagram_link -->
 
 		<?php the_posts_navigation();
 

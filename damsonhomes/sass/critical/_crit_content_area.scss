@@ -7,6 +7,29 @@
 
 .card {max-width: 45rem;}
 
+.card-social {
+
+  flex: 0 0 100%;
+  width: 100%;
+  flex: 1;
+
+  & a.block-link { align-items: center; justify-content: center; padding: 2em; text-align: center;}
+
+  & .dh-svg { width: 7em; height: 7em; display: inline-flex;}
+
+  & .dh-svg svg { width: 100%; height: 100%;}
+
+  & h5 {color: white; text-align: center; margin-top: 2em;}
+
+  & .fb-cta {
+    width: 66%;
+    max-width: 16em;
+    display: inline-block;
+  }
+
+}
+
+
 .hentry {
   margin: 0 auto 1.5em;
   display: flex;
@@ -25,18 +48,28 @@
 .post-results .card-9 {order: 9;}
 .post-results .card-10 {order: 10;}
 .post-results .card-11 {order: 11;}
+.post-results .card-11 {order: 12;}
 
 .post-results .card-facebook  {order: 2;}
-.post-results .card-twitter   {order: 5;}
-.post-results .card-instagram {order: 8;}
+.post-results .card-instagram   {order: 5;}
+.post-results .card-twitter {order: 11;}
+
+.post-results .card-subscribe {order: 8;}
 
 .post-results .card a {
   background-color: white;
   border-color: $gray_l;
+  flex: 1;
 }
 
 .post-results .card-facebook a {background-color: $fb_brand1; color: white;}
 .post-results .card-twitter a {background-color: $tw_brand1; color: white;}
+.post-results .card-subscribe {
+  text-align: center;
+  
+  & a {background-color: $brand1; color: white;}
+
+}
 
 .post-results .entry-title {margin: 0;}
 
@@ -89,7 +122,9 @@
 
 
   .post-results .card-facebook {order: 2;}
-  .post-results .card-twitter {order: 4;}
+  .post-results .card-subscribe {order: 4;}
+  .post-results .card-instagram {order: 8;}
+  
 
 }
 
@@ -97,15 +132,25 @@
 
   .post-results .card { flex: 0 0 33.3333%; }
   .post-results .card-1 {flex: 0 0 66.6666%; }
-
-  .post-results .card-twitter {order: 5;}
+  .post-results .card-instagram {order: 8;}
+  .post-results .card-twitter {order: 12;}
 
 }
+
+@media only screen and (min-width:730px) and (max-width:1299px) {
+  .post-results .card-subscribe {
+    order: 7;
+    flex: 0 0 100%;
+    max-width: 100%;
+  } 
+}
+
 
 @media only screen and (min-width:1300px) {
 
   .post-results .card { flex: 0 0 25%;}
   .post-results .card-1 {flex: 0 0 50%;}
+  .post-results .card-subscribe {order: 5;}
 }
 
 @import "crit_posts_and_pages";

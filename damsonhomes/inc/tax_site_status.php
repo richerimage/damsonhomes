@@ -33,8 +33,8 @@ function custom_taxonomy_site_status() {
   );
   $rewrite = array(
     'slug'                       => 'status',
-    'with_front'                 => false,
-    'hierarchical'               => false,
+    'with_front'                 => true,
+    'hierarchical'               => true,
   );
   $args = array(
     'labels'                     => $labels,
@@ -42,12 +42,12 @@ function custom_taxonomy_site_status() {
     'public'                     => true,
     'show_ui'                    => true,
     'show_admin_column'          => true,
-    'show_in_nav_menus'          => true,
-    'show_tagcloud'              => true,
+    'show_in_nav_menus'          => false,
+    'show_tagcloud'              => false,
     'rewrite'                    => $rewrite,
   );
 
-    register_taxonomy( $ct_key, array('post', 'page'), $args );
+    register_taxonomy( $ct_key, array('page'), $args );
 
 
       

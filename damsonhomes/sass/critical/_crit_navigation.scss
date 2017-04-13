@@ -1,10 +1,10 @@
 .nav-area {background-color: $brand1;}
 
-.nav-area .page {
+.nav-area .container {
   flex-direction: column; 
   position: relative; 
   padding: 0 2em 0 0.9em;
-  font-size: 0.9em;
+  font-size: 1.05em;
 }
 
 .nav-area li {margin-bottom: 0; font-size: 1em;}
@@ -17,7 +17,7 @@
 }
 
 .nav-area .menu a {
-  color: ghostwhite; 
+  color: $gray_ll; 
   font-weight: bold; 
   padding: 0.75em 1em; 
   display: block;
@@ -29,13 +29,13 @@
 
 @import "crit_burger";
 
-.menu-item-has-children {position: relative;}
+.nav-area .menu-item-has-children {position: relative;}
 
 .nav-area .menu {display: flex; flex-direction: column; list-style: none; margin: 0; }
 .nav-area .primary-menu {flex-direction: row; justify-content: flex-start; padding-right: 12.5%;}
 
 .dna-nav {opacity: 0; height: 0; overflow: hidden;}
-.dna-nav.active {opacity: 1; height: auto;}
+.dna-nav.active {opacity: 1; height: auto; overflow: visible;}
 
 .dna-nav ul a {width: auto;}
 
@@ -61,13 +61,13 @@
 .dna-nav > li > .parent {background-image: none;}  
 .dna-nav li .more {
   position: absolute;
-  color: ghostwhite;
+  color: $gray_ll;
   width: 2em;
   height: 2em;
   cursor: pointer;
   z-index: 200;
-  right: 2em;
-  top: 1em;
+  right: 0em;
+  top: 0.75em;
   vertical-align: middle;
 }
 .dna-nav li .more:before {content: ""; background: url($dh_darr) no-repeat 50%; display: block; height: 1em; width: 1em; position: absolute; top: 3px; bottom: 0; left: 0; right: 0;}
@@ -76,14 +76,29 @@
 .dna-nav li li.hover ul {position: static;}
 
 
-@media only screen and (min-width:550px) {
+@media only screen and (min-width:600px) {
 
-  .nav-area .page {flex-direction: row; justify-content: flex-start; padding: 0 1.05em;}
+  .nav-area .container {flex-direction: row; justify-content: flex-start; padding: 0 1em; font-size: 1.1em;}
   .hamburger-menu {display: none;}
   .nav-area .menu {flex-direction: row; justify-content: space-between; }
   .nav-area .primary-menu {padding-right: 0;}
-  .dna-nav {opacity: 1; height: auto;}
+  .dna-nav {opacity: 1; height: auto; overflow: visible;}
 
+  .nav-area .menu-item-has-children {padding-right: 2em;}
+
+}
+
+
+@media only screen and (min-width:768px) {
+
+  .nav-area .container {justify-content: space-between; font-size: 0.85em; letter-spacing: 0.025em;}
+
+  .dna-nav {flex-direction: row; flex-wrap: wrap;}
+  
+  .nav-area .menu a {padding: 1em 1.25em; font-weight: normal;}
+
+
+  .dna-nav > li > .parent {padding-right: 2.5em;}
 
   .dna-nav li {border: none;}
   .dna-nav li:last-child {border-bottom: none;}
@@ -105,19 +120,13 @@
     right: 1em;
   }
 
-
-}
-
-
-@media only screen and (min-width:768px) {
-  .nav-area .page {justify-content: space-between;}
-  .dna-nav {flex-direction: row; flex-wrap: wrap;}
-  
-  .nav-area .menu a {padding: 1em 1.25em;}
-  .dna-nav > li > .parent {padding-right: 2.5em;}
-
 }
 
 
 @media only screen and (min-width:900px) {
-  .nav-area .page {padding: 0 2em;}}
+  .nav-area .container {padding: 0 2em;}
+}
+
+@media only screen and (min-width:1300px) {
+.nav-area .container {font-size: 1em;}
+}

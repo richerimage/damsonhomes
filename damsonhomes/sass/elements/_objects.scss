@@ -8,11 +8,13 @@
   display: flex; 
   margin-left: auto;
 
+  & li {margin-bottom: 0;}
+
     & a { 
       color: #777777; 
       display: block; 
-      height: 1.6em; 
-      width: 1.6em; 
+      height: 1.8em; 
+      width: 1.8em; 
       margin: 0.25em; 
       background: white;
     }
