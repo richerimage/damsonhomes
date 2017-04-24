@@ -133,12 +133,31 @@ jQuery(document).ready(function($) {
 
 
   $('.gallery').flickity({
-  // options
-  cellAlign: 'left',
-  contain: true,
-  setGallerySize: false,
-  autoPlay: true
-});
+    // options
+    cellAlign: 'left',
+    contain: true,
+    setGallerySize: false,
+    autoPlay: true
+  });
+
+
+  // Tabs - START
+
+$('.tabs a').click(function(e){
+    e.preventDefault();
+      var $this = $(this),
+        tabgroup = '#'+$this.parents('.tabs').data('tabgroup'),
+        others = $this.closest('li').siblings().children('a'),
+        target = $this.attr('href');
+    others.removeClass('active');
+    $this.addClass('active');
+
+    $(tabgroup).children('.tab-content').addClass('tab-bottom').removeClass('tab-top');
+    $(target).addClass('tab-top').removeClass('tab-bottom');
+  });
+
+
+  // Tabs End
 
 
 

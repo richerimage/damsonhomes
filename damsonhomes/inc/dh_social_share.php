@@ -1,7 +1,7 @@
 <?php 
 
 
-function dh_social_share() {
+function dh_social_share($type = 'post!') {
 
   global $post;
 
@@ -38,7 +38,7 @@ function dh_social_share() {
 
   if ($count == '0' || $count == '' ) {
 
-    echo "\t<p class=\"shares shares-first nbm\">Be the First to share this post!</p>";
+    echo "\t<p class=\"shares shares-first nbm\">Be the First to share this {$type}</p>";
 
   } else if ($count === 1) {
 

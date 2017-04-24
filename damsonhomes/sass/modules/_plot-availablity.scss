@@ -1,0 +1,164 @@
+
+.tab-plots {
+  display: flex;
+  flex-direction: column;
+
+  & h2 {text-align: center;}
+
+  & .columns {padding-left: 1em; padding-right: 1em;}
+
+  & .action-box {
+    display: flex;
+    margin-bottom: 1.5em;
+    justify-content: center;
+  }
+
+  & .action-box a {
+    flex: 1;
+    margin: 0 1em;
+    text-align: center;
+    padding: 1em;
+  }  
+
+  & .action-box a:first-child {margin-left: 0;} 
+
+  & .action-box a:last-child {margin-right: 0;} 
+
+  & .plot-map {
+    margin-bottom: 1.5em;
+    border: solid 4px white;
+  }
+
+}
+
+  .plot-availability {
+    flex: 0 0 33.333%;
+    padding: 1em;
+    border: double 3px #b78958;
+    margin: 1em auto;
+    text-align: center;
+    max-width: 32em;
+
+    & h5 {margin: 0;}
+
+    & .aux {color: $brand1;}
+  }
+
+  .tab-top .res-buyer-prompt {
+    animation: gambole 1200ms backwards;
+    animation-delay: 1000ms;
+  }
+
+  .res-buyer-prompt {
+
+    max-width: 32em;
+    margin-left: auto;
+    margin-right: auto;
+
+    & a {
+      text-decoration: none;
+      color: white;
+      background-color: $brand1;
+      display: block;
+      text-align: center;
+      padding: 0.75em 1em;
+    }
+
+    & a strong {
+      display: block;
+    }
+  }
+
+.dh-plot-list {
+  list-style: none; 
+  margin: 1.5em auto 0;
+  max-width: 28em;
+  padding-top: 1.5em;
+  border-top: solid 1px $gray_m;
+  text-align: left;
+
+  & li {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-bottom: 0em;
+    padding: 1em;
+  }
+
+  & li.available {
+    padding: 0;
+  }
+
+  & li span {
+    padding: 0 0.5em 0 0;
+  }
+
+  & li a {border: solid 2px transparent;}
+
+  & li a:hover,
+    li a:focus {
+      background-color: white;
+      transform: scale(1.0225,1.0225);
+      box-shadow: 0 2em 2em rgba(0, 0, 0, 0.1);
+      border-color: $gray_d;
+  }
+
+  & li a:active {
+      transform: scale(1.01,1.01);
+      box-shadow: 0 0.5em 0.5em rgba(0, 0, 0, 0.5);
+  }
+
+  & .dh-svg svg {height: 1.25em; width: 1.25em;}
+
+  & .available .dh-svg svg {color: green;}
+  & .sstc .dh-svg svg {color: #A0002E;}
+  & .sold .dh-svg svg {color: $brand1;}
+
+  & .dh-plot-number {
+    color: $brand1;
+    font-weight: bold;
+  }
+
+  & .dh-plot-value {
+    font-weight: bold;
+    color: black;
+  }
+
+  & .dh-plot-desc {
+    flex: 0 0 100%;
+    font-style: italic;
+    padding-left: 1.75em;
+  }
+}
+
+
+@media only screen and (min-width:550px) {
+
+  .tab-plots .action-box a {font-size: 1.3em;}
+
+}
+
+
+@media only screen and (min-width:768px) {
+
+  .tab-plots {
+    flex-direction: row;
+  }
+
+  .plot-availability {
+    flex: 0 0 33.333%;
+    margin: 1em 1em 1em auto;
+  }
+  
+}
+
+@media only screen and (min-width:768px) and (max-width:900px) {
+
+  .plot-availability {font-size: 0.85em;}
+
+}
+
+@media only screen and (min-width:1300px) {
+
+  .tab-plots {padding: 1em;}
+}

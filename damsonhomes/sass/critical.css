@@ -74,6 +74,9 @@ p, .entry-content ul, .entry-content ol {
   margin-bottom: 1rem;
   line-height: 1.6em; }
 
+p.aux {
+  font-size: 1em; }
+
 .intro {
   font-size: 1.6em;
   font-family: georgia, serif;
@@ -222,6 +225,9 @@ li {
 .ilb {
   display: inline-block; }
 
+.text-center {
+  text-align: center; }
+
 a.button {
   background-color: #777777;
   color: white;
@@ -245,6 +251,29 @@ a.cta {
   .block-link:hover, .block-link:focus {
     background-color: #EEEEEE; }
 
+.box {
+  padding: 1em; }
+  .box *:first-child {
+    margin-top: 0; }
+  .box *:last-child {
+    margin-bottom: 0; }
+  .box.xv {
+    border: solid 1px #CCCCCC; }
+
+.frame {
+  border: solid 5px #F5F5F5;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5); }
+
+.xv .frame,
+.xv.frame {
+  border-color: white; }
+
+@media only screen and (min-width: 768px) {
+  .box {
+    padding: 1.5em; } }
+@media only screen and (min-width: 1300px) {
+  .box {
+    padding: 2em; } }
 .header {
   padding-top: 1em;
   padding-bottom: 1em;
@@ -829,10 +858,12 @@ a.cta {
 @media only screen and (min-width: 2000px) {
   .single .entry-header,
   .single .featured-image {
-    width: calc(1600px - 6em); } }
+    width: calc(1600px - 6em);
+    margin-left: -34em; } }
 @media only screen and (min-width: 2400px) {
   .single .entry-header,
   .single .featured-image {
-    width: calc(2400px - 6em); } }
+    width: calc(2400px - 6em);
+    margin-left: -67em; } }
 
 /*# sourceMappingURL=critical.css.map */

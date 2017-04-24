@@ -33,10 +33,16 @@
 
 @media only screen and (min-width:2000px) {
   .single .entry-header,
-  .single .featured-image {width: calc(1600px - 6em);}
+  .single .featured-image {
+    width: calc(1600px - 6em);
+    margin-left: -34em;
+  }
 }
 
 @media only screen and (min-width:2400px) {
   .single .entry-header,
-  .single .featured-image {width: calc(2400px - 6em);}
+  .single .featured-image {
+    width: calc(2400px - 6em);
+    margin-left: -67em;
+  }
 }

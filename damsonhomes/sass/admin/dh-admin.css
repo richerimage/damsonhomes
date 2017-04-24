@@ -1,32 +1,39 @@
-#dh_site_metabox .dh-site-mb .cmb-row {
+#dh_site_metabox .dh-mb .cmb-row,
+#dh_area_metabox .dh-mb .cmb-row {
   padding-top: 0;
   padding-bottom: 0; }
 
-#dh_site_metabox .dh-site-mb .cmb-row {
+#dh_site_metabox .dh-mb .cmb-row {
   border: none; }
 
 #dh_site_metabox.cmb2-postbox .cmb-th,
-#dh_site_metabox.cmb2-postbox .cmb-td {
+#dh_site_metabox.cmb2-postbox .cmb-td,
+#dh_area_metabox.cmb2-postbox .cmb-th,
+#dh_area_metabox.cmb2-postbox .cmb-td {
   width: 100%;
   float: none; }
 
-#dh_site_metabox .cmb2-wrap input[type="text"] {
+#dh_site_metabox .cmb2-wrap input[type="text"],
+#dh_area_metabox .cmb2-wrap input[type="text"] {
   width: 100%; }
 
-#dh_site_metabox .cmb2-wrap input.cmb2-text-small {
+#dh_site_metabox .cmb2-wrap input.cmb2-text-small,
+#dh_area_metabox .cmb2-wrap input.cmb2-text-small {
   max-width: 100px; }
 
-#dh_site_metabox .cmb2-wrap input.cmb2-text-medium {
+#dh_site_metabox .cmb2-wrap input.cmb2-text-medium,
+#dh_area_metabox .cmb2-wrap input.cmb2-text-medium {
   max-width: 230px; }
 
-#dh_site_metabox .cmb2-wrap .cmb-type-text-url input.cmb2-text-medium {
+#dh_site_metabox .cmb2-wrap .cmb-type-text-url input.cmb2-text-medium,
+#dh_area_metabox .cmb2-wrap .cmb-type-text-url input.cmb2-text-medium {
   max-width: 100%; }
 
-.dh-site-mb .postbox.cmb-row.cmb-repeatable-grouping {
+.dh-mb .postbox.cmb-row.cmb-repeatable-grouping {
   flex: 0 0 100%;
   box-sizing: border-box; }
 
-.dh-site-mb .cmb-repeat {
+.dh-mb .cmb-repeat {
   padding: 1em !important;
   margin: 0 0 1.5em;
   max-width: 100%;
@@ -36,43 +43,43 @@
   flex-direction: column;
   background-color: #F5F5F5; }
 
-.dh-site-mb .row,
-.dh-site-mb .cmb-repeatable-grouping .cmb-field-list {
+.dh-mb .row,
+.dh-mb .cmb-repeatable-grouping .cmb-field-list {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   align-items: flex-end; }
 
-.dh-site-mb .cmb-repeatable-grouping .cmb-field-list {
+.dh-mb .cmb-repeatable-grouping .cmb-field-list {
   align-items: flex-end;
   justify-content: space-between; }
 
-.dh-site-mb .row .columns {
+.dh-mb .row .columns {
   padding: 0 1em;
   box-sizing: border-box; }
 
-.dh-site-mb .row .columns:first-child {
+.dh-mb .row .columns:first-child {
   padding-left: 0em; }
 
-.dh-site-mb .row .columns:last-child {
+.dh-mb .row .columns:last-child {
   padding-right: 0em; }
 
-.dh-site-mb .four {
+.dh-mb .four {
   flex: 0 0 33.333%; }
 
-.dh-site-mb .six {
+.dh-mb .six {
   flex: 0 0 50%; }
 
-.dh-site-mb .eight {
+.dh-mb .eight {
   flex: 0 0 66.666%; }
 
-.dh-site-mb .ntm {
+.dh-mb .ntm {
   margin-top: 0; }
 
-.dh-site-mb .dh-mb-full-width input {
+.dh-mb .dh-mb-full-width input {
   width: 100%; }
 
-.dh-site-mb span.cmb2-metabox-description {
+.dh-mb span.cmb2-metabox-description {
   display: block;
   font-size: 0.9em;
   margin-top: 0.25em; }
@@ -82,39 +89,51 @@
   padding: 1em;
   margin-bottom: 1.5em; }
 
-.dh-site-mb .cmb-inline li {
+.dh-mb .cmb-inline li {
   width: 40%; }
 
-#dh_site_metabox .cmb-type-file .cmb-td {
+#dh_site_metabox .cmb-type-file .cmb-td,
+#dh_area_metabox .cmb-type-file .cmb-td {
   display: flex;
   align-items: center;
   justify-content: flex-start;
   padding-top: 0.5em; }
 
-#dh_site_metabox .cmb-type-file .cmb-td input {
+#dh_site_metabox .cmb-type-file .cmb-td input,
+#dh_area_metabox .cmb-type-file .cmb-td input {
   order: 1; }
 
-#dh_site_metabox .cmb-type-file .cmb-td .cmb2-media-status {
+#dh_site_metabox .cmb-type-file .cmb-td .cmb2-media-status,
+#dh_area_metabox .cmb-type-file .cmb-td .cmb2-media-status {
   order: 0; }
 
-#dh_site_metabox .cmb-type-file .cmb-td .cmb2-upload-file {
+#dh_site_metabox .cmb-type-file .cmb-td .cmb2-upload-file,
+#dh_area_metabox .cmb-type-file .cmb-td .cmb2-upload-file {
   color: #AAA; }
 
-#dh_site_metabox .cmb-type-file .cmb-td .cmb2-media-status img {
+#dh_site_metabox .cmb-type-file .cmb-td .cmb2-media-status img,
+#dh_area_metabox .cmb-type-file .cmb-td .cmb2-media-status img {
   margin-top: 0; }
 
-#dh_site_metabox .cmb-type-file .cmb2-media-status .img-status .cmb2-remove-file-button {
+#dh_site_metabox .cmb-type-file .cmb2-media-status .img-status .cmb2-remove-file-button,
+#dh_area_metabox .cmb-type-file .cmb2-media-status .img-status .cmb2-remove-file-button {
   top: -8px;
   left: -8px; }
 
-.dh-site-mb #site-name {
+.dh-mb #site-name {
   font-size: 1.5em; }
 
-#dh_plot_avail_repeat .cmb2-metabox-description {
+#dh_plot_avail_repeat .cmb2-metabox-description,
+#dh_area_picks_repeat .cmb2-metabox-description,
+#dh_area_schools_repeat .cmb2-metabox-description {
   margin: 0;
   color: #222;
   padding: 0;
   font-style: normal;
   font-size: 1.25em; }
+
+#dh_site_metabox .area-options {
+  align-items: flex-start;
+  margin-bottom: 2em; }
 
 /*# sourceMappingURL=dh-admin.css.map */

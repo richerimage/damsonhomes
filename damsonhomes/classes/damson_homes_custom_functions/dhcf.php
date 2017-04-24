@@ -54,6 +54,7 @@ class dh_custom_functions {
 
     $row_width          = 1600;
     $content_width      = round($row_width * 0.6666667);
+    
     $square             = round($content_width / 2);
     $classic_height     = round($content_width / 3 * 2);
     $standard_height    = round($content_width / 4 * 3);
@@ -196,6 +197,14 @@ class dh_custom_functions {
     }
 
     wp_enqueue_script( 'dh-scripts', DH_URL . '/js/dh_scripts.js', 'jquery', false, true );
+
+    if (is_page_template( 'template-site.php' )) {
+
+      wp_enqueue_script( 'google-maps', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyC2MEUHYicgbIvLGyU2o0GZJ_R9vluTJP8&extension=.js', '', false, true);
+
+      // wp_enqueue_script( 'google-maps', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyC2MEUHYicgbIvLGyU2o0GZJ_R9vluTJP8&sensor=false&extension=.js', '', false, true);
+
+    }
 
   }
 

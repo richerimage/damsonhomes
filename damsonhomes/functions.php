@@ -161,6 +161,7 @@ require get_template_directory() . '/inc/dh_social_share.php';
  */
 
 require get_template_directory() . '/inc/metaboxes/dh-mb-sites.php';
+require get_template_directory() . '/inc/metaboxes/dh-mb-area.php';
 
 
 

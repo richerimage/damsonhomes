@@ -1,0 +1,100 @@
+.dh-spec h2 {margin-top: 0;}
+
+.dh-spec .card {
+  max-width: 100em;
+  padding: 1.5em;
+  border: solid 1px $gray_ll;
+  margin-bottom: 1.5em;
+
+  & .headline {
+    margin-top: 0;
+    text-align: center;
+  }
+
+  & .wp-post-image {
+    margin-bottom: 1.5em;
+    width: 100%;
+    max-width: 320px;
+  }
+
+  & .entry-content *:last-child {
+    margin-bottom: 0;
+  } 
+
+  & .row {
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+}
+
+.spec-intro {
+  display: flex;
+  flex-direction: column;
+  margin: 2em auto;
+  max-width: 47em;
+  font-family: $head_ff;
+  font-style: italic;
+  font-size: 1.15em;
+  text-align: justify;
+
+  & .button-holder {
+    margin-top: 1em;
+    font-style: normal;
+  }
+}
+
+
+@media only screen and (min-width:500px) {
+
+  .dh-spec .card .row {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 100%;
+
+    & .wp-post-image {
+      margin-bottom: 0;
+      flex: 0 0 50%;
+      height: 100%;
+      width: 50%;
+    }
+
+    & .entry-content {
+      flex: 0 0 50%;
+      padding-left: 1.5em;
+    }
+
+  }
+
+}
+
+@media only screen and (min-width:768px) {
+
+  .dh-spec .card .row .wp-post-image {
+      flex: 0 0 320px;
+      height: 100%;
+    }
+
+  .dh-spec .card .row .entry-content {
+      flex: 0 0 calc(100% - 320px);
+  }
+  
+  .dh-spec .card {
+    margin-bottom: 2em;
+  
+    & .headline {text-align: left;}
+  
+    & .entry-content {padding-left: 2em;}
+
+  }
+
+}
+
+@media only screen and (min-width:1024px) {
+
+  .spec-intro {
+    max-width: 53em;
+    line-height: 1.8em;
+  }
+
+}

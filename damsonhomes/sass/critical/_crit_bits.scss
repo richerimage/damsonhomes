@@ -33,6 +33,8 @@
 .nbm {margin-bottom: 0;}
 .ilb {display: inline-block;}
 
+.text-center {text-align: center;}
+
 a.button {
   background-color: $text2;
   color: white;
@@ -64,4 +66,36 @@ a.cta {
     &:focus {
         background-color: $gray_ll;
     }
+}
+
+
+.box {
+
+  padding: 1em;
+  
+    & *:first-child {margin-top: 0;}
+    & *:last-child {margin-bottom: 0;}
+
+    &.xv {border: solid 1px $gray_l;}
+
+}
+
+.frame {
+  border: solid 5px #F5F5F5;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.xv .frame,
+.xv.frame {border-color: white;}
+
+@media only screen and (min-width:768px) {
+
+  .box {padding: 1.5em;}
+  
+}
+
+@media only screen and (min-width:1300px) {
+
+  .box {padding: 2em;}
+  
 }

@@ -136,6 +136,56 @@ function cmb2_get_term_options( $field ) {
 
 
 
+
+
+/**
+ * Gets a number of posts and displays them as options
+ * @param  array $query_args Optional. Overrides defaults.
+ * @return array             An array of options that matches the CMB2 options array
+ */
+function cmb2_get_post_options( $query_args ) {
+
+	$args = wp_parse_args( $query_args, array(
+		'post_type'   => 'post',
+		'numberposts' => 10,
+	) );
+
+	$posts = get_posts( $args );
+
+	$post_options = array();
+	if ( $posts ) {
+		foreach ( $posts as $post ) {
+          $post_options[ $post->ID ] = $post->post_title;
+		}
+	}
+
+	return $post_options;
+}
+
+/**
+ * Gets 5 posts for your_post_type and displays them as options
+ * @return array An array of options that matches the CMB2 options array
+ */
+function dh_area_cpt_list() {
+	return cmb2_get_post_options( 
+		array( 
+			'post_type' 	=> 'dnh_cpt_area', 
+			'numberposts' => 100,
+			'orderby'			=> 'title', 
+			'order' 			=> 'ASC'
+		));
+}
+
+
+
+
+
+
+
+
+
+
+
 add_action( 'cmb2_admin_init', 'dh_register_demo_metabox' );
 /**
  * Hook in and add a demo metabox. Can only happen on the 'cmb2_admin_init' or 'cmb2_init' hook.
@@ -154,7 +204,7 @@ function dh_register_demo_metabox() {
 		'context'    => 'normal',
 		'priority'   => 'high',
 		'show_names' => true,
-		'classes'    => 'dh-site-mb',
+		'classes'    => 'dh-mb dh-site-mb',
 	) );
 
 
@@ -211,10 +261,17 @@ function dh_register_demo_metabox() {
 	) );
 
 	$dh_site->add_field( array(
+		'name' => esc_html__( 'Number/Name', 'dh' ),
+		'id'   => 'site-number',
+		'type' => 'text_small',
+		'before_row'   => '<div class="mb-ftr-section"><h4 class="ntm">Development Details</h4><div class="row"><div class="six colmns">', // callback.
+	) );
+
+	$dh_site->add_field( array(
 		'name' => esc_html__( 'Street', 'dh' ),
 		'id'   => 'site-street',
 		'type' => 'text_medium',
-		'before_row'   => '<div class="mb-ftr-section"><h4 class="ntm">Development Details</h4><div class="row"><div class="six colmns">', // callback.
+		// 'before_row'   => '<div class="mb-ftr-section"><h4 class="ntm">Development Details</h4><div class="row"><div class="six colmns">', // callback.
 	) );
 
 	$dh_site->add_field( array(
@@ -249,19 +306,8 @@ function dh_register_demo_metabox() {
 		'name' => esc_html__( 'Completion Date', 'dh' ),
 		'id'   => $prefix . 'completion_date',
 		'type' => 'text_medium',
-	) );
-
-	$dh_site->add_field( array(
-		'name' => esc_html__( 'OS Coordinates', 'dh' ),
-		'desc' => esc_html__( 'eg. 52.471420, -1.946139', 'dh'),
-		'id'   => $prefix . 'site_map',
-		'type' => 'text_medium',
-		
 		'after_row'   => '</div></div></div>'
-
 	) );
-
-
 
 
 	$dh_site->add_field( array(
@@ -335,7 +381,7 @@ function dh_register_demo_metabox() {
 
 
 	$dh_site->add_group_field( $dh_plots, array(
-		'name'             => esc_html__( 'Test Select', 'dh' ),
+		'name'             => esc_html__( 'Sale Status', 'dh' ),
 		'id'               => $prefix . 'plot_status',
 		'type'             => 'select',
 		'show_option_none' => true,
@@ -352,6 +398,91 @@ function dh_register_demo_metabox() {
 	 * Repeatable Plot Groups -- END
 	 *
 	 */
+
+
+	$dh_site->add_field( array(
+		'name'    => 'Site Location Introduction',
+		'id'      => $prefix . 'area_intro',
+		'type'    => 'wysiwyg',
+
+		'options' => array(
+
+			// https://codex.wordpress.org/Function_Reference/wp_editor
+
+			'textarea_rows' => 8,
+			'teeny' => true,
+		),
+
+		'before_row'  => '<div class="site-area-section"><h4>Area Details</h4><div class="row area-options">',
+		'classes'			=> 'eight columns',
+	) );
+
+	$dh_site->add_field( array(
+		'name'       => __( 'Area Information', 'cmb2' ),
+		'id'         => $prefix . 'area_info',
+		'type'       => 'select',
+		'options_cb' => 'dh_area_cpt_list',
+		'before_row'  => '<div class="four columns">',
+		
+	) );
+
+
+	$dh_site->add_field( array(
+		'name' => esc_html__( 'OS Coordinates', 'dh' ),
+		'desc' => esc_html__( 'eg. 52.471420, -1.946139', 'dh'),
+		'id'   => $prefix . 'site_map',
+		'type' => 'text_medium',
+		
+		'after_row'   => '</div></div>'
+
+	) );
+
+
+
+
+
+	/***** Repeatable Group: START Key Distances *****/
+
+
+	$dh_dist = $dh_site->add_field( array(
+		'id'          => $prefix . 'distance',
+		'type'        => 'group',
+		'description' => esc_html__( 'Key Distances', 'dh' ),
+		'options'     => array(
+			'group_title'   => esc_html__( 'Location: {#}', 'dh' ), // {#} gets replaced by row number
+			'add_button'    => esc_html__( 'Add Another Location', 'dh' ),
+			'remove_button' => esc_html__( 'Remove Location', 'dh' ),
+			'sortable'      => true, // beta
+			'closed'     		=> false, // true to have the groups closed by default
+
+		),
+	) );
+
+	$dh_site->add_group_field( $dh_dist, array(
+		'name'       => esc_html__( 'Name', 'dh' ),
+		'id'         => $prefix . 'location_name',
+		'type'       => 'text_medium',
+	));
+
+	$dh_site->add_group_field( $dh_dist, array(
+		'name'       => esc_html__( 'Distance', 'dh' ),
+		'id'         => $prefix . 'location_distance',
+		'type'       => 'text_small',
+	));
+
+	/***** Repeatable Group: END Key Distances *******/
+
+
+
+	$dh_site->add_field( array(
+		'name' => esc_html__( 'Show Reserve Buyer Option', 'dh' ),
+		'id'   => $prefix . 'show_reserve_buyer',
+		'type' => 'checkbox',
+		'before_row'  => '<p><a href="http://sites.psu.edu/symbolcodes/accents/math/mathchart/#fractions/">Handy Fraction HTML References</a></p><div class="mb-ftr-section"><h4>Toggle Options</h4><div class="row toggle-options">',
+		'classes'			=> 'four columns',
+		'after_row' 	=> '</div></div>'
+		
+	) );
 
 
 	$dh_site->add_field( array(

@@ -24,20 +24,20 @@ function damsonhomes_posted_on() {
 		esc_html( get_the_modified_date() )
 	);
 
-	if (is_singular()) {
+	// if (is_singular()) {
 
-		$posted_on = '<span class="posted-on"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a></span>';
+	// 	$posted_on = '<span class="posted-on"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a></span>';
 
-		$byline = '<span class="author"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' .
-						'<span class="vcard">By ' . esc_html( get_the_author() ) . '</span></a></span>';
+	// 	$byline = '<span class="author"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' .
+	// 					'<span class="vcard">By ' . esc_html( get_the_author() ) . '</span></a></span>';
 
-	} else {
+	// } else {
 
 		$posted_on = '<span class="posted-on">' . $time_string . '</span>';
 
 		$byline = '<span class="author"><span class="vcard">By ' . esc_html( get_the_author() ) . '</span></span>';
 
-	}
+	// }
 
 	
 

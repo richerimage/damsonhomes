@@ -20,5 +20,322 @@
 	## Captions
 	## Galleries
 --------------------------------------------------------------*/
+.cta-area {
+  background-color: #c08802;
+  padding: 1em 0; }
+
+.cta-box {
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.cta-box .site-logo {
+  width: 66px;
+  margin-right: 1em; }
+
+.hentry {
+  margin: 0; }
+  .hentry.tab-top {
+    margin: 0 auto 1.5em; }
+
+.tab-content.tab-top {
+  margin-bottom: 2em; }
+
+.tab-content h2 {
+  text-align: center; }
+
+.tab-plots {
+  display: flex;
+  flex-direction: column; }
+  .tab-plots h2 {
+    text-align: center; }
+  .tab-plots .columns {
+    padding-left: 1em;
+    padding-right: 1em; }
+  .tab-plots .action-box {
+    display: flex;
+    margin-bottom: 1.5em;
+    justify-content: center; }
+  .tab-plots .action-box a {
+    flex: 1;
+    margin: 0 1em;
+    text-align: center;
+    padding: 1em; }
+  .tab-plots .action-box a:first-child {
+    margin-left: 0; }
+  .tab-plots .action-box a:last-child {
+    margin-right: 0; }
+  .tab-plots .plot-map {
+    margin-bottom: 1.5em;
+    border: solid 4px white; }
+
+.plot-availability {
+  flex: 0 0 33.333%;
+  padding: 1em;
+  border: double 3px #b78958;
+  margin: 1em auto;
+  text-align: center;
+  max-width: 32em; }
+  .plot-availability h5 {
+    margin: 0; }
+  .plot-availability .aux {
+    color: #6b1c56; }
+
+.tab-top .res-buyer-prompt {
+  animation: gambole 1200ms backwards;
+  animation-delay: 1000ms; }
+
+.res-buyer-prompt {
+  max-width: 32em;
+  margin-left: auto;
+  margin-right: auto; }
+  .res-buyer-prompt a {
+    text-decoration: none;
+    color: white;
+    background-color: #6b1c56;
+    display: block;
+    text-align: center;
+    padding: 0.75em 1em; }
+  .res-buyer-prompt a strong {
+    display: block; }
+
+.dh-plot-list {
+  list-style: none;
+  margin: 1.5em auto 0;
+  max-width: 28em;
+  padding-top: 1.5em;
+  border-top: solid 1px #AAAAAA;
+  text-align: left; }
+  .dh-plot-list li {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-bottom: 0em;
+    padding: 1em; }
+  .dh-plot-list li.available {
+    padding: 0; }
+  .dh-plot-list li span {
+    padding: 0 0.5em 0 0; }
+  .dh-plot-list li a {
+    border: solid 2px transparent; }
+  .dh-plot-list li a:hover,
+  .dh-plot-list li a:focus {
+    background-color: white;
+    transform: scale(1.0225, 1.0225);
+    box-shadow: 0 2em 2em rgba(0, 0, 0, 0.1);
+    border-color: #999999; }
+  .dh-plot-list li a:active {
+    transform: scale(1.01, 1.01);
+    box-shadow: 0 0.5em 0.5em rgba(0, 0, 0, 0.5); }
+  .dh-plot-list .dh-svg svg {
+    height: 1.25em;
+    width: 1.25em; }
+  .dh-plot-list .available .dh-svg svg {
+    color: green; }
+  .dh-plot-list .sstc .dh-svg svg {
+    color: #A0002E; }
+  .dh-plot-list .sold .dh-svg svg {
+    color: #6b1c56; }
+  .dh-plot-list .dh-plot-number {
+    color: #6b1c56;
+    font-weight: bold; }
+  .dh-plot-list .dh-plot-value {
+    font-weight: bold;
+    color: black; }
+  .dh-plot-list .dh-plot-desc {
+    flex: 0 0 100%;
+    font-style: italic;
+    padding-left: 1.75em; }
+
+@media only screen and (min-width: 550px) {
+  .tab-plots .action-box a {
+    font-size: 1.3em; } }
+@media only screen and (min-width: 768px) {
+  .tab-plots {
+    flex-direction: row; }
+
+  .plot-availability {
+    flex: 0 0 33.333%;
+    margin: 1em 1em 1em auto; } }
+@media only screen and (min-width: 768px) and (max-width: 900px) {
+  .plot-availability {
+    font-size: 0.85em; } }
+@media only screen and (min-width: 1300px) {
+  .tab-plots {
+    padding: 1em; } }
+.dh-spec h2 {
+  margin-top: 0; }
+
+.dh-spec .card {
+  max-width: 100em;
+  padding: 1.5em;
+  border: solid 1px #EEEEEE;
+  margin-bottom: 1.5em; }
+  .dh-spec .card .headline {
+    margin-top: 0;
+    text-align: center; }
+  .dh-spec .card .wp-post-image {
+    margin-bottom: 1.5em;
+    width: 100%;
+    max-width: 320px; }
+  .dh-spec .card .entry-content *:last-child {
+    margin-bottom: 0; }
+  .dh-spec .card .row {
+    max-width: 320px;
+    margin: 0 auto; }
+
+.spec-intro {
+  display: flex;
+  flex-direction: column;
+  margin: 2em auto;
+  max-width: 47em;
+  font-family: georgia, serif;
+  font-style: italic;
+  font-size: 1.15em;
+  text-align: justify; }
+  .spec-intro .button-holder {
+    margin-top: 1em;
+    font-style: normal; }
+
+@media only screen and (min-width: 500px) {
+  .dh-spec .card .row {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 100%; }
+    .dh-spec .card .row .wp-post-image {
+      margin-bottom: 0;
+      flex: 0 0 50%;
+      height: 100%;
+      width: 50%; }
+    .dh-spec .card .row .entry-content {
+      flex: 0 0 50%;
+      padding-left: 1.5em; } }
+@media only screen and (min-width: 768px) {
+  .dh-spec .card .row .wp-post-image {
+    flex: 0 0 320px;
+    height: 100%; }
+
+  .dh-spec .card .row .entry-content {
+    flex: 0 0 calc(100% - 320px); }
+
+  .dh-spec .card {
+    margin-bottom: 2em; }
+    .dh-spec .card .headline {
+      text-align: left; }
+    .dh-spec .card .entry-content {
+      padding-left: 2em; } }
+@media only screen and (min-width: 1024px) {
+  .spec-intro {
+    max-width: 53em;
+    line-height: 1.8em; } }
+.tab-location {
+  display: flex;
+  flex-direction: column; }
+  .tab-location .column-full {
+    flex: 1 1 100%;
+    order: 1; }
+    .tab-location .column-full h2 {
+      text-align: left; }
+    .tab-location .column-full:first-child {
+      border-bottom: double 3px #EEEEEE;
+      margin-bottom: 1.25em;
+      padding-bottom: 1em; }
+    .tab-location .column-full:last-child {
+      border-top: double 3px #EEEEEE;
+      margin-top: 1em;
+      padding-top: 1.25em;
+      order: 5; }
+  .tab-location .area-intro {
+    max-width: 60em; }
+    .tab-location .area-intro *:last-child {
+      margin-bottom: 0; }
+  .tab-location .column-1-2 {
+    flex: 1 1 50%;
+    order: 3; }
+  .tab-location .map-wrap {
+    font-size: 1.25em;
+    line-height: 1.5em;
+    order: 2; }
+  .tab-location .column-1-3 {
+    flex: 1 1 33.333%; }
+  .tab-location .location-meta {
+    display: flex;
+    flex-direction: column; }
+    .tab-location .location-meta h5 {
+      margin-top: 0;
+      border-bottom: solid 1px #c08802;
+      padding-bottom: 0.15em; }
+
+.map-wrap h5 {
+  display: flex;
+  flex-direction: row;
+  align-content: flex-start;
+  margin-bottom: 0.75em; }
+  .map-wrap h5 .dh-svg {
+    height: 1.25em;
+    width: 1.25em;
+    margin-right: 0.35em; }
+
+.site-address {
+  margin-bottom: 1em; }
+  .site-address span {
+    display: inline-block; }
+    .site-address span:after {
+      content: ",";
+      margin-right: 0.25em; }
+    .site-address span:last-child:after {
+      content: "";
+      margin-right: none; }
+    .site-address span.number:after {
+      content: "";
+      margin-right: 0.25em; }
+
+.target-distances .distance:before {
+  content: "~";
+  margin: 0 0.25em;
+  color: #AAAAAA; }
+
+.area-meta-council ul {
+  margin-left: 0;
+  list-style: none; }
+
+@media only screen and (min-width: 550px) {
+  .tab-location .location-meta {
+    flex-direction: row;
+    flex-wrap: wrap; }
+    .tab-location .location-meta .column-1-3 {
+      padding: 0 1em; }
+      .tab-location .location-meta .column-1-3:first-child {
+        padding-left: 0; }
+      .tab-location .location-meta .column-1-3:last-child {
+        padding-right: 0; } }
+@media only screen and (min-width: 768px) {
+  .tab-location {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; }
+    .tab-location .column-full:first-child {
+      border-bottom: double 3px #EEEEEE;
+      margin-bottom: 2.25em;
+      padding-bottom: 2em; }
+    .tab-location .map-wrap {
+      font-size: 1.05em;
+      flex: 0 1 calc(50% - 2em);
+      order: 3;
+      margin-left: auto; }
+    .tab-location .desc-wrap {
+      padding-right: 2em; }
+    .tab-location .column-full:last-child {
+      margin-top: 2em;
+      padding-top: 2.25em; } }
+@media only screen and (min-width: 1300px) {
+  .tab-location .area-intro {
+    max-width: 70em; } }
+.tab-updates {
+  display: flex; }
+  .tab-updates .column-full {
+    flex: 1 1 100%; }
+  .tab-updates .card h2 {
+    text-align: left; }
 
 /*# sourceMappingURL=style-template-site.css.map */
