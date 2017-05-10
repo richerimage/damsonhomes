@@ -51,8 +51,10 @@
   align-items: flex-end; }
 
 .dh-mb .cmb-repeatable-grouping .cmb-field-list {
-  align-items: flex-end;
+  align-items: flex-start;
   justify-content: space-between; }
+  .dh-mb .cmb-repeatable-grouping .cmb-field-list .cmb-remove-field-row {
+    align-self: center; }
 
 .dh-mb .row .columns {
   padding: 0 1em;

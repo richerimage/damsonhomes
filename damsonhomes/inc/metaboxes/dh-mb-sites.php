@@ -12,19 +12,19 @@
  */
 
 
-if ( file_exists( get_template_directory() . '/classes/cmb2/init.php' ) ) {
-	require_once get_template_directory() . '/classes/cmb2/init.php';
-} elseif ( file_exists( get_template_directory() . '/classes/cmb2/init.php' ) ) {
-	require_once get_template_directory() . '/classes/cmb2/init.php';
+if ( file_exists( get_template_directory() . '/inc/classes/cmb2/init.php' ) ) {
+	require_once get_template_directory() . '/inc/classes/cmb2/init.php';
+} elseif ( file_exists( get_template_directory() . '/inc/classes/cmb2/init.php' ) ) {
+	require_once get_template_directory() . '/inc/classes/cmb2/init.php';
 }
 
 
 // https://github.com/CMB2/cmb2-attached-posts
 
-if ( file_exists( get_template_directory() . '/classes/cmb2-attached-posts/cmb2-attached-posts-field.php' ) ) {
-	require_once get_template_directory() . '/classes/cmb2-attached-posts/cmb2-attached-posts-field.php';
-} elseif ( file_exists( get_template_directory() . '/classes/cmb2-attached-posts/cmb2-attached-posts-field.php' ) ) {
-	require_once get_template_directory() . '/classes/cmb2-attached-posts/cmb2-attached-posts-field.php';
+if ( file_exists( get_template_directory() . '/inc/classes/cmb2-attached-posts/cmb2-attached-posts-field.php' ) ) {
+	require_once get_template_directory() . '/inc/classes/cmb2-attached-posts/cmb2-attached-posts-field.php';
+} elseif ( file_exists( get_template_directory() . '/inc/classes/cmb2-attached-posts/cmb2-attached-posts-field.php' ) ) {
+	require_once get_template_directory() . '/inc/classes/cmb2-attached-posts/cmb2-attached-posts-field.php';
 }
 
 
@@ -179,18 +179,12 @@ function dh_area_cpt_list() {
 
 
 
-
-
-
-
-
-
-
 add_action( 'cmb2_admin_init', 'dh_register_demo_metabox' );
 /**
  * Hook in and add a demo metabox. Can only happen on the 'cmb2_admin_init' or 'cmb2_init' hook.
  */
 function dh_register_demo_metabox() {
+	
 	$prefix = 'dh_';
 
 	/**
@@ -200,7 +194,7 @@ function dh_register_demo_metabox() {
 		'id'            => $prefix . 'site_metabox',
 		'title'         => esc_html__( 'New Homes Site Meta', 'dh' ),
 		'object_types'  => array( 'page' ), // Post type
-		'show_on'      	=> array( 'key' => 'page-template', 'value' => 'template-site.php' ),
+		'show_on'      	=> array( 'key' => 'page-template', 'value' => 'templates/template-site.php' ),
 		'context'    => 'normal',
 		'priority'   => 'high',
 		'show_names' => true,
@@ -253,12 +247,23 @@ function dh_register_demo_metabox() {
 	) );
 
 	$dh_site->add_field( array(
+		'name' => esc_html__( 'Brochure Image', 'dh' ),
+		'id'   => $prefix . 'site_brochure_img',
+		'type' => 'file',
+		'before_row'   => '<div class="row">', // callback.
+		'classes' => 'six columns',
+		'preview_size' => array( 64, 64 ), // Default: array( 50, 50 )
+	) );
+
+	$dh_site->add_field( array(
 		'name' => esc_html__( 'Brochure Link', 'dh' ),
 		'id'   => 'site_brochure_link',
 		'type' => 'text_url',
-		'classes' => 'dh-mb-full-width',
-		'after_row' => '<hr />'
+		'classes' => 'six columns',
+		'after_row'   => '</div>', // callback.
 	) );
+
+	
 
 	$dh_site->add_field( array(
 		'name' => esc_html__( 'Number/Name', 'dh' ),
@@ -339,6 +344,13 @@ function dh_register_demo_metabox() {
 	) );
 
 
+	$dh_site->add_field( array(
+		'name' => esc_html__( 'Gallery', 'dh' ),
+		'id'   => $prefix . 'site_gallery',
+		'type' => 'text'
+	) );
+
+
 	/*
 	 *
 	 * Repeatable Plot Groups -- START
@@ -377,6 +389,12 @@ function dh_register_demo_metabox() {
 		'name'       => esc_html__( 'Value', 'dh' ),
 		'id'         => $prefix . 'plot_value',
 		'type'       => 'text_small',
+	));
+
+	$dh_site->add_group_field( $dh_plots, array(
+		'name'       => esc_html__( 'Help to Buy', 'dh' ),
+		'id'         => $prefix . 'h2b_available',
+		'type'       => 'checkbox',
 	));
 
 

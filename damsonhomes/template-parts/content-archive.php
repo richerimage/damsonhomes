@@ -29,7 +29,7 @@
 
 		} ?>
 
-		<div class="excerpt-content aside">
+		<div class="entry-header aside">
 			<?php the_excerpt(); ?>
 			<p class="read-on">Continue Reading &rarr;</p>
 		</div>

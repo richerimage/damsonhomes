@@ -13,13 +13,12 @@ get_header(); ?>
 
 		<?php while ( have_posts() ) : the_post();
 
-			get_template_part( 'template-parts/content', get_post_format() );
+			get_template_part( 'template-parts/content-page', get_post_format() );
 
 		endwhile; // End of the loop. ?>
 
 		</main><!-- #main -->
 
-		<?php // get_sidebar(); ?>
 	</section><!-- #primary -->
 
 <?php get_footer();

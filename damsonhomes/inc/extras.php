@@ -14,6 +14,8 @@
  * @return array
  */
 function damsonhomes_body_classes( $classes ) {
+
+	global $post;
 	
 	// Adds 'sans-hero' to templates without a hero-area
 
@@ -25,6 +27,12 @@ function damsonhomes_body_classes( $classes ) {
 
 	if (! is_singular() ) {
 		$classes[] = 'hfeed';
+	}
+
+	if ( get_post_meta( get_the_ID(), 'dh_hide_nav', true ) ) {
+		
+		$classes[] = 'dh-hide-nav';
+		
 	}
 
 	return $classes;

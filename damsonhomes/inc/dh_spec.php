@@ -30,7 +30,7 @@ function dh_spec(&$name = '', &$site_logo_id = '', &$brochure = '') {
       <h3 class="headline"><?php echo $spec->post_title; ?></h3>
       <div class="row">
         <?php echo get_the_post_thumbnail( $spec->ID, 'Square',  array( 'class' => 'spec-ftr-img' )); ?> 
-        <div class="entry-content">
+        <div>
           <?php echo wpautop(do_shortcode($spec->post_content)); ?>
         </div>
       </div>

@@ -11,7 +11,7 @@ function dh_location(&$name = '', &$address = '', $area_id = '') {
   <div class="column-full">
     <h2>Around <?php echo $name; ?></h2>
     <?php if (!empty($area_intro)) { ?>
-    <div class="area-intro entry-content">
+    <div class="area-intro">
       <?php echo wpautop(do_shortcode($area_intro)); ?>
     </div>
     <?php } ?>
@@ -21,22 +21,18 @@ function dh_location(&$name = '', &$address = '', $area_id = '') {
 
   
     <h3 class="headline"><?php echo get_post_field('post_title', $area_id); ?></h3>
-    <?php echo get_the_post_thumbnail( $area_id, 'Golden Ratio' ); ?>
-    <div class="entry-content">
-      <?php echo  wpautop(do_shortcode(get_post_field('post_content', $area_id))); ?>
-    </div>
+    <?php 
+      echo get_the_post_thumbnail( $area_id, 'Golden Ratio' );
+      echo wpautop(do_shortcode(get_post_field('post_content', $area_id)));
+    ?>
       
   </div>
 
-  <div class="column-1-2 columns map-wrap xv box">
-    <h5>
-      <span class="dh-svg dh-svg-location icon-location-22">
-        <svg class="icon-location" height="100%" width="100%">
-          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-location"></use>
-        </svg>
-      </span>
+  <div class="column-1-2 columns map-wrap xv box aside">
+    <h4>
+      <?php echo dh_get_svg(array('icon' => 'location')); ?>
       <?php echo $name; ?> Address
-    </h5>
+    </h4>
     <?php echo $address; ?>
     <div id="dh_map" class="site-map frame"></div>
 
@@ -45,7 +41,7 @@ function dh_location(&$name = '', &$address = '', $area_id = '') {
     $dh_distances    = get_post_meta($post->ID, 'dh_distance', true) ?  get_post_meta($post->ID, 'dh_distance', true) : '';
 
     if (!empty($dh_distances)) { ?>
-    <h5>Key Distances</h5>
+    <h4>Key Distances</h4>
     <ul class="target-distances">
       <?php foreach( $dh_distances as $key => $dh_dist){
       echo '<li><span class="target">' . $dh_dist['dh_location_name'] . ' </span><span class="distance">' . $dh_dist['dh_location_distance'] . '</span></li>';

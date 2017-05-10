@@ -4,7 +4,7 @@ function dh_logo() {
 
   echo '<svg class="damson-logo" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 615.3 1000" enable-background="new 0 0 615.3 1000" xml:space="preserve">
     <g class="background">
-      <rect fill="#C08802" width="615.3" height="1000"></rect>
+      <rect fill="#B78958" width="615.3" height="1000"></rect>
     </g>
     <g class="dh-letters">
       <path class="letter-h" fill="#FFFFFF" d="M274,754.3c14.9-2,24.6-5.7,29.3-11c4.6-5.4,6.9-18,6.9-38V444c0-10.2-1.3-17.6-3.9-22.5

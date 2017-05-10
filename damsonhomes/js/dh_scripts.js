@@ -67,10 +67,10 @@ jQuery(document).ready(function($) {
   }  	
 
   // Start > DNA Reveal JS
-	$('.dna-reveal-wrap').on('click', 'a.reveal', function(e) {
+	$('.dh-reveal-wrap').on('click', 'a.reveal', function(e) {
 		e.preventDefault();
 		$(this).closest('a.reveal').toggleClass('open');
-		$(this).closest('.dna-reveal-wrap').find('.reveal-box').slideToggle('slow').toggleClass('open');
+		$(this).closest('.dh-reveal-wrap').find('.reveal-box').slideToggle('medium').toggleClass('open');
 	});
 
 
@@ -159,8 +159,52 @@ $('.tabs a').click(function(e){
 
   // Tabs End
 
+  /*
+   * Test if inline SVGs are supported.
+   * @link https://github.com/Modernizr/Modernizr/
+   */
+
+  function supportsInlineSVG() {
+    var div = document.createElement( 'div' );
+    div.innerHTML = '<svg/>';
+    return 'http://www.w3.org/2000/svg' === ( 'undefined' !== typeof SVGRect && div.firstChild && div.firstChild.namespaceURI );
+  }
+  
+  if ( true === supportsInlineSVG() ) {
+    document.documentElement.className = document.documentElement.className.replace( /(\s*)no-svg(\s*)/, '$1svg$2' );
+  }
+
+
+
+
+
+
+
+  $( document ).ready(function() {
+    moveThis();
+  });
+
+  $( window ).resize( function() {
+      moveThis();
+  });
+
+  function moveThis(){
+      var ww = document.body.clientWidth;
+      if (ww >= 768) {
+          $( '#dh_social_share' ).appendTo($( '#entry_meta' ) );
+      }else{
+          $( '#dh_social_share' ).insertBefore($( '#post_content' ) );
+      }
+  }
+
 
 
 });
+
+
+
+
+
+
 
 // END OF DNA SCRIPTS

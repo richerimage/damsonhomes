@@ -1,4 +1,6 @@
-.entry-header {margin-bottom: 1.5em;}
+.entry-header {
+  margin-bottom: 1.5em;
+}
 
 .title-intro {
   font-size: 1.2em;
@@ -8,17 +10,66 @@
   color: $text2;
 }
 
-.entry-meta {display: flex; align-items: center;}
-.entry-meta a {text-decoration: none; color: $text2;}
-.entry-meta span {order: 1;}
-.entry-meta .avatar {width: 2em; order: 0; margin-right: 1em; border-radius: 50%;}
-.entry-meta .posted-on {padding-right: 0.5em; margin-right: 0.5em; border-right: dotted 1px $gray_l;}
+.entry-meta {
+    display: flex; 
+    align-items: center;
+
+  & a {
+    text-decoration: none; 
+    color: $text2;
+  }
+
+  & span {
+    order: 1;
+  }
+
+  & .avatar {
+    @include square(2em); 
+    order: 0; 
+    margin-right: 1em; 
+    border-radius: 50%;
+  }
+
+  & .posted-on {
+    padding-right: 0.5em; 
+    margin-right: 0.5em; 
+    border-right: dotted 1px $gray_l;
+    color: $text2;
+  }
+
+  & .author {
+    color: $text2;
+  }
+
+}
+
+
+@include mq(momma) {
+
+  .entry-meta {
+
+    margin-bottom: 0.5em;
+
+    & .avatar {
+      @include square(3em);
+    }
+
+    & .dh-social-share-box {
+      margin-bottom: 0;
+      order: 2;
+      margin-left: auto;
+    }
+
+  }
+
+}
+
 
 @media only screen and (min-width:960px) {
   .single .entry-header,
   .single .featured-image {
-    width: calc(960px - 6em);
-    margin-left: -7em;
+    width: calc(94rem);
+    transform: translateX(-11rem);
     text-align: center;
   }
 }
@@ -26,23 +77,15 @@
 @media only screen and (min-width:1300px) {
   .single .entry-header,
   .single .featured-image {
-    width: calc(1200px - 6em);
-    margin-left: -17em;
+    width: calc(114rem);
+    transform: translateX(-21rem);
   }
 }
 
 @media only screen and (min-width:2000px) {
   .single .entry-header,
   .single .featured-image {
-    width: calc(1600px - 6em);
-    margin-left: -34em;
-  }
-}
-
-@media only screen and (min-width:2400px) {
-  .single .entry-header,
-  .single .featured-image {
-    width: calc(2400px - 6em);
-    margin-left: -67em;
+    width: calc(160rem);
+    transform: translateX(-44rem);
   }
 }

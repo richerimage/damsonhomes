@@ -1,25 +1,53 @@
-.content-area {background-color: white;}
+@import "../-variables/variables-site";
 
-.blog .content-area {background-color: transparent;}
+.content-area {
+  background-color: white;
+}
 
-.site-main {flex-direction: column;}
+.blog .content-area {
+  background-color: transparent;
+}
 
+// .card {max-width: 72rem;}
 
-.card {max-width: 45rem;}
+.post {
+  margin: 0 auto 1.5em;
+  display: flex;
+  flex-direction: column;
+  max-width: 72rem;
+}
 
 .card-social {
 
-  flex: 0 0 100%;
   width: 100%;
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5em;
 
-  & a.block-link { align-items: center; justify-content: center; padding: 2em; text-align: center;}
+  & a.block-link {
+    align-items: center; 
+    justify-content: center; 
+    padding: 2em; 
+    text-align: center;
+  }
 
-  & .dh-svg { width: 7em; height: 7em; display: inline-flex;}
+  & .dh-svg {
+    width: 7em; 
+    height: 7em; 
+    display: inline-flex;
+  }
 
-  & .dh-svg svg { width: 100%; height: 100%;}
+  & .dh-svg svg { 
+    width: 100%; 
+    height: 100%;
+  }
 
-  & h5 {color: white; text-align: center; margin-top: 2em;}
+  & h5 {
+    color: white; 
+    text-align: center; 
+    margin-top: 2em;
+  }
 
   & .fb-cta {
     width: 66%;
@@ -30,11 +58,11 @@
 }
 
 
-.hentry {
-  margin: 0 auto 1.5em;
-  display: flex;
-  flex-direction: column;
-}
+// .hentry {
+//   margin: 0 auto 1.5em;
+//   display: flex;
+//   flex-direction: column;
+// }
 
 .post-results .card   {order: 10;}
 .post-results .card-1 {order: 1;}
@@ -62,19 +90,45 @@
   flex: 1;
 }
 
-.post-results .card-facebook a {background-color: $fb_brand1; color: white;}
-.post-results .card-twitter a {background-color: $tw_brand1; color: white;}
+.post-results .card-facebook a {
+  background-color: $fb_brand1; 
+  color: white;
+}
+
+.post-results .card-twitter a {
+  background-color: $tw_brand1; 
+  color: white;
+}
+
 .post-results .card-subscribe {
+
   text-align: center;
   
-  & a {background-color: $brand1; color: white;}
+  & a {
+    background-color: $brand1; 
+    color: white;
+  }
 
 }
 
-.post-results .entry-title {margin: 0;}
+.post-results .entry-title {
+  margin: 0;
+}
+
+.post-results .entry-footer {
+  border-top: dotted 1px $gray_l;
+  padding-top: 1em;
+  color: $text2;
+}
+
+.read-on {
+  color: $brand2;
+}
 
 
-.posts-navigation {order: 1000;}
+.posts-navigation {
+  order: 1000;
+}
 
 @media only screen and (min-width:500px) {
 
@@ -87,7 +141,7 @@
   .post-results .card {
 
     flex: 0 0 50%; 
-    padding: 1em;
+    padding: 0.5em;
     margin: 0;
 
     & a {
@@ -106,27 +160,39 @@
 
       }
 
-    & .excerpt-content {
-
+    & .entry-content.aside {
+      font-size: 0.9em;
       flex-grow: 1;
 
     }
 
-    & .featured-image {margin-top: 0;}
+    & .featured-image {
+      margin-top: 0;
+    }
 
   }
 
-  .post-results .card-1 {flex: 0 0 100%; 
-    & .entry-title {font-size: 1.65em;}
+  .post-results .card-1 {
+
+    flex: 0 0 100%; 
+
+    & .entry-title {
+      font-size: 1.65em;
+    }
+
+    & .entry-content.aside {
+      font-size: 1em;
+    }
   }
 
 
-  .post-results .card-facebook {order: 2;}
+  .post-results .card-facebook  {order: 2;}
   .post-results .card-subscribe {order: 4;}
   .post-results .card-instagram {order: 8;}
   
 
 }
+
 
 @media only screen and (min-width:730px) {
 
@@ -148,9 +214,18 @@
 
 @media only screen and (min-width:1300px) {
 
-  .post-results .card { flex: 0 0 25%;}
+  .post-results .card {
+    flex: 0 0 25%;
+
+    & .entry-meta .avatar {
+      flex: 1 0 auto;
+    }
+
+  }
+
   .post-results .card-1 {flex: 0 0 50%;}
   .post-results .card-subscribe {order: 5;}
 }
 
 @import "crit_posts_and_pages";
+@import "crit_posts_single";

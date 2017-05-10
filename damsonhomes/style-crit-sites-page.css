@@ -1,0 +1,255 @@
+/* --- Damson Homes Template-Site Critical CSS --- */
+/* --- Damson Homes Hero Banner Critical CSS --- */
+.site-intro-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 1.5rem 0; }
+  .site-intro-wrap .site-logo {
+    height: 5em;
+    width: 5em;
+    margin: 0 1em;
+    -ms-flex-item-align: center;
+    -ms-grid-row-align: center;
+    align-self: center; }
+
+.headline-wrapper {
+  -ms-flex-item-align: center;
+  -ms-grid-row-align: center;
+  align-self: center;
+  text-align: center; }
+  .headline-wrapper h1, .headline-wrapper h3 {
+    margin: 0; }
+  .headline-wrapper h3 {
+    color: #777777;
+    font-weight: normal; }
+
+.site-meta {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  list-style: none;
+  margin: 0 0 1.5em;
+  padding: 1rem 0;
+  border: solid 1px #CCCCCC;
+  border-width: 1px 0; }
+  .site-meta li {
+    padding: 0.5em;
+    line-height: 1em;
+    margin: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
+    .site-meta li .icon {
+      height: 1.5em;
+      width: 1.5em;
+      color: #6b1c56;
+      margin-right: 0.25em;
+      position: relative;
+      top: -0.15em; }
+    .site-meta li .cta .icon {
+      top: 0;
+      color: white;
+      height: 2.5em;
+      width: 2.5em;
+      vertical-align: middle; }
+  .site-meta li:last-child {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
+
+.archive-description {
+  text-align: center; }
+
+.hero-right img {
+  border: solid 5px #F5F5F5;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5); }
+
+@media only screen and (min-width: 600px) and (max-width: 899px) {
+  .hero-left .dh-social-share-box,
+  .hero-right img {
+    margin: auto;
+    width: 80%; }
+
+  .hero-left .dh-social-share-box {
+    margin-bottom: 1.5em; }
+
+  .hero-right img {
+    display: block; } }
+@media only screen and (min-width: 768px) {
+  .site-meta {
+    font-size: 0.9em; } }
+@media only screen and (min-width: 900px) {
+  .hero-area {
+    padding-bottom: 3em; }
+
+  .hero-box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row; }
+
+  .site-intro-wrap {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    padding-bottom: 2.5em; }
+    .site-intro-wrap .site-logo {
+      width: 7em;
+      height: 7em;
+      margin-right: 2em; }
+
+  .hero-left, .hero-right {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-item-align: center;
+    align-self: center; }
+
+  .hero-left {
+    padding-right: 1em; }
+    .hero-left .dh-social-share-box {
+      -webkit-box-ordinal-group: 4;
+      -ms-flex-order: 3;
+      order: 3;
+      margin-bottom: 0; }
+    .hero-left .site-meta {
+      -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+      order: 1;
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+      padding: 0.25rem 0; }
+    .hero-left li {
+      font-size: 1em; }
+    .hero-left .archive-description {
+      text-align: left; }
+
+  .hero-right {
+    padding-left: 1em; } }
+@media only screen and (min-width: 1300px) {
+  .site-intro-wrap {
+    padding-top: 0; }
+
+  .site-intro-wrap .site-logo {
+    height: 8.5em;
+    width: 8.5em; }
+
+  .hero-left {
+    padding-right: 2em; }
+
+  .hero-right {
+    padding-left: 2em; }
+
+  .content-area {
+    padding-top: 4em; } }
+@media only screen and (min-width: 1600px) {
+  .site-meta {
+    -ms-flex-pack: distribute;
+    justify-content: space-around; } }
+.ftr-nav-area {
+  background-color: #b78958; }
+
+.ftr-nav-area .tabgroup {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
+  .ftr-nav-area .tabgroup .tabs {
+    list-style: none;
+    margin: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center; }
+  .ftr-nav-area .tabgroup li {
+    padding: 0;
+    margin: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
+  .ftr-nav-area .tabgroup a {
+    padding: 1em 0.75em;
+    color: white;
+    text-decoration: none; }
+  .ftr-nav-area .tabgroup a:hover, .ftr-nav-area .tabgroup a:focus {
+    background-color: #bf966a; }
+  .ftr-nav-area .tabgroup a.active {
+    background-color: #6b1c56; }
+
+.content-box {
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  z-index: 0; }
+
+.tab-content {
+  -webkit-transition: all 800ms ease-in-out;
+  -moz-transition: all 800ms ease-in-out;
+  -o-transition: all 800ms ease-in-out;
+  transition: all 800ms ease-in-out;
+  /* -webkit-transition: 800ms ease-in-out;*/
+  /* transition: 800ms ease-in-out;*/ }
+
+.tab-bottom {
+  /* transform: translate(-110%, 0); // Slide in from left*/
+  /* transform: translate(110%, 0); // Slide in from right*/
+  opacity: 0;
+  height: 0;
+  visibility: hidden;
+  overflow: hidden; }
+
+.tab-top {
+  opacity: 1;
+  height: auto;
+  visibility: visible; }
+
+@media only screen and (min-width: 500px) {
+  .ftr-nav-area .tabgroup a {
+    padding: 1em 1.5em; } }
+@media only screen and (min-width: 768px) {
+  .ftr-nav-area .tabgroup a {
+    padding: 1em 2em; } }
+
+/*# sourceMappingURL=style-crit-sites-page.css.map */

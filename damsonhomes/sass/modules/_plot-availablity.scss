@@ -1,20 +1,31 @@
 
 .tab-plots {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 
-  & h2 {text-align: center;}
+  & h2 {text-align: center; width: 100%; margin-bottom: 1.5em;}
 
   & .columns {padding-left: 1em; padding-right: 1em;}
 
   & .action-box {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     margin-bottom: 1.5em;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 
   & .action-box a {
-    flex: 1;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
     margin: 0 1em;
     text-align: center;
     padding: 1em;
@@ -32,21 +43,40 @@
 }
 
   .plot-availability {
-    flex: 0 0 33.333%;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 33.333%;
+            flex: 0 0 33.333%;
     padding: 1em;
     border: double 3px #b78958;
     margin: 1em auto;
     text-align: center;
     max-width: 32em;
 
-    & h5 {margin: 0;}
+    & .plots-header {
+      color: white;
+      background-color: $brand1;
+      border: solid 1px $brand1_d2;
+      padding: 1em;
+      margin: calc(-1em + -1px) calc(-1em + -1px) calc(1.5em + 1px);
 
-    & .aux {color: $brand1;}
+      & h3,
+      & p {
+        margin: 0;
+        color: $gray_ll;
+      }
+
+    }
+  
+
   }
 
+
+
   .tab-top .res-buyer-prompt {
-    animation: gambole 1200ms backwards;
-    animation-delay: 1000ms;
+    -webkit-animation: gambole 1200ms backwards;
+            animation: gambole 1200ms backwards;
+    -webkit-animation-delay: 1000ms;
+            animation-delay: 1000ms;
   }
 
   .res-buyer-prompt {
@@ -57,11 +87,19 @@
 
     & a {
       text-decoration: none;
-      color: white;
-      background-color: $brand1;
+      color: $brand1;
+      border-color: $brand1;
+      background: white;
       display: block;
       text-align: center;
       padding: 0.75em 1em;
+
+      &:hover,
+      &:focus {
+        background: $brand3_d2;
+        border-color: $brand3_d3;
+        color: white;
+      }
     }
 
     & a strong {
@@ -71,48 +109,109 @@
 
 .dh-plot-list {
   list-style: none; 
-  margin: 1.5em auto 0;
+  margin: 1.5em auto;
   max-width: 28em;
   padding-top: 1.5em;
+  padding-bottom: 1.5em;
   border-top: solid 1px $gray_m;
+  border-bottom: solid 1px $gray_m;
   text-align: left;
 
   & li {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    margin-bottom: 0em;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    margin-bottom: 1em;
     padding: 1em;
   }
 
   & li.available {
     padding: 0;
+
+    & a:before {
+      content: "";
+      opacity: 0;
+      position: absolute;
+      top: 0;
+        left: 0;
+        right: 0;
+      @include trans(150ms);
+    }
+
+    & a:hover,
+    & a:focus {
+
+      padding-top: 3.25em;
+
+      &:before,
+      &:before {
+        content: "Reserve Me";
+        font-size: 1.25em;
+        font-weight: bold;
+        line-height: 1.5em;
+        padding: 0.25em;
+        text-align: center;
+        background-color: $brand3;
+        color: white;
+        height: 2em;
+        
+        
+        opacity: 1;
+      }
+
+    }
+
+  }
+
+  & li.sstc,
+  & li.sold {
+    padding: 0 1em;
   }
 
   & li span {
     padding: 0 0.5em 0 0;
   }
 
-  & li a {border: solid 2px transparent;}
+  & li a {
+    position: relative;
+    border: solid 1px $gray_l;
+    padding: calc(1em - 1px) calc(1em - 1px);
+  }
 
   & li a:hover,
     li a:focus {
       background-color: white;
-      transform: scale(1.0225,1.0225);
+      -webkit-transform: scale(1.0225,1.0225);
+              transform: scale(1.0225,1.0225);
       box-shadow: 0 2em 2em rgba(0, 0, 0, 0.1);
       border-color: $gray_d;
   }
 
   & li a:active {
-      transform: scale(1.01,1.01);
+      -webkit-transform: scale(1.01,1.01);
+              transform: scale(1.01,1.01);
       box-shadow: 0 0.5em 0.5em rgba(0, 0, 0, 0.5);
   }
 
-  & .dh-svg svg {height: 1.25em; width: 1.25em;}
+  & .icon {
+    @include square(1.25em);
+    margin-right: 0.25em;
 
-  & .available .dh-svg svg {color: green;}
-  & .sstc .dh-svg svg {color: #A0002E;}
-  & .sold .dh-svg svg {color: $brand1;}
+    &.icon-h2b {
+      position: relative;
+      top: -0.1em;
+    }
+
+  }
+
+  & .available .icon {color: $brand3_d3;}
+  & .sstc .icon {color: #A0002E;}
+  & .sold .icon {color: $brand1;}
 
   & .dh-plot-number {
     color: $brand1;
@@ -125,9 +224,44 @@
   }
 
   & .dh-plot-desc {
-    flex: 0 0 100%;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
     font-style: italic;
     padding-left: 1.75em;
+  }
+}
+
+
+.legend {
+  text-align: left;
+
+  & h5 {
+    margin-bottom: 0.5em;
+  }
+
+  & ul {
+    list-style: none;
+    margin: 0;
+  }
+
+  & li {
+    display: inline-block;
+    margin-bottom: 0.5em;
+    margin-right: 0.75em;
+
+    &:last-child {margin-right: 0;}
+
+    &.available .icon {color: $brand3_d3;}
+    &.sstc .icon {color: #A0002E;}
+    &.sold .icon {color: $brand1;}
+  }
+
+  & .icon {
+  margin-right: 0.25em;
+  position: relative;
+  top: -0.1em;
+  @include square(1.25em);
   }
 }
 
@@ -142,12 +276,25 @@
 @media only screen and (min-width:768px) {
 
   .tab-plots {
-    flex-direction: row;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    flex-wrap: wrap;
+
+    & .plot-plan {
+      flex: 0 1 calc(66.666% - 2em);
+    }
+
   }
 
+  
+
   .plot-availability {
-    flex: 0 0 33.333%;
-    margin: 1em 1em 1em auto;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 33.333%;
+            flex: 0 0 33.333%;
+    margin: 0em 1em 1em auto;
   }
   
 }

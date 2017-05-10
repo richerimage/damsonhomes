@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AACA,KAAM;EAAC,OAAO,EAAE,IAAI;EAAE,KAAK,EAAE,IAAI;EAAE,MAAM,EAAE,MAAM;EAAE,OAAO,EAAE,KAAK;;AAKjE,yCAAyC;EACvC,KAAM;IAAC,OAAO,EAAE,KAAK;AAGvB,yCAAyC;EACvC,KAAM;IAAC,OAAO,EAAE,KAAK",
-"sources": ["_crit_grid.scss"],
-"names": [],
-"file": "_crit_grid.css"
-}

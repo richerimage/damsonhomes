@@ -9,23 +9,41 @@
  * @package Damson_Homes
  */
 
+// https://github.com/typekit/webfontloader
 
-
-require get_template_directory() . '/atoms/dh_logo.php';
-// require get_template_directory() . '/atoms/dh_svg.php';
-
-// $css_source = get_template_directory_uri() . '/sass/critical.css';
-
-// $css = file_get_contents($css_source); 
+require_once get_template_directory() . '/atoms/dh_logo.php';
 
 ?><!DOCTYPE html>
-<html <?php language_attributes(); ?>>
+<html <?php language_attributes(); ?> class="no-svg">
 <head>
+<script src="//cdnjs.cloudflare.com/ajax/libs/webfont/1.3.0/webfont.js"></script>
+  <script>
+    WebFont.load({
+      google: { families: ['Open Sans:400,400italic,700']},
+      timeout: 2000
+    });
+</script>
 <style id="critical_css"><?php do_action('dh_critical_css'); ?></style>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="profile" href="http://gmpg.org/xfn/11">
-<?php wp_head(); ?>
+<?php 
+
+  $load_on_page = array(
+      'brochure', 
+      'register', 
+      'reserve',  
+      'subscribe',
+      'viewing'
+    );
+
+  if (is_page($load_on_page)) {
+  gravity_form_enqueue_scripts( 18, true );
+
+} 
+
+wp_head(); ?>
+
 </head>
 
 <body <?php body_class('xv');?>>
@@ -43,54 +61,39 @@ require get_template_directory() . '/atoms/dh_logo.php';
 			<ul class="dna-social-wrapper six">
         <li class="dna_sm_facebook">
           <a href="https://facebook.com/damsonnewbuild/" class="icon-alone" title="Like us on Facebook" target="_blank">
-            <span class="dh-svg dh-svg-facebook icon-square-22">
-              <svg class="icon-facebook" height="100%" width="100%">
-                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-facebook"></use>
-              </svg>
-            </span>
-            <span class="screen-reader-text">Facebook</span>
+            <?php echo dh_get_svg(array('icon' => 'facebook')); ?>
           </a>
         </li>
         <li class="dna_sm_twitter">
           <a href="https://twitter.com/damsonhomes/" class="icon-alone" title="Follow us on Twitter" target="_blank">
-            <span class="dh-svg dh-svg-twitter icon-square-22">
-        <svg class="icon-twitter" height="100%" width="100%">
-          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-twitter"></use>
-        </svg>
-      </span>      <span class="screen-reader-text">Twitter</span>
+            <?php echo dh_get_svg(array('icon' => 'twitter')); ?>
+          </a>
           </a>
         </li>
         <li class="dna_sm_instagram">
           <a href="https://instagram.com/damsonhomes/" class="icon-alone" title="Follow us on Instagram" target="_blank">
-            <span class="dh-svg dh-svg-instagram icon-square-22">
-        <svg class="icon-instagram" height="100%" width="100%">
-          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-instagram"></use>
-        </svg>
-      </span>      <span class="screen-reader-text">Instagram</span>
+            <?php echo dh_get_svg(array('icon' => 'instagram')); ?>
           </a>
         </li>
         <li class="dna_sm_telephone">
           <a href="+441217090539" class="icon-alone" title="Call us" target="_blank">
-            <span class="dh-svg dh-svg-phone icon-square-22">
-        <svg class="icon-phone" height="100%" width="100%">
-          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-phone"></use>
-        </svg>
-      </span>      <span class="screen-reader-text">0121 709 0539</span>
+            <?php echo dh_get_svg(array('icon' => 'phone')); ?>
+            <span class="screen-reader-text mobile-hide">0121 709 0539</span>
+          </a>
           </a>
         </li>
         <li class="dna_sm_login">
           <a href="http://portal.damsonhomes.net/" class="icon-alone" title="Log in to the Client Portal" target="_blank">
-            <span class="dh-svg dh-svg-client icon-square-22">
-        <svg class="icon-client" height="100%" width="100%">
-          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-client"></use>
-        </svg>
-      </span>      <span class="screen-reader-text">Client Portal</span>
+            <?php echo dh_get_svg(array('icon' => 'client')); ?>
           </a>
         </li>
       </ul>
 
 
 		</div><!-- .header.page -->
+
+
+    </header><!-- #masthead -->
 
 		<nav id="site-navigation" class="nav-area" role="navigation">
       <div class="container">
@@ -117,4 +120,3 @@ require get_template_directory() . '/atoms/dh_logo.php';
         ); ?>
       </div> <!-- .nav-area .page -->
 		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->

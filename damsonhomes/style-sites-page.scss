@@ -1,0 +1,55 @@
+/*--------------------------------------------------------------
+>>> SITE TEMPLATE STYLES:
+--------------------------------------------------------------*/
+
+@import "sass/-variables/variables-site";
+@import "sass/-mixins/mixins-master";
+
+.cta-area {
+  background-color: $brand2; 
+  padding: 1em 0;
+}
+
+.cta-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; 
+  -webkit-box-align: center; 
+  -ms-flex-align: center; 
+  align-items: center; 
+  -webkit-box-pack: center; 
+  -ms-flex-pack: center; 
+  justify-content: center;
+}
+
+.cta-box .site-logo {
+  width: 66px;
+  margin-right: 1em;
+}
+
+.hentry {
+  margin: 0;
+
+  &.tab-top {
+    margin: 0 auto 1.5em;
+  }
+
+}
+
+.tab-content.tab-top {
+  margin-bottom: 2em;
+}
+
+.tab-content h2 {
+  text-align: center;
+}
+
+@import "sass/modules/plot-availablity";
+@import "sass/modules/spec";
+@import "sass/modules/location";
+@import "sass/modules/build_updates";
+@import "sass/modules/enquire";
+
+
+
+

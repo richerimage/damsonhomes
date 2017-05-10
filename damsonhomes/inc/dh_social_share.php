@@ -1,17 +1,18 @@
 <?php 
 
 
-function dh_social_share($type = 'post!') {
+function dh_social_share(&$type = 'blog!', &$id='') {
 
   global $post;
 
-  $id         = '';
+  $id         = (!empty($id) ? 'id="' . $id . '" ' : '');
+  //$type       = (!empty($type) ? 'post!' : '');
   $hook       = 'dh_social_share_box';
   $cache_key  = 'dh_social_share_' . get_the_ID();
   $count      = get_transient( $cache_key ); // try to get value from Wordpress cache
 
 
-  echo "<div id=\"$id\" class=\"dh-social-share-box\">\n";
+  echo "<div {$id}class=\"dh-social-share-box\">\n";
 
   if ( $count === false ) { // if no value in the cache
 
@@ -56,12 +57,12 @@ function dh_social_share($type = 'post!') {
 
   (!empty($count) ? "\t\t<span class=\"share-btn share-cta\">Now it's your turn&hellip;</span>\n" : '' ) .
 
-  "\t\t<a class=\"share-btn share-btn-facebook\" href=\"https://www.facebook.com/sharer/sharer.php?u=" . get_the_permalink() . "\" title=\"Share on Facebook\"><span class=\"dh-svg dh-svg-facebook icon-square-22\"><svg class=\"icon-facebook\" height=\"100%\" width=\"100%\"><use xmlns:xlink=\"http://www.w3.org/1999/xlink\" xlink:href=\"#icon-facebook\"></use></svg></span><span class=\"screen-reader-text\">Facebook</span></a>\n".
+  "\t\t<a class=\"share-btn share-btn-facebook\" href=\"https://www.facebook.com/sharer/sharer.php?u=" . get_the_permalink() . "\" title=\"Share on Facebook\">" . dh_get_svg(array('icon' => 'facebook')) . "</a>\n".
 
   "\t\t<a class=\"share-btn share-btn-twitter\" href=\"https://twitter.com/share?url=" . get_the_permalink() . "&text=" . get_the_title() . "&via=damsonhomes\"
-       title=\"Share on Twitter\"><span class=\"dh-svg dh-svg-twitter icon-square-22\"><svg class=\"icon-twitter\" height=\"100%\" width=\"100%\"><use xmlns:xlink=\"http://www.w3.org/1999/xlink\" xlink:href=\"#icon-twitter\"></use></svg></span><span class=\"screen-reader-text\">Twitter</span></a>\n".
+       title=\"Share on Twitter\">" . dh_get_svg(array('icon' => 'twitter')) . "</a>\n".
 
-  "\t\t<a class=\"share-btn share-btn-email\" href=\"mailto:?subject=" . get_the_title() . "&body=Check this out: " . get_the_permalink() . "\" title=\"Share via Email\"><span class=\"dh-svg dh-svg-twitter icon-square-22\"><svg class=\"icon-mail\" height=\"100%\" width=\"100%\"><use xmlns:xlink=\"http://www.w3.org/1999/xlink\" xlink:href=\"#icon-mail\"></use></svg></span><span class=\"screen-reader-text\">Email Link</span></a>\n".
+  "\t\t<a class=\"share-btn share-btn-email\" href=\"mailto:?subject=" . get_the_title() . "&body=Check this out: " . get_the_permalink() . "\" title=\"Share via Email\">" . dh_get_svg(array('icon' => 'envelope-o')) . "</a>\n".
 
   "\t</div>\n".
   "</div>\n";

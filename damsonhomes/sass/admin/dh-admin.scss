@@ -65,8 +65,12 @@ $show: dotted 2px cyan;
 }
 
 .dh-mb .cmb-repeatable-grouping .cmb-field-list {
-  align-items: flex-end;
+  align-items: flex-start;
   justify-content: space-between;
+
+  & .cmb-remove-field-row {
+    align-self: center;
+  }
 }
 
 

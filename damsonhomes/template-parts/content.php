@@ -13,7 +13,7 @@
 	<header class="entry-header">
 		<?php
 		if ( is_single() ) : ?>
-			<span class="title-intro">From the Blog&hellip;</span>
+			<p class="intro">From the Blog&hellip;</p>
 			<?php the_title( '<h1 class="entry-title h2 ntm">', '</h1>' );
 		else :
 			the_title( '<h2 class="entry-title ntm">', '</h2>' );
@@ -21,7 +21,7 @@
 	</header><!-- .entry-header -->
 
 	<?php if ( 'post' === get_post_type() ) : ?>
-	<div class="entry-meta">
+	<div id="entry_meta" class="entry-meta aside">
 		<?php damsonhomes_posted_on(); ?>
 	</div><!-- .entry-meta -->
 	<?php endif;
@@ -37,9 +37,12 @@
 
 	}
 
-	dh_social_share(); ?>
+	$type = 'Post!';
+	$id   = 'dh_social_share';
 
-	<div class="entry-content">
+	dh_social_share($type, $id); ?>
+
+	<div id="post_content" class="entry-content">
 		<?php
 			the_content( sprintf(
 				/* translators: %s: Name of current post. */

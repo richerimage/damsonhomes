@@ -1,0 +1,269 @@
+/* --- Damson Homes Hero Banner Critical CSS --- */
+// @import "../sass/-variables/variables-site";
+// @import "../sass/-mixins/mixins-master";
+
+
+.site-intro-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 1.5rem 0;
+
+  & .site-logo {
+    @include square(5em);
+    margin: 0 1em; 
+    -ms-flex-item-align: center; 
+    -ms-grid-row-align: center; 
+    align-self: center;
+  }
+
+  & .alert {
+    background-color: $brand2_l3;
+    border: solid 1px $brand2;
+    color: $brand1_d3;
+    margin: 2em auto 0;
+    width: 100%;
+    max-width: 40rem;
+    padding: 1em;
+
+    & *:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.headline-wrapper {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+      text-align: center;
+
+  & h1, h3 {
+    margin: 0;
+  }
+  & h3 {
+    color: $text2; 
+    font-weight: normal;
+  }
+}
+
+.site-meta {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  list-style: none;
+  margin: 0 0 1.5em;
+  padding: 1rem 0;
+  border: solid 1px $gray_l;
+  border-width: 1px 0;
+
+  & li {
+    padding: 0.5em;
+    line-height: 1em;
+    margin: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+
+    & .icon {
+      @include square(1.5em);
+      color: $brand1;
+      margin-right: 0.25em;
+      position: relative;
+      top: -0.15em;
+    }
+
+    & .cta .icon {
+      top: 0;
+      color: white;
+      @include square(2.5em);
+      vertical-align: middle;
+    }
+  }
+
+  & li:last-child {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+}
+
+.archive-description {text-align: center;}
+
+.hero-left .dh-social-share-box,
+.hero-left .dh-social-share-box,
+.hero-left .dl-form,
+.hero-left .gform_confirmation_wrapper {margin-bottom: 1.5em;}
+
+.hero-right img {
+  border: solid 5px #F5F5F5;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+
+
+@media only screen and (min-width:600px) and (max-width:899px){
+
+  .hero-left .dh-social-share-box,
+  .hero-left .dl-form,
+  .hero-left .gform_confirmation_wrapper,
+  .hero-right img {
+    margin: auto;
+    width: 80%;
+  }
+
+  .hero-left .dh-social-share-box,
+  .hero-left .dl-form,
+  .hero-left .gform_confirmation_wrapper {margin-bottom: 1.5em;}
+
+  .hero-right img {
+    display: block;
+  }
+
+}
+
+@include mq(momma) {
+
+  .site-meta {font-size: 0.9em;}
+
+}
+
+
+
+
+@media only screen and (min-width:900px) {
+
+  .hero-area {padding-bottom: 3em;}
+
+  .hero-box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+
+  .site-intro-wrap {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+    padding-bottom: 2.5em;
+  
+    & .site-logo {
+      width: 7em; 
+      height: 7em; 
+      margin-right: 2em;
+    }
+
+    & .alert {
+      max-width: 100%;
+      padding: 2em;
+    }
+
+  }
+
+  .hero-left, .hero-right {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 50%;
+            flex: 0 0 50%; 
+    display: -webkit-box; 
+    display: -ms-flexbox; 
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-item-align: center;
+        align-self: center;
+
+  }
+
+  .hero-left { 
+
+    padding-right: 1em; 
+
+    & .dh-social-share-box {
+      -webkit-box-ordinal-group: 4;
+      -ms-flex-order: 3;
+      order: 3;
+      margin-bottom: 0;
+    }
+
+    & .site-meta {
+      -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+      order: 1; 
+      -webkit-box-pack: justify; 
+      -ms-flex-pack: justify; 
+      justify-content: space-between;
+      padding: 0.25rem 0;
+    }
+
+    & li {
+      font-size: 1em;
+    }
+
+    & .archive-description {
+      text-align: left;
+    }
+
+  }
+
+  .hero-left .dl-form,
+  .hero-left .gform_confirmation_wrapper {margin-bottom: 0;}
+
+  .hero-right {padding-left: 1em;}
+
+  
+}
+
+
+@include mq(pappa) {
+
+
+}
+
+
+@media only screen and (min-width:1300px) {
+
+  .site-intro-wrap {padding-top: 0;}
+
+  .site-intro-wrap .site-logo {
+    @include square(8.5em);
+  }
+
+  .hero-left { padding-right: 2em; }
+  .hero-right {padding-left: 2em;}
+
+  .content-area {padding-top: 4em;}
+
+}
+
+@media only screen and (min-width: 1600px)  {
+  .site-meta {
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+}

@@ -12,10 +12,10 @@
  */
 
 
-if ( file_exists( get_template_directory() . '/classes/cmb2/init.php' ) ) {
-	require_once get_template_directory() . '/classes/cmb2/init.php';
-} elseif ( file_exists( get_template_directory() . '/classes/cmb2/init.php' ) ) {
-	require_once get_template_directory() . '/classes/cmb2/init.php';
+if ( file_exists( get_template_directory() . '/inc/classes/cmb2/init.php' ) ) {
+	require_once get_template_directory() . '/inc/classes/cmb2/init.php';
+} elseif ( file_exists( get_template_directory() . '/inc/classes/cmb2/init.php' ) ) {
+	require_once get_template_directory() . '/inc/classes/cmb2/init.php';
 }
 
 

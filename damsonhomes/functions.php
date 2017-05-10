@@ -118,7 +118,7 @@ add_action( 'widgets_init', 'damsonhomes_widgets_init' );
 /**
  * Implement the Custom Header feature.
  */
-require get_template_directory() . '/inc/custom-header.php';
+
 
 /**
  * Custom template tags for this theme.
@@ -154,6 +154,12 @@ require get_template_directory() . '/inc/cpt_team.php';
 
 require get_template_directory() . '/inc/dh_social_share.php';
 
+/**
+ * SVG Icons
+ */
+
+require get_template_directory() . '/inc/icon-functions.php';
+
 
 
 /**
@@ -162,12 +168,13 @@ require get_template_directory() . '/inc/dh_social_share.php';
 
 require get_template_directory() . '/inc/metaboxes/dh-mb-sites.php';
 require get_template_directory() . '/inc/metaboxes/dh-mb-area.php';
+require get_template_directory() . '/inc/metaboxes/dh-mb-post-options.php';
+require get_template_directory() . '/inc/metaboxes/dh-mb-sub-headline.php';
 
 
 
+require get_template_directory() . '/inc/dh_link_function.php';
 
-
-
-require get_template_directory() . '/classes/damson_homes_custom_functions/dhcf.php';
+require get_template_directory() . '/inc/classes/damson_homes_custom_functions/dhcf.php';
 
 new dh_custom_functions;

@@ -145,23 +145,23 @@ http://flickity.metafizzy.co
 
 
 .hentry .flickity-enabled {
-  margin-top: 3.5em;
+  margin-top: 0.5em;
   margin-bottom: 6em;
 }
 
 
 
 @media only screen and (min-width:960px) {
-  .hentry .gallery {
-    width: calc(960px - 6em);
-    margin-left: -7em;
+  .post .gallery {
+    width: calc(94rem);
+    transform: translateX(-11rem);
   }
 }
 
 @media only screen and (min-width:1300px) {
-  .hentry .gallery {
-    width: calc(960px);
-    margin-left: -10em;
+  .post .gallery {
+    width: calc(114rem);
+    transform: translateX(-21rem);
   }
 }
 
