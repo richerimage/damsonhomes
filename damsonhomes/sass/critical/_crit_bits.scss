@@ -93,6 +93,36 @@
 }
 
 
+.video-thumb {
+  position: relative;
+  display: block;
+
+  & .icon {
+    background-color: $brand1;
+    width: 4.5em;
+    height: 2.5em;
+    padding: 0.5em 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -1.25em;
+    margin-left: -2.25em;
+    border-radius: 2px;
+    color: white;
+    border: solid 1px $brand1_d2;
+  }
+
+  &:hover,
+  &:focus {
+    & .icon {
+      background-color: $brand1_d2;
+      border-color: $brand1_d2;
+    }
+  }
+
+}
+
+
 
 @media only screen and (min-width:768px) {
 

@@ -19,6 +19,16 @@
     -ms-flex-item-align: center;
     -ms-grid-row-align: center;
     align-self: center; }
+  .site-intro-wrap .alert {
+    background-color: #ceaf8d;
+    border: solid 1px #b78958;
+    color: #2e0c25;
+    margin: 2em auto 0;
+    width: 100%;
+    max-width: 40rem;
+    padding: 1em; }
+    .site-intro-wrap .alert *:last-child {
+      margin-bottom: 0; }
 
 .headline-wrapper {
   -ms-flex-item-align: center;
@@ -79,17 +89,27 @@
 .archive-description {
   text-align: center; }
 
+.hero-left .dh-social-share-box,
+.hero-left .dh-social-share-box,
+.hero-left .dl-form,
+.hero-left .gform_confirmation_wrapper {
+  margin-bottom: 1.5em; }
+
 .hero-right img {
   border: solid 5px #F5F5F5;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5); }
 
 @media only screen and (min-width: 600px) and (max-width: 899px) {
   .hero-left .dh-social-share-box,
+  .hero-left .dl-form,
+  .hero-left .gform_confirmation_wrapper,
   .hero-right img {
     margin: auto;
     width: 80%; }
 
-  .hero-left .dh-social-share-box {
+  .hero-left .dh-social-share-box,
+  .hero-left .dl-form,
+  .hero-left .gform_confirmation_wrapper {
     margin-bottom: 1.5em; }
 
   .hero-right img {
@@ -121,6 +141,9 @@
       width: 7em;
       height: 7em;
       margin-right: 2em; }
+    .site-intro-wrap .alert {
+      max-width: 100%;
+      padding: 2em; }
 
   .hero-left, .hero-right {
     -webkit-box-flex: 0;
@@ -155,6 +178,10 @@
       font-size: 1em; }
     .hero-left .archive-description {
       text-align: left; }
+
+  .hero-left .dl-form,
+  .hero-left .gform_confirmation_wrapper {
+    margin-bottom: 0; }
 
   .hero-right {
     padding-left: 1em; } }
@@ -230,7 +257,11 @@
   -o-transition: all 800ms ease-in-out;
   transition: all 800ms ease-in-out;
   /* -webkit-transition: 800ms ease-in-out;*/
-  /* transition: 800ms ease-in-out;*/ }
+  /* transition: 800ms ease-in-out;*/
+  width: 100%; }
+  .tab-content h2 {
+    text-align: center;
+    width: 100%; }
 
 .tab-bottom {
   /* transform: translate(-110%, 0); // Slide in from left*/
@@ -238,7 +269,11 @@
   opacity: 0;
   height: 0;
   visibility: hidden;
-  overflow: hidden; }
+  overflow: hidden;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+  margin-top: 0 !important; }
 
 .tab-top {
   opacity: 1;

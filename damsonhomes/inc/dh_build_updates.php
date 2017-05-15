@@ -16,12 +16,6 @@ function dh_build_updates(&$name = '', &$cat_id = '', &$site_logo_id = '', &$bro
   // The Loop
   if ( $query->have_posts() ) { ?>
 
-    <div class="column-full columns">
-
-      <h2>Build Updates from <?php echo $name; ?></h2>
-
-    </div>
-
     <?php while ( $query->have_posts() ) {
       
       $query->the_post();
@@ -50,7 +44,7 @@ function dh_build_updates(&$name = '', &$cat_id = '', &$site_logo_id = '', &$bro
               <p class="read-on">Continue Reading &rarr;</p>
             </div>
 
-            <footer class="entry-footer">
+            <footer class="entry-footer aside">
               <div class="entry-meta">
                 <?php damsonhomes_posted_on(); ?>
               </div><!-- .entry-meta -->

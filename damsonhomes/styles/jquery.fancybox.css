@@ -1,4 +1,3 @@
-@charset "UTF-8";
 .fancybox-enabled {
   overflow: hidden; }
 
@@ -121,13 +120,12 @@
   text-align: center;
   z-index: 99994;
   -webkit-overflow-scrolling: touch; }
-
-.fancybox-slide::before {
-  content: '';
-  display: inline-block;
-  vertical-align: middle;
-  height: 100%;
-  width: 0; }
+  .fancybox-slide:before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+    width: 0; }
 
 .fancybox-slide > * {
   display: inline-block;
@@ -143,9 +141,8 @@
 
 .fancybox-slide--image {
   overflow: hidden; }
-
-.fancybox-slide--image::before {
-  display: none; }
+  .fancybox-slide--image:before {
+    display: none; }
 
 .fancybox-content {
   display: inline-block;
@@ -213,6 +210,9 @@
   background: transparent;
   background-size: 100% 100%; }
 
+.fancybox-image {
+  padding: 2em; }
+
 .fancybox-controls--canzoomOut .fancybox-placeholder {
   cursor: -webkit-zoom-out;
   cursor: zoom-out; }
@@ -272,24 +272,23 @@
   background: transparent;
   z-index: 10;
   cursor: pointer; }
-
-.fancybox-close-small:after {
-  content: '×';
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  width: 30px;
-  height: 30px;
-  font: 20px/30px Arial,"Helvetica Neue",Helvetica,sans-serif;
-  color: #888;
-  font-weight: 300;
-  text-align: center;
-  border-radius: 50%;
-  border-width: 0;
-  background: #fff;
-  transition: background .2s;
-  box-sizing: border-box;
-  z-index: 2; }
+  .fancybox-close-small::after {
+    content: "\00d7";
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 30px;
+    height: 30px;
+    font: 20px/30px Arial,"Helvetica Neue",Helvetica,sans-serif;
+    color: #888;
+    font-weight: 300;
+    text-align: center;
+    border-radius: 50%;
+    border-width: 0;
+    background: #fff;
+    transition: background .2s;
+    box-sizing: border-box;
+    z-index: 2; }
 
 .fancybox-close-small:focus:after {
   outline: 1px dotted #888; }
@@ -416,7 +415,8 @@
 .fancybox-button--close {
   float: right; }
 
-.fancybox-button--close::before, .fancybox-button--close::after {
+.fancybox-button--close::before,
+.fancybox-button--close::after {
   content: '';
   display: inline-block;
   position: absolute;
@@ -459,7 +459,6 @@
   to {
     -webkit-transform: rotate(359deg);
     transform: rotate(359deg); } }
-
 @keyframes fancybox-rotate {
   from {
     -webkit-transform: rotate(0deg);
@@ -467,19 +466,19 @@
   to {
     -webkit-transform: rotate(359deg);
     transform: rotate(359deg); } }
-
 /* Styling for Small-Screen Devices */
 @media all and (max-width: 800px) {
   .fancybox-controls {
     text-align: left; }
+
   .fancybox-button--left,
   .fancybox-button--right,
   .fancybox-buttons button:not(.fancybox-button--close) {
     display: none !important; }
+
   .fancybox-caption {
     padding: 20px 0;
     margin: 0; } }
-
 /* Fullscreen  */
 .fancybox-button--fullscreen::before {
   width: 15px;
@@ -534,8 +533,8 @@
   left: auto;
   width: 220px;
   margin: 0;
-  padding: 5px 5px 0 0;
-  background: #fff;
+  padding: 5px;
+  background: black;
   z-index: 99993;
   word-break: normal;
   -webkit-overflow-scrolling: touch;
@@ -565,7 +564,7 @@
   position: relative;
   cursor: pointer;
   outline: none;
-  border: 5px solid #fff;
+  border: 5px solid black;
   border-top-width: 0;
   border-right-width: 0;
   -webkit-tap-highlight-color: transparent;
@@ -610,7 +609,35 @@ li.fancybox-thumbs-loading {
 @media all and (max-width: 800px) {
   .fancybox-thumbs {
     display: none !important; }
+
   .fancybox-container--thumbs .fancybox-controls,
   .fancybox-container--thumbs .fancybox-slider-wrap,
   .fancybox-container--thumbs .fancybox-caption-wrap {
     right: 0; } }
+/* MY Edits */
+.fancybox-slide.fancybox-slide--video {
+  padding: 4em 1em; }
+
+/*
+
+.fancybox-slide--video .fancybox-content  {
+    display: inline-block; // let it be styled thusly 
+    padding: 0;            // get rid of pre-styling 
+    margin: 0;
+    width: 100%;           // take up full width available 
+    padding-top: 56.25%;   // give aspect ratio of 16:9; "720 / 1280 = 0.5625" 
+    height: 0px;           // don't want it to expand beyond padding 
+    position: relative;    // allow for absolute positioning of child elements 
+}
+
+.fancybox-slide--video .fancybox-content iframe {
+  position: absolute;    // expand to fill 
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+}
+
+*/
+
+/*# sourceMappingURL=jquery.fancybox.css.map */

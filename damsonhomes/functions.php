@@ -69,9 +69,58 @@ function damsonhomes_setup() {
 
 	// Add theme support for selective refresh for widgets.
 	add_theme_support( 'customize-selective-refresh-widgets' );
-}
-endif;
+
+
+	// Add our Image Sizes
+
+	add_image_size( 'letterbox-small ', 600, 338, true );
+	add_image_size( 'letterbox-medium ', 900, 506, true );
+  add_image_size( 'letterbox-large ', 1200, 675, true );
+  add_image_size( 'letterbox-xlarge ', 1600, 900, true );
+	
+	add_image_size( 'square-small ', 600, 600, true );
+	add_image_size( 'square-medium ', 900, 900, true );
+  add_image_size( 'square-large ', 1200, 1200, true ); // (cropped)
+
+  add_image_size( 'golden-ratio-small ', 600, 371, true );
+	add_image_size( 'golden-ratio-medium ', 900, 556, true );
+  add_image_size( 'golden-ratio-large ', 1200, 742, true );
+
+  add_image_size( 'panoramic-large ', 1200, 267, true );
+  add_image_size( 'panoramic-xlarge ', 1600, 356, true );
+  add_image_size( 'panoramic-full ', 2000, 444, true );
+
+  add_image_size( 'mega-image', 2000 ); // 300 pixels wide (and unlimited height)
+
+
+} endif;
+
 add_action( 'after_setup_theme', 'damsonhomes_setup' );
+
+
+add_filter( 'image_size_names_choose', 'dh_custom_img_sizes' );
+ 
+function dh_custom_img_sizes( $sizes ) {
+  return array_merge( $sizes, array(
+
+  	'medium_large' => __('Medium Large'),
+    
+    'letterbox-small'		=> __('Letterbox S (600)'),
+    'letterbox-medium'	=> __('Letterbox M (900)'),
+    'letterbox-large'		=> __('Letterbox L (1200)'),
+    'letterbox-xlarge'  => __('Letterbox XL (1600)'),
+    
+    'square-small' 			=> __('Square S (600)'),
+    'square-medium' 		=> __('Square M (900)'),
+    'square-large' 			=> __('Square L (1200)'),
+
+    'panoramic-large'		=> __('Panoramic L (1200)'),
+		'panoramic-xlarge'  => __('Panoramic XL (1600)'),
+		'panoramic-full'    => __('Panoramic F (2000)'),
+
+    'mega-image'   			=> __('Mahoosive'),
+  ) );
+}
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -86,6 +135,18 @@ function damsonhomes_content_width() {
 	$GLOBALS['content_width'] = apply_filters( 'damsonhomes_content_width', 640 );
 }
 add_action( 'after_setup_theme', 'damsonhomes_content_width', 0 );
+
+
+
+function dump(&$dump="") {
+	if(!empty($dump)) {
+		echo '<code><pre>';
+		var_dump($dump);
+		echo '</pre></code>';
+	}
+}
+
+
 
 /* Add Exceprt for pages */
 
@@ -154,13 +215,6 @@ require get_template_directory() . '/inc/cpt_team.php';
 
 require get_template_directory() . '/inc/dh_social_share.php';
 
-/**
- * SVG Icons
- */
-
-require get_template_directory() . '/inc/icon-functions.php';
-
-
 
 /**
  * MetaBoxes
@@ -171,9 +225,19 @@ require get_template_directory() . '/inc/metaboxes/dh-mb-area.php';
 require get_template_directory() . '/inc/metaboxes/dh-mb-post-options.php';
 require get_template_directory() . '/inc/metaboxes/dh-mb-sub-headline.php';
 
+/**
+ * Plugins
+ */
+
+require get_template_directory() . '/inc/plugins/dh_fancybox.php';  // Fancybox
+require get_template_directory() . '/inc/plugins/slick/dh_slick.php';  // Slick Slider
+require get_template_directory() . '/inc/icon-functions.php';       // SVG Icon Sprites
 
 
+require get_template_directory() . '/js/dh_footer_scripts_handle.php';
 require get_template_directory() . '/inc/dh_link_function.php';
+
+require get_template_directory() . '/inc/classes/damson_homes_custom_functions/inc/dh_post_gallery.php';
 
 require get_template_directory() . '/inc/classes/damson_homes_custom_functions/dhcf.php';
 

@@ -7,10 +7,6 @@ function dh_enquire(&$site_meta=array(), &$link_to=array()) {
 
   ?>
 
-
-  <div class="column-full">
-    <h2>Have a question about <?php echo $site_meta['name']; ?>?</h2>
-  </div>
   <div class="column-2-3 columns enquire-intro">
     <p class="intro">Here you will find all you'll need to know about buying your Damson Home.</p>
     <p>Any questions? We'd be happy to help. You can contact us through&hellip;

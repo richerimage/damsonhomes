@@ -77,6 +77,15 @@ pre,
 samp {
   font-family: monospace, monospace;
   font-size: 1em;
+  line-height: 1.5em;
+}
+
+code {
+
+  overflow: scroll;
+  background: #333;
+  padding: 0 10px;
+  color: whitesmoke;
 }
 
 button,

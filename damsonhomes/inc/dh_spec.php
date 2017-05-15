@@ -8,7 +8,6 @@ function dh_spec(&$name = '', &$site_logo_id = '', &$brochure = '') {
   ?>
 
   <div class="dh-spec columns">
-    <h2>Our 5 &times; Award Winning Signature Specification</h2>
     <div class="spec-intro hentry">
       <p>Our breathtaking 5 &times; signature specification is fitted into each and every single one of our luxuruous new homes.</p>
       <p>From contemporary kitchens to stunning bathrooms and from luxury floorings to designer lighting, all is included as standard when you own a Damson Home.<p>

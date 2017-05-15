@@ -70,6 +70,12 @@
   @include trans(800ms);
   /* -webkit-transition: 800ms ease-in-out;*/
   /* transition: 800ms ease-in-out;*/
+  width: 100%;
+
+  & h2 {
+    text-align: center;
+    width: 100%;
+  }
 }
 
 .tab-bottom {
@@ -81,6 +87,10 @@
   height: 0; 
   visibility: hidden; 
   overflow: hidden;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+  margin-top: 0 !important;
 }
 
 .tab-top {

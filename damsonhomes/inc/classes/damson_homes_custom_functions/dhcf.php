@@ -53,37 +53,49 @@ class dh_custom_functions {
     add_action( 'save_post', array($this, 'delete_transients_live_site'));
 
 
-    $row_width          = 1600;
-    $content_width      = round($row_width * 0.6666667);
+    // $row_width          = 1600;
+    // $content_width      = round($row_width * 0.6666667);
     
-    $square             = round($content_width / 2);
-    $classic_height     = round($content_width / 3 * 2);
-    $standard_height    = round($content_width / 4 * 3);
-    $golden_height      = round($content_width / 1.61803398875);
-    $letterbox_height   = round($row_width / 16 * 9);
-    $anamorphic_height  = round($row_width / 2.39);
-    $panavision_height  = round($row_width / 2.75);
-    $ultrawide_height   = round($row_width / 21 * 9);
-    $polyvision_height  = round($row_width / 4);
+    // $square             = round($content_width / 2);
+    // $classic_height     = round($content_width / 3 * 2);
+    // $standard_height    = round($content_width / 4 * 3);
+    // $golden_height      = round($content_width / 1.61803398875);
+    // $letterbox_height   = round($row_width / 16 * 9);
+    // $anamorphic_height  = round($row_width / 2.39);
+    // $panavision_height  = round($row_width / 2.75);
+    // $ultrawide_height   = round($row_width / 21 * 9);
+    // $polyvision_height  = round($row_width / 4);
 
-    add_image_size( 'DNA Dev', 600, 338, true );
-    add_image_size( 'Icon', 75, 75, true );
-    add_image_size( 'Square', $square, $square, true );
-    add_image_size( 'Classic', $content_width, $classic_height, true );
-    add_image_size( 'Standard', $content_width, $standard_height, true );
-    add_image_size( 'Golden Ratio', $content_width, $golden_height, true );
-    add_image_size( 'Letterbox 16:9', $row_width, $letterbox_height, true );
-    add_image_size( 'Anamorphic 2.39:1', $row_width, $anamorphic_height, true );
-    add_image_size( 'Ultra-Panavision 2.75:1', $row_width, $panavision_height, true );
-    add_image_size( 'Ultra-Wide 21:9', $row_width, $ultrawide_height, true );
-    add_image_size( 'Polyvision 4:1', $row_width, $polyvision_height, true );
+    // add_image_size( 'DNA Dev', 600, 338, true );
+    // add_image_size( 'Icon', 75, 75, true );
+    // add_image_size( 'Square', $square, $square, true );
+    // add_image_size( 'Classic', $content_width, $classic_height, true );
+    // add_image_size( 'Standard', $content_width, $standard_height, true );
+    // add_image_size( 'Golden Ratio', $content_width, $golden_height, true );
+    // add_image_size( 'Letterbox 16:9', $row_width, $letterbox_height, true );
+    // add_image_size( 'Anamorphic 2.39:1', $row_width, $anamorphic_height, true );
+    // add_image_size( 'Ultra-Panavision 2.75:1', $row_width, $panavision_height, true );
+    // add_image_size( 'Ultra-Wide 21:9', $row_width, $ultrawide_height, true );
+    // add_image_size( 'Polyvision 4:1', $row_width, $polyvision_height, true );
 
-    add_filter('image_size_names_choose', array($this, 'dh_custom_sizes'));
+    // add_filter('image_size_names_choose', array($this, 'dh_custom_sizes'));
 
-    add_filter ('post_gallery', array($this, 'dh_post_gallery'), 10, 2);
+    
+
+    // add_filter ('post_gallery', array($this, 'dh_post_gallery'), 10, 2);
     // add_action ('wp_footer', array($this, 'add_owl_script'), 50);
+    // add_action( 'print_media_templates', array($this, 'dh_add_gallery_options' ));
 
   }
+
+
+
+
+
+  // public function dh_post_gallery($output, $attr) {
+  //   require DH_CF_PATH . '/inc/dh_post_gallery.php';
+  // }
+
 
   public function dh_brochure_link_js() {
 
@@ -156,9 +168,14 @@ class dh_custom_functions {
 
     $dh_css = '  <link rel="stylesheet" type="text/css" href="' . get_template_directory_uri() . '/style.css"/>' . "\n";
 
+    $slick =  '  <link rel="stylesheet" type="text/css" href="' . get_template_directory_uri() . '/inc/plugins/slick/slick.css"/>' . "\n";
+
+    $dh_css_fancybox  = '  <link rel="stylesheet" type="text/css" href="' . get_template_directory_uri() . '/styles/jquery.fancybox.css"/>' . "\n";
+
     if (is_page_template( 'templates/template-site.php' )) {
 
       $dh_css_temp_site = '  <link rel="stylesheet" type="text/css" href="' . get_template_directory_uri() . '/style-sites-page.css"/>' . "\n";
+      
 
     } else {
 
@@ -170,7 +187,9 @@ class dh_custom_functions {
 
     "<noscript id=\"dna_deferred_styles\">\n".
       $dh_css . 
+      // $slick  .
       $dh_css_temp_site .
+      $dh_css_fancybox .
     "</noscript>\n\n".
 
     "<script id=\"load_deferred_styles\">\n".
@@ -212,7 +231,7 @@ class dh_custom_functions {
   public function dh_load_scripts(){
 
     $inc = includes_url();
-    
+
     if (!is_admin()) {
 
       wp_deregister_script('jquery');
@@ -221,13 +240,23 @@ class dh_custom_functions {
 
     }
 
-    wp_enqueue_script( 'dh-scripts', DH_URL . '/js/dh_scripts.js', 'jquery', false, true );
+    wp_register_script( 'dh-scripts', DH_URL . '/js/dh_scripts.js', 'jquery', false, true );
+    wp_register_script( 'dh-fancybox', DH_URL . '/js/jquery.fancybox.min.js', 'jquery', false, true );
+    wp_register_script( 'dh-slick', DH_URL . '/inc/plugins/slick/slick.min.js', 'jquery', false, true );
+
+    wp_enqueue_script( 'dh-scripts' );
+    wp_enqueue_script( 'dh-fancybox' );
+    wp_enqueue_script( 'dh-slick' );
+
 
     if (is_page_template( 'templates/template-site.php' )) {
 
       wp_enqueue_script( 'google-maps', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyC2MEUHYicgbIvLGyU2o0GZJ_R9vluTJP8&extension=.js', '', false, true);
 
     }
+    
+
+
 
   }
 
@@ -256,136 +285,7 @@ class dh_custom_functions {
   }
 
 
-  public function dh_post_gallery($output, $attr) {
-      
-      global $post, $wp_locale;
 
-      static $instance = 0;
-      $instance++;
-
-      // We're trusting author input, so let's at least make sure it looks like a valid orderby statement
-      if ( isset( $attr['orderby'] ) ) {
-        $attr['orderby'] = sanitize_sql_orderby( $attr['orderby'] );
-        if ( !$attr['orderby'] )
-            unset( $attr['orderby'] );
-      }
-
-      $class_option = 'owl-carousel';
-
-      extract(shortcode_atts(array(
-        'order'      => 'ASC',
-        'orderby'    => 'menu_order ID',
-        'id'         => $post->ID,
-        'itemtag'    => 'div',
-        'icontag'    => 'div',
-        'captiontag' => 'span',
-        'columns'    => '',
-        'link'       => 'file',
-        'size'       => 'thumbnail',
-        'class'      => '', 
-        'include'    => '',
-        'exclude'    => ''
-      ), $attr));
-
-      if ($class_option == 'owl-carousel') {
-        $this->addScript = true;
-      }
-
-      $id = intval($id);
-      if ( 'RAND' == $order )
-          $orderby = 'none';
-      if ( !empty($include) ) {
-        $include = preg_replace( '/[^0-9,]+/', '', $include );
-        $_attachments = get_posts(
-          array(
-            'include'         => $include,
-            'post_status'     => 'inherit',
-            'post_type'       => 'attachment',
-            'post_mime_type'  => 'image',
-            'order'           => $order,
-            'orderby'         => $orderby));
-
-        $attachments = array();
-        foreach ( $_attachments as $key => $val ) {
-            $attachments[$val->ID] = $_attachments[$key];
-        }
-      } elseif (!empty($exclude)) {
-        $exclude = preg_replace( '/[^0-9,]+/', '', $exclude );
-        $attachments = get_children(
-          array(
-            'post_parent'     => $id,
-            'exclude'         => $exclude,
-            'post_status'     => 'inherit',
-            'post_type'       => 'attachment',
-            'post_mime_type'  => 'image',
-            'order'           => $order,
-            'orderby'         => $orderby));
-      } else {
-        $attachments = get_children(
-          array(
-            'post_parent'     => $id,
-            'post_status'     => 'inherit',
-            'post_type'       => 'attachment',
-            'post_mime_type'  => 'image',
-            'order'           => $order,
-            'orderby'         => $orderby));
-      }
-
-      if ( empty($attachments) )
-          return '';
-
-      if ( is_feed() ) {
-        $output = "\n";
-        foreach ( $attachments as $att_id => $attachment )
-          $output .= wp_get_attachment_link($att_id, $size, true) . "\n";
-        return $output;
-      }
-
-      $itemtag    = tag_escape($itemtag);
-      $captiontag = tag_escape($captiontag);
-      $columns    = intval($columns);
-      $itemwidth  = $columns > 0 ? floor(100/$columns) : 100;
-      $float      = is_rtl() ? 'right' : 'left';
-      $selector   = "gallery-{$instance}";
-
-      // var_dump($this->options['gallery-output']);
-
-      // $plugin_class = !empty($this->options['gallery-output']) ? 'owl-carousel ' : '';
-
-      $class = !empty($class) ? $class . ' ' . $class_option . ' ' : $class_option . ' ';
-
-      // $class_option = !empty($class_option) ? ' ' . $class_option : '';
-      
-
-      $output     = "<div id=\"$selector\" class=\"gallery gallery-id-{$id} " . $class . (!empty($columns) ? 'gallery-columns-' . $columns . ' ' : '') . "clearfix\">";
-
-      $i = 0;
-
-      foreach ( $attachments as $id => $attachment ) {
-
-        $link = isset($attr['link']) && 'file' == $attr['link'] 
-
-          ? wp_get_attachment_link($id, $size, false, false) 
-
-          : wp_get_attachment_image($id, $size, false);
-
-
-        $output .= "<{$itemtag} class='gallery-item'>";
-        $output .= "<{$icontag} class='gallery-icon'>";
-        $output .= (!empty($title) ? '<div class="image-title">' . $attachment->post_title . '</div>' : '');
-        $output .= $link;
-        $output .= "</{$icontag}>";
-        if ( $captiontag && trim($attachment->post_excerpt) ) {
-          $output .= "<{$captiontag} class='gallery-caption'>";
-          $output .= wptexturize($attachment->post_excerpt);
-          $output .= "</{$captiontag}>";
-        }
-        $output .= "</{$itemtag}>";
-      }
-      $output .= "</div>";
-
-      return $output;
-  }
 
   
 }

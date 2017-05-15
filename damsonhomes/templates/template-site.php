@@ -50,6 +50,8 @@ $brochure_url       = $brochure_src['0'];
 $slug = get_permalink();
 
 $dh_video_thumb_id  = get_post_meta($post->ID, 'dh_video_thumb_id', true) ? get_post_meta($post->ID, 'dh_video_thumb_id', true) : '';
+$videoID            = get_post_meta($post->ID, 'dh_video', true) ? get_post_meta($post->ID, 'dh_video', true) : '63773282';
+    
 $brochure           = get_post_meta($post->ID, 'site_brochure_link', true) ? get_post_meta($post->ID, 'site_brochure_link', true) : ''; 
 $gallery            = get_post_meta($post->ID, 'dh_site_gallery', true) ? get_post_meta($post->ID, 'dh_site_gallery', true) : '';
 
@@ -107,7 +109,14 @@ $site_meta = array(
     </div><!-- END .site-intro.six.columns -->
     <div class="hero-right six columns">
         <?php if (!empty($dh_video_thumb_id)) {
-        echo wp_get_attachment_image( $dh_video_thumb_id, 'Letterbox 16:9', '', array( 'class' => 'video_thumb' ));
+        echo '<a class="video-thumb" data-fancybox="video" href="https://player.vimeo.com/video/' . $videoID . '?autoplay=1" width="500" height="281" frameborder="0"">'.
+             dh_get_svg(array('icon' => 'play')) .
+             wp_get_attachment_image( $dh_video_thumb_id, 'letterbox-medium', '', array( 'class' => 'video_thumb' )) .
+             '</a>';
+
+        // $video    = '<iframe src="https://player.vimeo.com/video/' . $videoID . '?autoplay=1" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
+
+
       } ?>
     </div>
   </header><!-- END .page-header -->
@@ -139,47 +148,44 @@ $site_meta = array(
     </div>
 
     <div id="tab2" class="tab-content tab2 tab-plots tab-bottom">
-
-    <h2>Plot Plan &amp; Availablity</h2>
-    <?php require get_template_directory() . '/inc/dh_available_plots.php';
-    dh_available_plots($site_meta, $link_to); ?>
-
+      <h2>Plot Plan &amp; Availablity</h2>
+      <?php require get_template_directory() . '/inc/dh_available_plots.php';
+      dh_available_plots($site_meta, $link_to); ?>
     </div>
 
     <?php if (!empty($gallery)) { ?>
 
-      <div id="tab3" class="tab-content tab3 tab-gallery tab-bottom xv">
-
-      <h2>Gallery</h2>
-
-      <?php echo wpautop(do_shortcode($gallery)); ?>
-
+      <div id="tab3" class="tab-content tab3 tab-gallery tab-bottom">
+        <h2>Gallery</h2>
+        <?php echo wpautop(do_shortcode($gallery)); ?>
       </div>
 
     <?php } ?>
 
     <div id="tab4" class="tab-content tab4 tab-spec tab-bottom">
-      
+      <h2>Our 5 &times; Award Winning Signature Specification</h2>
       <?php require get_template_directory() . '/inc/dh_spec.php';
       dh_spec($name, $site_logo_id, $brochure);  ?>
-
     </div>
+
     <div id="tab5" class="tab-content tab5 tab-location tab-bottom">
-      
+      <h2>Around <?php echo $name; ?></h2>
       <?php require get_template_directory() . '/inc/dh_location.php';
       dh_location($name, $address, $area_id);  ?>
-
     </div>
 
     <div id="tab6" class="tab-content tab6 tab-updates post-results tab-bottom">
+      <h2>Build Updates from <?php echo $name; ?></h2>
       <?php require get_template_directory() . '/inc/dh_build_updates.php';
       dh_build_updates($name, $cat_id, $site_logo_id, $brochure);  ?>
     </div>
 
     <div id="tab7" class="tab-content tab7 tab-enquire tab-bottom">
+      <h2>Have a question about <?php echo $site_meta['name']; ?>?</h2>
       <?php require get_template_directory() . '/inc/dh_enquire.php';
       dh_enquire($site_meta, $link_to);  ?>
     </div>
+
   </main>
   <!-- #main -->
 

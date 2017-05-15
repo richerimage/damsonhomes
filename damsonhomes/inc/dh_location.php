@@ -9,7 +9,6 @@ function dh_location(&$name = '', &$address = '', $area_id = '') {
   ?>
 
   <div class="column-full">
-    <h2>Around <?php echo $name; ?></h2>
     <?php if (!empty($area_intro)) { ?>
     <div class="area-intro">
       <?php echo wpautop(do_shortcode($area_intro)); ?>
