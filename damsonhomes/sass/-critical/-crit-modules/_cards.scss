@@ -1,0 +1,53 @@
+
+
+.card {
+  margin-bottom: 1em;
+
+  & .block-link {
+    padding: 0;
+    background-color: white;
+  }
+
+
+  & .headline-area,
+  & .post-content {
+    margin: 0;
+    border: none;
+    padding: 1em;
+  }
+
+  & .headline-area {
+    background-color: white;
+  }
+
+  & .post-content {
+    padding: 1em 1em 0;
+  }
+
+  & img {width: 100%;}
+
+}
+
+
+.card-site .site-name span {
+  display: block;
+  
+  &.area {
+    color: $text2;
+  }
+
+}
+
+.card-site figure {
+  
+  position: relative;
+
+  & .flash {
+    
+    @include abs(auto, 0, 1em, auto);
+
+  }
+
+}
+
+

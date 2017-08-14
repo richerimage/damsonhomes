@@ -1,0 +1,121 @@
+/* Text meant only for screen readers. */
+
+a {
+  text-decoration: underline;
+  color: $link;
+
+  &:hover,
+  &:focus,
+  &:active {
+    text-decoration: none;
+  }
+
+  &.block-link {
+    border: solid 1px $gray_ll;
+    color: $text1;
+    display: block;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      border-color: $gray_ll;
+    }
+  }
+
+} // end 'a'
+
+
+input[type],
+textarea {
+  color: $text1;
+  background-color: white;
+  border: 1px solid $gray_l;
+  border-radius: 2px;
+  padding: 0.5em;
+  font-size: 1.25em;
+}
+
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  font-size: inherit;
+  line-height: initial;
+  white-space: normal;
+}
+
+select {
+  border: 1px solid $brand2;
+}
+
+textarea {
+  width: 100%;
+  height: 7em;
+  overflow: auto;
+}
+
+
+
+
+a.button,
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  background-color: $brand2;
+  color: white;
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+  padding: 0.5em 1em;
+  border: solid 1px $brand2_d2;
+  border-radius: 2px;
+
+    & .icon,
+    & .button-text {
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    & .icon {
+      fill: white;
+    }
+
+}
+
+a.sub,
+input[type="reset"] {
+  background-color: $gray_m;
+  border-color: $gray_d;
+
+  &:hover,
+  &:focus {
+    background-color: $gray_d;
+  }
+}
+
+
+a.cta,
+input[type="submit"] {
+  background-color: $brand1;
+  border-color: $brand1_d2;
+
+  &:hover,
+  &:focus {
+    background-color: $brand1_d2;
+  }
+}
+
+a.large {
+  line-height: 1.5em;
+  padding: 0.5em 1.5em;
+}
+
+form input[type="submit"] {
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  padding: 0.5em 1.5em;
+  font-size: 1.1em;
+  line-height: 1.2em;
+}

@@ -1,0 +1,157 @@
+/*-------------------------------------------------------------
+
+Critical Site Template Styles: TABLE OF CONTENTS:
+
+# links and inputs
+# typography
+# bits
+# grid
+# sections
+# header
+# main nav
+
+# footer
+
+# key frames
+
+--------------------------------------------------------------*/
+@import "../sass/-variables/variables-site";
+@import "../sass/-mixins/mixins-master";
+
+
+.site-intro-wrap {
+
+  text-align: center;
+  margin-bottom: 1.5em;
+
+  & .site-logo,
+  & .headline-area {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0;
+    padding: 0;
+    border: none;
+  }
+
+  & .site-logo {
+    width: 64px;
+    margin-right: 1em;
+    margin-bottom: 1em;
+  }
+
+  & .headline-area * {
+    margin: 0;
+    line-height: 1.15em;
+    text-align: left;
+  }
+
+}
+
+@include mq(toddler) {
+  .site-logo {
+    margin-bottom: 0;
+  }
+}
+
+
+@include mq(goldiePlus) {
+
+  .site-intro-wrap {
+
+    padding: 1em 0;
+
+    & .site-logo {
+      width: 96px;
+    }
+
+  }
+
+}
+
+
+// Enquire Section
+
+.contact-list {
+  text-align: left;
+  margin-left: -0.25em;
+  margin-right: -0.25em;
+
+  & li {
+    display: inline-block;
+    width: 100%;
+    max-width: 17em;
+    padding: 0 0.25em;
+
+  }
+
+  & a {
+    display: block;
+    text-align: left;
+  }
+}
+
+
+.tab-enquire .dh-reveal-wrap {
+  display: block;
+  margin-bottom: 0.5em;
+  border: solid 1px $gray_l;
+  background-color: $gray_ll;
+
+  & a.reveal {
+    color: $brand1;
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+    padding: 0.5em 0.25em;
+
+    &:hover,
+    &:focus {
+      background-color: $gray_l;
+    }
+  }
+}
+
+.tab-enquire  .open .dh-reveal-content {
+  display: block;
+  margin: 0.25em;
+  border: solid 1px $gray_l;
+  padding: 0.5em;
+
+  & *:last-child {margin-bottom: 0;}
+}
+
+.tab-enquire  .reveal.open {
+  position: relative;
+
+  &:after {
+    content: "\00D7";
+    color: white;
+    right: 1em;
+    position: absolute;
+    line-height: 1em;
+    width: 1em;
+    height: 1em;
+    background: $gray_m;
+    text-align: center;
+    border-radius: 100%;
+
+    &:hover,
+    &:focus {
+      background-color: $gray_d;
+    }
+  }
+
+}
+
+
+.tab-enquire .aftercare {
+  padding: 1em 1em 0;
+}
+
+@include mq(grandma) {
+
+  .contact-list li {
+    max-width: 50%;
+  }  
+}
+

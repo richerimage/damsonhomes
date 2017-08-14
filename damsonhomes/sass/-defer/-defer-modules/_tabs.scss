@@ -1,0 +1,16 @@
+.tab-content {
+  @include trans(800ms);
+}
+
+.tabs a:hover,
+.tabs a:focus {
+
+  background-color: $brand2_l1;
+  
+}
+
+.tabs a.active {
+
+  background-color: $brand1;
+  
+}

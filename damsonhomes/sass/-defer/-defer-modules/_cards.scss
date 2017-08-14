@@ -1,0 +1,54 @@
+.white-bg .card {
+  background: url($xv) $body;
+}
+
+.card .block-link {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+}
+
+.card-site .flash {
+  background-color: $alert;
+  color: white;
+  font-weight: bold;
+  padding: 0.25em 0.5em;
+}
+
+.card .entry-footer {
+  padding: 1em;
+
+  .flexbox & {margin-top: auto;}
+}
+
+.card .entry-meta {
+
+  border-top: dotted 1px $gray_m;
+  padding-top: 1em;
+  display: block;
+
+  & li {
+
+  padding-left: 1.25em;
+  margin-right: 1.25em;
+
+    & .icon {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      margin-top: -0.5em;
+      color: $brand1;
+    }
+  }
+
+}
+
+
+
+.read-on {
+  color: $brand1;
+  font-weight: bold;
+  font-style: italic;
+}

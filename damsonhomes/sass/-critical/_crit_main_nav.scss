@@ -1,0 +1,305 @@
+.nav-area {
+
+  background-color: $brand1;
+
+  & .nav-box {
+
+    padding: 0 0.5rem;
+
+  }
+
+  & .menu {
+    margin: 0; 
+    list-style: none;
+
+    & li {
+
+      display: inline-block;
+      margin: 0;
+
+    }
+
+    & a {
+
+      font-size: 1.1rem;
+      color: white;
+      padding: 0.5em 0.9rem;
+      text-decoration: none;
+      display: block;
+
+    }
+
+    &.primary-menu .burger-holder {
+      position: absolute;
+      top: 0.925em;
+      right: 1.5em;
+    }
+  
+  }
+
+
+  .dna-nav {
+    opacity: 0; 
+    height: 0; 
+    overflow: hidden;
+  }
+
+
+}
+
+@media only screen and (min-width: 360px) {
+
+  .nav-area .menu a {
+    font-size: 1.4rem;
+  }
+
+}
+
+
+@include mq(goldie) {
+
+
+
+  .nav-area .menu {
+    
+    display: inline-block;
+    vertical-align: middle;
+
+
+    &.dna-nav {
+      opacity: 1; 
+      height: auto;
+
+      & .burger-holder .more-text {
+        display: none;
+      }
+
+    }
+
+    &.primary-menu .burger-holder {
+      display: none;      
+    }
+
+  }
+
+}
+
+@include mq(goldiePlus) {
+
+  .nav-area .menu {
+    display: block;
+    width: 50%;
+    float: left;
+    text-align: left;
+    padding: 0 4rem 0 0;
+
+    &.dna-nav {
+      text-align: right;
+      padding: 0 0 0 4rem;
+      float: right;
+    }
+  }
+
+}
+
+
+@include mq(momma) {
+  .nav-area .nav-box {
+    padding: 0 1.5em;
+  }
+}
+
+
+
+// .nav-area {
+  
+//   background-color: $brand1;
+
+//   & .nav-box {
+
+//     padding: 0;
+    
+//   }
+
+//   & .menu {
+
+//     list-style: none;
+//     margin: 0;
+
+//   }
+
+//   & a {
+  
+//     color: white;
+//     text-decoration: none;
+//     padding: 0.5em 1.4rem;
+//     display: block;
+
+//   }
+
+//   & li {
+
+//     display: inline-block;
+//     vertical-align: middle;
+//     margin: 0;
+//     padding: 0;
+
+//   }
+
+//   & .burger-holder {
+//     padding-left: 1em;
+//   }
+
+// }
+
+// .dna-nav {
+//   opacity: 0; 
+//   height: 0; 
+//   overflow: hidden;
+
+// }
+
+
+// #side_menu_trigger {
+//   padding-left: 0;
+
+//   & .hamburger-menu {
+
+//     display: none;
+
+//   }
+
+// }
+
+
+.fly-out-menu {
+  position: fixed;
+  right: -20em;
+  width: 20em;
+}
+
+
+
+/*  
+ *  Hamburger animation
+ *  http://codepen.io/husnimun/pen/pJvEeL
+ */
+
+//  .burger-holder {padding-left: 1em;}
+
+
+$bar-width: 1em;
+$bar-height: 1px;
+$bar-spacing: 4px;
+
+.hamburger-menu {
+  width: $bar-width;
+  height: $bar-height + $bar-spacing*2;
+  cursor: pointer;
+
+  & .bar,
+  & .bar:after,
+  & .bar:before {
+    width: $bar-width;
+    height: $bar-height;
+  }
+
+  & .bar {
+    position: relative;
+    transform: translateY($bar-spacing);
+    background: $gray_ll;
+    &.active {
+      background: transparent; 
+    }
+  }
+
+  & .bar:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: $bar-spacing;
+    background-color: $gray_ll;
+  }
+
+  & .bar:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: $bar-spacing;
+    background-color: $gray_ll;
+  }
+
+  & .bar.active:after {
+    top: 0;
+  }
+
+  & .bar.active:before {
+    bottom: 0;
+  }
+
+}
+
+
+.dh-hide-nav .nav-area .container {
+  visibility: hidden;
+}
+
+
+// @include mq(goldie) {
+
+//   .nav-box ul {
+//     width: auto;
+//     display: inline-block;
+//   }
+
+//   .dna-nav {
+//     opacity: 1; 
+//     height: auto; 
+//     overflow: visible;
+//   }
+
+//   .primary-menu .burger-holder {
+//     display: none;
+//   }
+
+//   #side_menu_trigger {
+//     & .more-text {display: none;}
+//     & .hamburger-menu {display: block;}
+//   }
+
+
+// }
+
+
+// @include mq(goldiePlus) {
+
+//   .nav-box ul {
+//     width: 50%;
+//     display: block;
+
+//     &.primary-menu {
+//       float: left;
+//       padding-right: 3rem;
+//     }
+
+//     &.dna-nav {
+//       float: right;
+//       text-align: right;
+//       padding-left: 3rem;
+//     }
+//   }
+
+
+// }
+
+// @include mq(momma) {
+
+//   .nav-area .nav-box {
+//     padding: 0 1em;
+
+//     & a {
+//       padding: 0.6em 1.2em;
+//     }
+//   }
+
+// }

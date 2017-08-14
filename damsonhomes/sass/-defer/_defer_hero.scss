@@ -1,0 +1,53 @@
+@include mq(toddler) {
+
+  .hero-area.hero-fly-in {
+
+    position: relative;
+
+  }
+
+  .hero-fly-in:before {
+
+    content: "";
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-size: cover;
+    @include abs(0, 0, 0, 27em);
+    -webkit-clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
+    clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
+
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    animation-name: fadeInRight;
+
+  }
+
+  .hero-fly-in .hero-left {
+    max-width: 25em;
+  }
+
+}
+
+
+@include mq(momma) {
+
+  .hero-fly-in:before {
+    left: 50%;
+  }
+
+  .hero-fly-in .hero-left {
+    width: 50%;
+    max-width: 50%;
+  }
+}
+
+
+
+@include mq(grampa) {
+
+  .hero-fly-in .hero-left {
+    padding-right: 0em;
+ 
+  }
+}

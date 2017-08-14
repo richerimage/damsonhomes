@@ -1,0 +1,47 @@
+.ftr-nav-area {
+  background-color: $brand2;
+
+  & .tabs {
+    margin: 0;
+    list-style: none;
+    text-align: center;
+  }
+
+  & li {
+
+    display: inline-block;
+    margin: 0;
+
+  }
+
+  & a {
+
+    padding: 0.5em 1em;
+    color: white;
+    display: block;
+    text-decoration: none;
+
+  }
+
+
+}
+
+
+.tab-top {
+  // -webkit-transform: translate(0%, 0);
+  //         transform: translate(0%, 0);
+  height: auto; 
+  visibility: visible;
+}
+
+.tab-bottom {
+  /* transform: translate(-110%, 0); // Slide in from left*/
+  /* transform: translate(110%, 0); // Slide in from right*/
+  // -webkit-transform: translate(0%, -100%);
+  //         transform: translate(0%, -100%); /* Slide in from top*/
+  opacity: 0;
+  height: 0; 
+  visibility: hidden; 
+  overflow: hidden;
+}
+

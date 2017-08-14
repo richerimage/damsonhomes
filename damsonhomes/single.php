@@ -7,21 +7,36 @@
  * @package Damson_Homes
  */
 
-get_header(); ?>
+get_header(); 
+do_action('dh_after_header');
+do_action('dh_before_main_content_area'); ?>
+<section id="content_area" class="content-area bg-white">
+  <?php do_action('dh_before_main_content'); ?>
+  <main id="main" class="row main-content" role="main">
+    <?php do_action('dh_main_content_top');
 
-	<section id="primary" class="content-area">
-		<main id="main" class="content-box container" role="main">
+    if ( have_posts() ) {
 
-		<?php while ( have_posts() ) : the_post();
+      /* Start the Loop */
+      while ( have_posts() ) : the_post();
 
-			get_template_part( 'template-parts/content', get_post_format() );
+        get_template_part( 'templates/template-parts/content');
 
-			the_post_navigation();
+        the_posts_navigation();
 
-		endwhile; // End of the loop. ?>
+      endwhile;
 
-		</main><!-- #main -->
+    } else {
 
-	</section><!-- #primary -->
+      get_template_part( 'template-parts/content', 'none' );
 
-<?php get_footer();
+    }
+
+    do_action('dh_main_content_bottom'); ?>
+  </main>
+  <?php do_action('dh_after_main_content'); ?>
+</section><!-- #content_area -->
+<?php do_action('dh_after_main_content_area');
+
+do_action('dh_before_footer');
+get_footer();

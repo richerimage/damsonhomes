@@ -1,0 +1,40 @@
+@import "../sass/-variables/variables-site";
+@import "../sass/-mixins/mixins-master";
+
+
+.main-ftr-image img {
+  width: 100%;
+  max-width: 25em;
+}
+
+.footer-listings {
+  text-align: center;
+  padding-top: 1.5em;
+
+  & .card {
+      display: inline-block;
+      max-width: 9.5em;
+      padding: 0 0.5em;
+
+      & .block-link {
+        opacity: 0.8;
+
+        &:hover,
+        &:focus {
+          opacity: 1;
+        }
+      }
+    }
+
+}
+
+@include mq(goldie) {
+  .listings.footer-listings .card {
+
+    flex: 1 1 calc(25% - 0.5em);
+    margin: 0em 0 1em;
+
+  }
+
+}
+

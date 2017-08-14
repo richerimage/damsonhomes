@@ -1,27 +1,29 @@
+$body: #F0F0F0;
+
 $text1: #444444;
 $text2: #777777;
 
+$link: #1C2E6B;
+
 $brand1: #6b1c56;
+$brand2: #b78958;
 
-// Shades: http://www.color-hex.com/color/6b1c2e
+$brand1_l1: lighten($brand1, 10%);
+$brand1_l2: lighten($brand1, 20%);
+$brand1_l3: lighten($brand1, 30%);
 
-$brand1_d1: #571746;
-$brand1_d2: #431136;
-$brand1_d3: #2e0c25;
+$brand1_d1: darken($brand1, 10%); 
+$brand1_d2: darken($brand1, 20%); 
+$brand1_d3: darken($brand1, 30%); 
 
-$brand1_l1: #7f2166;
-$brand1_l2: #932776;
-$brand1_l3: #a82c87;
+$brand2_l1: lighten($brand2, 10%);
+$brand2_l2: lighten($brand2, 20%);
+$brand2_l3: lighten($brand2, 30%);
 
-$brand2:    #b78958;
+$brand2_d1: darken($brand2, 10%); 
+$brand2_d2: darken($brand2, 20%); 
+$brand2_d3: darken($brand2, 30%); 
 
-$brand2_l1: #bf966a;
-$brand2_l2: #c6a27c;
-$brand2_l3: #ceaf8d;
-
-$brand2_d1: #ac7c4a;
-$brand2_d2: #9a6f42;
-$brand2_d3: #88623b;
 
 
 $brand3: #58b789;
@@ -35,43 +37,42 @@ $brand3_d2: #429a6f;
 $brand3_d3: #3b8862;
 
 
-$gray_ddd:  #333333;
-$gray_dd:   #777777;
-$gray_d:    #999999;
+// $gray_ddd:  #333333;
+// $gray_dd:   #777777;
+// $gray_d:    #999999;
+// $gray_m:    #AAAAAA;
+// $gray_l:    #CCCCCC;
+// $gray_ll:   #EEEEEE;
+
+
 $gray_m:    #AAAAAA;
-$gray_l:    #CCCCCC;
-$gray_ll:   #EEEEEE;
+
+$gray: $gray_m;
+
+$gray_l:    lighten($gray, 10%);
+$gray_ll:   lighten($gray, 20%);
+$gray_lll:  lighten($gray, 30%);
+
+$gray_d:    darken($gray, 10%);
+$gray_dd:   darken($gray, 20%);
+$gray_ddd:  darken($gray, 30%);
 
 
 $alert:     #A0002E;
 
+$green: #429A6F;
 
-$green_m:   #58b789;
+$green_l1: lighten($green, 10%);
+$green_l2: lighten($green, 20%);
+$green_l3: lighten($green, 30%);
+
+$green_d1: darken($green, 10%); 
+$green_d2: darken($green, 20%); 
+$green_d3: darken($green, 30%); 
 
 
 $fb_brand1: #3b5998;  // facebook
 $tw_brand1: #1da1f2;  // twitter
 $ms_brand_1: #0084ff; // messenger
 
-
-$color__background-hr: #ccc;
-$color__background-button: #e6e6e6;
-$color__background-pre: #eee;
-$color__background-ins: #fff9c0;
-
-$color__text-screen: #21759b;
-$color__text-input: #666;
-$color__text-input-focus: #111;
-$color__link: royalblue;
-$color__link-visited: purple;
-$color__link-hover: midnightblue;
-$color__text-main: #404040;
-
-$color__border-button: #ccc #ccc #bbb;
-$color__border-button-hover: #ccc #bbb #aaa;
-$color__border-button-focus: #aaa #bbb #bbb;
-$color__border-input: #ccc;
-$color__border-abbr: #666;
-
-
-$body: #F0F0F0;
+$crlBrand2: #4e5f6d;

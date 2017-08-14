@@ -1,0 +1,266 @@
+
+/* Slider */
+
+.slick-slider {
+  position: relative;
+  display: block;
+}
+.slick-list {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+.slick-track {
+  position: relative;
+  left: 0;
+  top: 0;
+  display: block;
+
+  &:before,
+  &:after {
+      content: "";
+      display: table;
+  }
+
+  &:after {
+      clear: both;
+  }
+
+  .slick-loading & {
+      visibility: hidden;
+  }
+
+}
+
+.slick-slide {
+
+
+  float: left;
+  height: 100%;
+  min-height: 1px;
+  background-color: #f0f0f0;
+
+  [dir="rtl"] & {
+    float: right;
+  }
+
+  img {
+    display: block;
+  }
+  
+  &.slick-loading img {
+    display: none;
+  }
+
+  // display: none;
+
+  .slick-initialized & {
+      display: block;
+  }
+
+  .slick-loading & {
+      visibility: hidden;
+  }
+
+  .slick-vertical & {
+      display: block;
+      height: auto;
+      border: 1px solid transparent;
+  }
+
+  & .gallery-icon img {
+      margin: 0 auto;
+  }
+
+}
+
+.slick-arrow.slick-hidden {
+  display: none;
+}
+
+
+
+
+
+// Default Variables
+
+$slick-loader-path: "https://damsondev.wpengine.com/wp-content/themes/damsonhomes/images/" !default;
+// $slick-loader-path: "/" !default;
+$slick-arrow-color: white !default;
+$slick-dot-color: $brand2;
+$slick-dot-color-active: $slick-dot-color !default;
+$slick-dot-size: 6px !default;
+$slick-opacity-default: 0.75 !default;
+$slick-opacity-on-hover: 1 !default;
+$slick-opacity-not-active: 0.25 !default;
+
+@function slick-image-url($url) {
+    @if function-exists(image-url) {
+        @return image-url($url);
+    }
+    @else {
+        @return url($slick-loader-path + $url);
+    }
+}
+
+
+
+/* Slider */
+
+.slick-list {
+    .slick-loading & {
+        background: #fff slick-image-url("ajax-loader.gif") center center no-repeat;
+    }
+}
+
+.slick-prev,
+.slick-next {
+
+  background: $brand2;
+  position: absolute;
+  bottom: -1em;
+  display: block;
+  @include square(1.5em);
+  line-height: 1.5em;
+  border-radius: 2px;
+  font-size: inherit;
+  cursor: pointer;
+  color: white;
+  -webkit-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  padding: 0;
+  border: solid 1px white;
+  outline: none;
+  &:hover, &:focus {
+      outline: none;
+      background: $brand1;
+  }
+
+}
+
+.slick-prev {
+  left: 0.25em;
+}
+
+.slick-next {
+  right: 0.25em;
+}
+
+.slick-buttons .icon {
+  position: relative;
+  top: -0.1em;
+}
+
+/* Dots */
+
+.slick-dotted.slick-slider {
+    margin-bottom: 1.5em;
+}
+
+.slick-dots {
+
+  list-style: none;
+  display: block;
+  text-align: center;
+  padding: 0;
+  margin: 0 auto;
+  width: calc(100% - 4.5em);
+  
+  & li {
+
+    position: relative;
+    display: inline-block;
+    @include square(0.5em);
+    margin: 0 0.5em;
+    padding: 0;
+    cursor: pointer;
+
+    &:before {
+      content: none !important;
+    }
+
+    button {
+
+      border: 0;
+      background: $brand2;
+      display: block;
+      @include square(0.5em);
+      border-radius: 100%;
+      outline: none;
+      line-height: 0px;
+      font-size: 0px;
+      padding: 5px;
+      cursor: pointer;
+
+      &:hover, &:focus {
+          outline: none;
+      }
+        
+    }
+
+    &.slick-active button {
+      background: $brand1;
+    }
+
+  }
+}
+
+
+@include mq(pappa) {
+
+  .slick-prev,
+  .slick-next {
+    bottom: auto;
+    top: calc(50% - 1.5em);
+    height: 6em;
+    z-index: 1;
+  }
+
+  .slick-prev {
+    left: 0.25em;
+  }
+
+  .slick-next {
+    right: 0.25em;
+  }
+
+}
+
+@include mq(grampa) {
+
+  .slick-prev {
+    left: -2em;
+  }
+
+  .slick-next {
+    right: -2em;
+  }
+
+}
+
+
+
+
+
+
+.slick-slider.slick-initialized {
+    overflow: visible;
+    opacity: 1;
+
+    & .slick-slide { 
+      display: block;
+    } 
+  }

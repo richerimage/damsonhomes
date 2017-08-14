@@ -1,0 +1,19 @@
+
+.slick-slider {
+    opacity: 0;
+    overflow: hidden;
+    margin: 0 auto;
+    max-width: 1200px;
+
+  & .slick-slide {
+
+    display: none;
+
+    &:first-child {
+      display: block;
+    }
+
+  }
+
+  
+}

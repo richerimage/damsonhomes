@@ -1,0 +1,206 @@
+// http://type-scale.com/
+// Typography Scale: 1.12 (Minor Third)
+
+body {font-size: 1.5rem;}
+
+
+p, .p, ul, ol {
+  margin-top: 0; 
+  margin-bottom: 1em; 
+  line-height: 1.6em;
+}
+
+.aux,
+p.aux {
+  font-size: 0.889em;
+  color: $text2;
+}
+
+h1, .h1 {
+  font-size: 2.074em;
+  line-height: 1.4em;
+}
+
+h2, .h2 {
+  font-size: 1.728em;
+  line-height: 1.4em;
+}
+
+h3, .h3 {
+  font-size: 1.44em;
+  line-height: 1.4em;
+}
+
+h4, .h4 {
+  font-size: 1.2em;
+  line-height: 1.4em;
+}
+
+h5, .h5 {
+  font-size: 1em;
+  line-height: 1.35em;
+}
+
+h1, h2, h3, h4, h5, 
+.h1, .h2, .h3, .h4, .h5 {
+  color: $brand1; 
+  margin-top: 1.5rem; 
+  margin-bottom: 1rem; 
+  font-family: $head_ff;
+}
+
+ul, ol {
+  margin: 0 0 1em 1.57em;
+  padding: 0;
+}
+
+ul {
+  
+  list-style: square;
+
+  &.no-style {
+
+    list-style: none;
+    margin-left: 0;
+
+    & li:before {
+      content: none !important;
+    }
+
+  }
+
+  &.inline li {
+    display: inline-block;
+    margin-right: 0.25em;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+
+  &.reveal-list {
+    margin-left: 0;
+    list-style: none;
+  }
+
+  &.block-list li {
+    border: solid 1px #ccc;
+    padding: 0.5em;
+  }
+
+}
+
+ol {
+  list-style: decimal;
+}
+
+li {
+  margin-bottom: 0.5em;
+  position: relative;
+
+  .post-content &, 
+  .ftr-list & {      
+
+    &:before, 
+    &:before {
+      content: "";
+      @include abs(0.55em, auto, auto, -1.2em);
+      @include square(0.5em);
+      background-color: $brand2;
+    }
+
+  }
+
+
+  .default-li &:before {
+    content: none !important;
+  }
+
+  &:last-child {margin-bottom: 0;}
+}
+
+
+.intro {
+  font-size: 1.2em; 
+  font-family: $head_ff; 
+  color: #222;
+}
+
+.aside,
+.gfield.aside {
+  font-size: 0.9em;
+  color: $text2;
+}
+
+
+.aside.aux {
+  font-size: 0.75em;
+}
+
+.ftr-section {
+  background-color: $gray_ll; 
+  padding: 1em; 
+  margin-bottom: 1.5em;
+
+  & *:first-child {margin-top: 0;}
+  & *:last-child {margin-bottom: 0;}
+
+}
+
+.text-columns {
+  column-width: 18em;
+  column-gap: 1.5em;
+}
+
+
+@include mq(momma) {
+
+  body {font-size: 1.5rem;}
+
+}
+
+@include mq(pappa) {
+
+  body {
+    font-size: 1.6rem;
+  }
+
+  // Typography Scale: 1.333 (Perfect Fourth)
+
+  h1, .h1 {
+    font-size: 2.441em; 
+    line-height: 1.4em;
+  }
+
+  h2, .h2 {
+    font-size: 1.953em; 
+    line-height: 1.4em;
+  }
+
+  h3, .h3 {
+    font-size: 1.563em; 
+    line-height: 1.4em;
+  }
+
+  h4, .h4 {
+    font-size: 1.25em; 
+    line-height: 1.4em;
+  }
+
+  h5, .h5 {
+    font-size: 1em; 
+    line-height: 1.4em;
+  }
+
+}
+
+@include mq(grampa) {
+
+  body {
+    font-size: 1.7rem;
+  }
+
+}
+
+

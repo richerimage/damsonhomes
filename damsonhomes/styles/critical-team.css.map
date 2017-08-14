@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAIA,mBAAoB,CAClB,KAAK,CAAE,IAAI,CACX,SAAS,CAAE,IAAI,CAGjB,gBAAiB,CACf,UAAU,CAAE,MAAM,CAClB,WAAW,CAAE,KAAK,CAElB,sBAAQ,CACJ,OAAO,CAAE,YAAY,CACrB,SAAS,CAAE,KAAK,CAChB,OAAO,CAAE,OAAO,CAEhB,kCAAc,CACZ,OAAO,CAAE,GAAG,CAEZ,iFACQ,CACN,OAAO,CAAE,CAAC,CCbhB,yCAA0C,CDqB5C,+BAAgC,CAE9B,IAAI,CAAE,qBAAqB,CAC3B,MAAM,CAAE,SAAS",
+"sources": ["critical-team.scss","../sass/-mixins/_mixins-master.scss"],
+"names": [],
+"file": "critical-team.css"
+}

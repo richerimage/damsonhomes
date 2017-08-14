@@ -3,6 +3,17 @@
 document.body.classList.remove('no-js');
 
 
+/**
+ * jQuery-viewport-checker - v1.8.7 - 2015-12-17
+ * https://github.com/dirkgroenen/jQuery-viewport-checker
+ *
+ * Copyright (c) 2015 Dirk Groenen
+ * Licensed MIT <https://github.com/dirkgroenen/jQuery-viewport-checker/blob/master/LICENSE>
+ */
+
+!function(a){a.fn.viewportChecker=function(b){var c={classToAdd:"visible",classToRemove:"invisible",classToAddForFullView:"full-visible",removeClassAfterAnimation:!1,offset:100,repeat:!1,invertBottomOffset:!0,callbackFunction:function(a,b){},scrollHorizontal:!1,scrollBox:window};a.extend(c,b);var d=this,e={height:a(c.scrollBox).height(),width:a(c.scrollBox).width()},f=-1!=navigator.userAgent.toLowerCase().indexOf("webkit")||-1!=navigator.userAgent.toLowerCase().indexOf("windows phone")?"body":"html";return this.checkElements=function(){var b,g;c.scrollHorizontal?(b=a(f).scrollLeft(),g=b+e.width):(b=a(f).scrollTop(),g=b+e.height),d.each(function(){var d=a(this),f={},h={};if(d.data("vp-add-class")&&(h.classToAdd=d.data("vp-add-class")),d.data("vp-remove-class")&&(h.classToRemove=d.data("vp-remove-class")),d.data("vp-add-class-full-view")&&(h.classToAddForFullView=d.data("vp-add-class-full-view")),d.data("vp-keep-add-class")&&(h.removeClassAfterAnimation=d.data("vp-remove-after-animation")),d.data("vp-offset")&&(h.offset=d.data("vp-offset")),d.data("vp-repeat")&&(h.repeat=d.data("vp-repeat")),d.data("vp-scrollHorizontal")&&(h.scrollHorizontal=d.data("vp-scrollHorizontal")),d.data("vp-invertBottomOffset")&&(h.scrollHorizontal=d.data("vp-invertBottomOffset")),a.extend(f,c),a.extend(f,h),!d.data("vp-animated")||f.repeat){String(f.offset).indexOf("%")>0&&(f.offset=parseInt(f.offset)/100*e.height);var i=f.scrollHorizontal?d.offset().left:d.offset().top,j=f.scrollHorizontal?i+d.width():i+d.height(),k=Math.round(i)+f.offset,l=f.scrollHorizontal?k+d.width():k+d.height();f.invertBottomOffset&&(l-=2*f.offset),g>k&&l>b?(d.removeClass(f.classToRemove),d.addClass(f.classToAdd),f.callbackFunction(d,"add"),g>=j&&i>=b?d.addClass(f.classToAddForFullView):d.removeClass(f.classToAddForFullView),d.data("vp-animated",!0),f.removeClassAfterAnimation&&d.one("webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend",function(){d.removeClass(f.classToAdd)})):d.hasClass(f.classToAdd)&&f.repeat&&(d.removeClass(f.classToAdd+" "+f.classToAddForFullView),f.callbackFunction(d,"remove"),d.data("vp-animated",!1))}})},("ontouchstart"in window||"onmsgesturechange"in window)&&a(document).bind("touchmove MSPointerMove pointermove",this.checkElements),a(c.scrollBox).bind("load scroll",this.checkElements),a(window).resize(function(b){e={height:a(c.scrollBox).height(),width:a(c.scrollBox).width()},d.checkElements()}),this.checkElements(),this}}(jQuery);
+
+
 // lazyload.js (c) Lorenzo Giuliani <img src="blank.gif" data-src="my_image.png" width="600" height="400" class="lazy">
 // ! function(a) {
 //     function e(a, b) {
@@ -43,51 +54,63 @@ document.body.classList.remove('no-js');
 
 
 jQuery(document).ready(function($) {
-  $('body').removeClass('no-jq');
-
+  $('body').removeClass('no-jq').addClass('jq-loaded');
 
   var ww = document.body.clientWidth;
+
   $(document).ready(function($) {
-    $('.dna-nav li a').each(function() {
-      if ($(this).next().length > 0) {
-        jQuery(this).addClass('parent');
-      };
-    })
+    // $('.dna-nav li a').each(function() {
+    //   if ($(this).next().length > 0) {
+    //     jQuery(this).addClass('parent');
+    //   };
+    // })
 
     $('#hamburger_menu').click(function(e) {
       e.preventDefault();
       $('#hamburger_menu .bar').toggleClass('active');
       $('.dna-nav').toggleClass('active');
     });
-    adjustMenu();
+
+    $('#side_menu_trigger').click(function(e) {
+      e.preventDefault();
+      $('#hamburger_menu_2 .bar').toggleClass('active');
+      $('#fly_out_menu').toggleClass('active');
+    });
+
+    $('#close_fly_out').click(function(e) {
+      e.preventDefault();
+      $('#fly_out_menu').removeClass('active');
+      $('#hamburger_menu_2 .bar').removeClass('active');
+    });
+    // adjustMenu();
   })
-  $(window).bind('resize orientationchange', function() {
-    ww = document.body.clientWidth;
-    adjustMenu();
-  });
-  var adjustMenu = function() {
-    if (ww < 768) {
-      // if 'more' link not in DOM, add it
-      if (!$('.more')[0]) {
-        $('<div class="more">&nbsp;</div>').insertBefore($('.parent')); 
-      }
-      $('.dna-nav li').unbind('mouseenter mouseleave');
-      $('.dna-nav li a.parent').unbind('click');
-      $('.dna-nav li .more').unbind('click').bind('click', function() {
-        $(this).parent('li').toggleClass('hover');
-      });
-    } else if (ww >= 768) {
-      // remove .more link in desktop view
-      $('.more').remove();
-      $('.dna-nav').show();
-      $('.dna-nav li').removeClass('hover');
-      $('.dna-nav li a').unbind('click');
-      $('.dna-nav li').unbind('mouseenter mouseleave').bind('mouseenter mouseleave', function() {
-        // must be attached to li so that mouseleave is not triggered when hover over submenu
-        $(this).toggleClass('hover');
-      });
-    }
-  }  	
+  // $(window).bind('resize orientationchange', function() {
+  //   ww = document.body.clientWidth;
+  //   adjustMenu();
+  // });
+  // var adjustMenu = function() {
+  //   if (ww < 768) {
+  //     // if 'more' link not in DOM, add it
+  //     if (!$('.more')[0]) {
+  //       $('<div class="more">&nbsp;</div>').insertBefore($('.parent')); 
+  //     }
+  //     $('.dna-nav li').unbind('mouseenter mouseleave');
+  //     $('.dna-nav li a.parent').unbind('click');
+  //     $('.dna-nav li .more').unbind('click').bind('click', function() {
+  //       $(this).parent('li').toggleClass('hover');
+  //     });
+  //   } else if (ww >= 768) {
+  //     // remove .more link in desktop view
+  //     $('.more').remove();
+  //     $('.dna-nav').show();
+  //     $('.dna-nav li').removeClass('hover');
+  //     $('.dna-nav li a').unbind('click');
+  //     $('.dna-nav li').unbind('mouseenter mouseleave').bind('mouseenter mouseleave', function() {
+  //       // must be attached to li so that mouseleave is not triggered when hover over submenu
+  //       $(this).toggleClass('hover');
+  //     });
+  //   }
+  // }  	
 
   // Start > DNA Reveal JS
 	$('.dh-reveal-wrap').on('click', 'a.reveal', function(e) {
@@ -157,7 +180,7 @@ jQuery(document).ready(function($) {
 
   // Tabs - START
 
-$('.tabs a').click(function(e){
+  $('.tabs a').click(function(e){
     e.preventDefault();
       var $this = $(this),
         tabgroup = '#'+$this.parents('.tabs').data('tabgroup'),
@@ -189,11 +212,6 @@ $('.tabs a').click(function(e){
   }
 
 
-
-
-
-
-
   $( document ).ready(function() {
     moveThis();
   });
@@ -212,22 +230,13 @@ $('.tabs a').click(function(e){
   }
 
 
+  // Add Classes ect
+
+  $('.ftr-section').addClass('clearfix');
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+// $('html').toggleClass('flexbox no-flexbox');
 
 
 

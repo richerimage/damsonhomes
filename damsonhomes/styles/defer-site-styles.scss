@@ -1,0 +1,200 @@
+/*-------------------------------------------------------------
+
+Deferred Global Styles: TABLE OF CONTENTS:
+
+# links and inputs
+# bits
+# sections
+# header
+# main nav
+
+# footer
+
+
+# key frames
+
+--------------------------------------------------------------*/
+@import "../sass/-variables/variables-site";
+@import "../sass/-mixins/mixins-master";
+
+.badge {
+  background-color: $gray_l;
+  padding: 0.5em 1em;
+  color: $brand1;
+  display: inline-block;
+  margin-bottom: -1px;
+  border-radius: 0.5em 0 0 0;
+  font-style: italic;
+}
+
+.badge-coming-soon {
+  color: $green_d1;
+}
+
+.badge-sold-out {
+  color: $alert;
+}
+ 
+.site-meta {
+
+  text-align: center;
+  padding: 0.5em 0;
+  border: solid 1px $gray_l;
+  border-width: 1px 0;
+  margin: 0 0 1em;
+  display: block;
+  font-size: 0.8em;
+
+  .site-hero & li {
+    margin: 0.5em;
+    vertical-align: middle;
+  }
+
+  & .icon {
+
+    color: $brand1;
+
+  }
+
+  & .button .icon {
+    @include square(2em);
+    margin-right: 0.5em;
+  }
+
+}
+
+.action-box a {
+  display: inline-block;
+  width: 45%;
+  max-width: 18em;
+  margin-right: 0.5em;
+  width: calc(50% - 0.5em);
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.tab-plots {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+.plot-availability {
+
+  & .block-list li.available {
+  padding: 0;
+  border: none;
+
+    & .block-link {
+      padding: 0.5em; border-color: $gray_l;
+    }
+
+  }
+
+  & .block-list li.sstc,
+  & .block-list li.sold {
+    border-color: transparent;
+  }
+
+  & a.block-link:hover,
+  & a.block-link:focus {
+    background-color: white;
+    border-color: $green;
+  }
+
+  & .dh-plot-number,
+    .dh-plot-value {
+    color: $text1;
+    font-weight: bold;
+  }
+
+  & .dh-plot-value:before {
+    content: " // ";
+    color: $brand1;
+    font-weight: normal;
+  }
+
+  & .dh-plot-desc {
+    font-style: italic;
+  }
+
+  & .available .icon {
+    color: $green;
+  }
+
+  & .sstc .icon {
+    color: $alert;
+  }
+
+  & .sold .icon {
+    color: $brand1_d1;
+  }
+
+}
+
+.spec-img {
+  margin-bottom: 1em;
+}
+
+.map-wrap {
+
+  padding: 1em;
+
+  & .site-address {
+
+    color: $text1;
+
+    & span {
+
+      &:after {
+        content: ", "
+      }
+
+      &:last-child:after {
+
+        content: "";
+
+      }
+
+      &.number:after {
+        content: " ";
+      }
+
+    }
+
+  }
+
+}
+
+.dh-social-share-box {
+  margin-bottom: 1.5em;
+}
+
+
+@include mq(momma) {
+  .site-meta {
+    text-align: left;
+    font-size: 0.7em;
+  }
+  .dh-social-share-box {
+    margin-bottom: 0;
+  }
+  .hero-footer {
+    margin-top: 2em;
+  }
+}
+
+@include mq(momma) {
+  .site-meta {
+    font-size: 0.8em;
+  }
+}
+
+@include mq(grampa) {
+  .site-meta {
+    font-size: 0.9em;
+    margin-bottom: 2em;
+  }
+}

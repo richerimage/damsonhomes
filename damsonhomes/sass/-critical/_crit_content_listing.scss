@@ -1,0 +1,34 @@
+
+
+.headline-area {
+  
+  border-bottom: solid 2px $gray_l;
+  padding-bottom: 1em;
+  margin-bottom: 1em;
+
+   & * {margin: 0;}
+
+   & .pre-head,
+   & .sub-head {
+    font-family: $head_ff;
+    font-style: italic;
+    font-weight: normal;
+    color: $gray_m;
+   }
+   
+   & .sub-head {
+    color: $gray_d;
+    font-style: normal;
+   }
+
+}
+
+.has-subhead .headline-wrapper .headline,
+.has-subhead .headline-wrapper .sub-head {display: inline;}
+.has-subhead .headline-wrapper .headline {padding-right: 0.35em;}
+
+@import "-crit-modules/content_meta";
+
+@import "-crit-modules/cards";
+
+

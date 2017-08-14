@@ -1,0 +1,49 @@
+/*-------------------------------------------------------------
+
+Critical Listings
+
+
+# 
+
+--------------------------------------------------------------*/
+@import "../sass/-variables/variables-site";
+@import "../sass/-mixins/mixins-master";
+
+.listings {
+
+  clear: both;
+
+}
+
+
+.posts-navigation {
+  display: block;
+  width: 100%;
+  clear: both;
+  order: 1000;
+}
+
+.card-social {
+  opacity: 0;
+}
+
+@include mq(toddler) {
+
+  .listings {
+
+    text-align: center;
+
+    & .card {
+      text-align: left;
+      width: 45%;
+      max-width: calc(280px - 1em);
+      display: inline-block;
+      margin: 0.5em;
+      padding: 0;
+      float: none;
+      vertical-align: top;
+    }
+  }
+
+}
+

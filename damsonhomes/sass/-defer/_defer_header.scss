@@ -1,0 +1,82 @@
+
+@media only screen and (max-width: 360px) {
+  .dna-social-wrapper {display: none;}
+}
+
+.dna-social-wrapper {
+  animation-name: fadeIn;
+  animation-duration: 1000ms;
+  animation-delay: 500ms;
+  animation-fill-mode: both;
+  vertical-align: middle;
+  overflow: visible;
+  height: auto;
+  list-style: none;
+  text-align: left;
+  float: right;
+  font-size: 1.25em;
+  margin: 0.75em 0;
+  line-height: 1;
+
+
+  & li {
+    margin: 0 0 0 0.25em;
+    display: block;
+    float: left;
+  }
+
+  & a {
+
+    color: $text2; 
+    display: block; 
+    @include square(1em);
+    background-color: white;
+    text-align: center;
+    border: solid 1px $gray_l;
+    position: relative;
+    @include trans;
+
+    &:hover,
+    &:focus {
+      @include grow;
+      opacity: 0.8;
+    }
+
+    & .icon {
+      @include square(0.6em);
+      position: absolute;
+      top: 0.175em;
+      left: 0.175em;
+    }
+
+  }
+
+}
+
+@include mq(toddler) {
+  .dna-social-wrapper li {
+    margin-left: 0.5em;
+  }
+
+}
+
+@include mq(momma) {
+  .dna-social-wrapper {
+    font-size: 1.75em;
+
+    & a {
+
+      color: $text2;
+      background-color: transparent;
+      text-align: center;
+      border-color: transparent;
+
+      &:hover,
+      &:focus {
+        background-color: white;
+        border-color: $gray_l;
+      }
+    }
+  }
+
+}

@@ -1,0 +1,35 @@
+
+.entry-meta {
+
+  animation-name: fadeIn;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  vertical-align: middle;
+
+  li {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 0.25em;
+    line-height: 2em;
+
+    .card.post-card & {padding-left: 0;}
+
+    &::last-child {
+      margin-right: 0;
+    }
+
+    &.posted-on:after {
+      content:"//";
+      color: $brand2;
+      margin-left: 0.25em;
+    }
+
+    &.author img {
+      @include square(2em);
+      border-radius: 100%;
+      display: block;
+      float: right;
+      margin-left: 0.25em;
+    } 
+  }
+}

@@ -1,0 +1,48 @@
+.nav-area + section {
+  padding-top: 2em !important; 
+}
+
+.hero-area {
+  padding: 2em 0;
+  position: relative;
+
+  &:before {
+    position: absolute;
+  }
+}
+
+
+.content-area {
+  padding: 2em 0;
+}
+
+
+@include mq(goldiePlus) {
+  .nav-area + section {
+    padding-top: 3em !important; 
+  }
+
+  .hero-area {
+    padding-bottom: 3em;
+  }
+
+  .content-area {
+    padding: 3em 0;
+  }
+
+}
+
+@include mq(grandma) {
+  .nav-area + section {
+    padding-top: 4em !important; 
+  }
+
+  .hero-area {
+    padding-bottom: 4em;
+  }
+
+  .content-area {
+    padding: 3em 0;
+  }
+
+}

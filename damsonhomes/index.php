@@ -12,44 +12,39 @@
  * @package Damson_Homes
  */
 
-get_header(); ?>
+get_header(); 
+do_action('dh_after_header'); ?>
+<section id="content_area" class="content-area">
+  <?php do_action('dh_before_main_content'); ?>
+  <main id="main" class="row main-content" role="main">
+    <?php do_action('dh_main_content_top');
+    if ( have_posts() ) {
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+      /* Start the Loop */
+      while ( have_posts() ) : the_post();
 
-		<?php
-		if ( have_posts() ) :
+        /*
+         * Include the Post-Format-specific template for the content.
+         * If you want to override this in a child theme, then include a file
+         * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+         */
+        get_template_part( 'template-parts/content', get_post_format() );
 
-			if ( is_home() && ! is_front_page() ) : ?>
-				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-				</header>
+        the_posts_navigation();
 
-			<?php
-			endif;
+      endwhile;
 
-			/* Start the Loop */
-			while ( have_posts() ) : the_post();
+    } else {
 
-				/*
-				 * Include the Post-Format-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_format() );
+      get_template_part( 'template-parts/content', 'none' );
 
-			endwhile;
+    } 
 
-			the_posts_navigation();
-
-		else :
-
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif; ?>
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
+    do_action('dh_main_content_bottom'); ?>
+  </main>
+  <?php do_action('dh_after_main_content'); ?>
+</section><!-- #content_area -->
 
 <?php 
+do_action('dh_before_footer');
 get_footer();

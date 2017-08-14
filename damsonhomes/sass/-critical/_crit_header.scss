@@ -1,0 +1,103 @@
+.header-area {
+  position: relative;
+  z-index: 1;
+}
+
+.header {
+  padding: 1em;
+}
+
+.site-title {
+
+  margin: 0.5em 0 0.5em 2.25em;
+  font-size: 1.5em;
+  font-family: "times new roman", serif;
+  line-height: 1em;
+  float: left;
+
+  & a {
+    color: $brand1; 
+    font-weight: normal; 
+    text-transform: lowercase; 
+    text-decoration: none; 
+    line-height: 1;
+  }
+
+  & span.homes {
+    color: $brand2;
+  }
+
+
+}
+
+.dna-social-wrapper {
+  opacity: 0; 
+  height: 0; 
+  overflow: hidden;
+  margin: 0;
+}
+
+.dna-logo-width {
+  width: 2.5em;
+  margin-right: 0;
+  position: absolute;
+  top: 0.5em;
+}
+
+.dna-logo a {
+  display: block; 
+  padding-top: 162.602%;
+  margin-top: -162.602%;
+}
+
+@include mq(toddler) {
+  .site-title {
+    margin: 0.5em 0 0.5em 2.2em;
+    font-size: 1.5em;
+  }
+  .dna-logo-width { 
+    width: 2.2em; 
+    top: 0.7em;
+  }
+}
+
+
+@include mq(goldiePlus) {
+
+  .site-title {margin-left: 0;}
+
+  .dna-logo-width {
+    width: 6rem; 
+    margin-right: 0;
+    margin-left: -3rem;
+    left: 50%;
+    top: 1.575em;
+  }
+
+}
+
+@include mq(momma) {
+
+  .header {
+    padding: 1em 2em;
+  }
+
+  .site-title {
+    font-size: 1.75em;
+    margin: 0.75em 0;
+  }
+
+  .dna-logo-width {
+    width: 5em;
+    margin-left: -2.5em;
+    top: 1em;
+  }
+
+}
+
+@include mq(grandma) {
+  .dna-logo-width {
+    width: 6em;
+    margin-left: -3em;
+  }
+}

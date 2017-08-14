@@ -1,0 +1,23 @@
+// media
+@import "-crit-modules/slick";
+
+// @include mq(grampa) {
+
+  .slider-breakout {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin: 0 -50vw 1.5em;
+    text-align: center;
+  }
+
+// }
+
+
+.caption {
+  padding: 0.25em;
+  margin: 0;
+
+  &:last-child * {margin-bottom: 0;}
+}

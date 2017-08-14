@@ -1,0 +1,43 @@
+.validation_error {
+  color: $alert;
+  line-height: 1.5em;
+  margin-bottom: 0.5em;
+  background: yellow;
+  padding: 0.25em 0.5em;
+}
+
+.validation_message {
+  color: $alert;
+  font-style: italic;
+}
+
+
+.gform_confirmation_wrapper {
+
+  padding: 1em;
+  text-align: center;
+  margin-bottom: 1.5em;
+
+  & .button {
+    padding: 1.5em;
+
+    & .icon {
+      @include square(3em);
+    }
+  }
+
+  & .brand1 {
+    font-family: $main_ff;
+    font-weight: bold;
+    background-color: white;
+    @include square(1.5em);
+    display: inline-block;
+    border-radius: 2px;
+    font-size: 1em;
+    text-align: center;
+    line-height: 1.5em;
+    border: solid 1px $brand1;
+  }
+
+
+}

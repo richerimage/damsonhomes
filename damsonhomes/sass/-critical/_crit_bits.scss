@@ -1,0 +1,111 @@
+/* Text meant only for screen readers. */
+
+.screen-reader-text,
+.srt { 
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+
+.hide-critical {
+  opacity: 0;
+  @include trans;
+}
+
+.ntm {
+  margin-top: 0;
+}
+
+.nbm {
+  margin-bottom: 0;
+}
+
+
+
+.mb {
+  margin-bottom: 1em;
+}
+
+.mb-large {
+  margin-bottom: 1.5em;
+}
+
+.mb-small {
+  margin-bottom: 0.5em;
+}
+
+.box {border: solid 1px $gray_l;}
+
+.ilb {
+  display: inline-block;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.brand1 {
+  color: $brand1;
+}
+
+.brand2 {
+  color: $brand2;
+}
+
+.divider-bottom {
+  border-bottom: dotted 1px $gray_l;
+  margin-bottom: 1em;
+}
+
+
+.alignleft {float: left; margin-right: 1em;}
+.alignright {float: right; margin-left: 1em;}
+.aligncenter {margin: 0 auto;}
+
+svg.icon {
+  @include square(1em);
+}
+
+
+.video-thumb {
+  border: solid 5px white;
+  display: block;
+
+  & .play-button {
+    display: none;
+  }
+}
+
+
+.breakout {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin: 0 -50vw 1.5em;
+  text-align: center;
+
+  & img {
+    width: auto;
+    height: auto;
+    display: inline-block;
+  }
+}
+
+#say_hello {
+  opacity: 0;
+}
+
+.has-icon {
+  position: relative;
+  padding-left: 2em;
+
+  & .icon {
+    position: absolute;
+    @include square(1.5em);
+    left: 0;
+    color: $brand2;
+  }
+}

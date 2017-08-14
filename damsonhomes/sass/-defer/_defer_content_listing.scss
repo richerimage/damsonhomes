@@ -1,0 +1,167 @@
+
+// @import "-defer-modules/content_meta";
+
+// @import "-defer-modules/cards";
+
+@import "-defer-modules/pagation";
+
+
+@include mq(toddler) {
+
+  .listings {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: center;
+
+    & .card {
+      flex: 1 1 calc(50% - 1em);
+    }
+
+    & .block-link {
+      height: 100%;
+    }
+
+    & .read-on {
+      color: $brand1;
+      font-weight: bold;
+      font-style: italic;
+    }
+
+  }
+
+  .flexbox .listings .card {
+    max-width: calc(50% - 1em);
+  }
+
+}
+
+
+@include mq(goldie) {
+
+  .listings .card {
+    flex: 1 1 calc(33.333% - 1em);
+  }
+
+}
+
+
+@include mq(grampa) {
+
+  .listings .card {
+    flex: 1 1 calc(25% - 1em);
+  }
+
+}
+
+
+.card-social {
+
+  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5em;
+
+  & a.block-link {
+    align-items: center; 
+    justify-content: center; 
+    padding: 2em; 
+    text-align: center;
+    border-width: 0;
+  }
+
+  & .dh-svg {
+    width: 7em; 
+    height: 7em; 
+    display: inline-flex;
+  }
+
+  & .dh-svg svg { 
+    width: 100%; 
+    height: 100%;
+  }
+
+  & h5 {
+    color: white; 
+    text-align: center; 
+    margin-top: 2em;
+  }
+
+  & .fb-cta {
+    width: 66%;
+    max-width: 16em;
+    display: inline-block;
+  }
+
+}
+
+
+.listings .card   {order: 10;}
+.listings .card-1 {order: 1;}
+.listings .card-2 {order: 2;}
+.listings .card-3 {order: 3;}
+.listings .card-4 {order: 4;}
+.listings .card-5 {order: 5;}
+.listings .card-6 {order: 6;}
+.listings .card-7 {order: 7;}
+.listings .card-8 {order: 8;}
+.listings .card-9 {order: 9;}
+.listings .card-10 {order: 10;}
+.listings .card-11 {order: 11;}
+.listings .card-11 {order: 12;}
+
+.listings .card-facebook  {order: 2;}
+.listings .card-instagram   {order: 5;}
+.listings .card-twitter {order: 11;}
+
+.listings .card-subscribe {order: 8;}
+
+
+.card-facebook a.block-link {
+  background-color: $fb_brand1; 
+  color: white;
+}
+
+.card-twitter a.block-link {
+  background-color: $tw_brand1; 
+  color: white;
+}
+
+.card-twitter h5,
+.card-instagram h5 {line-height: 2.5em;}
+
+.card-instagram a.block-link {
+  background-image: linear-gradient(-135deg,#1400c8,#b900b4,#f50000);}
+
+.card-subscribe {
+
+  text-align: center;
+  
+  & a.block-link {
+    background-color: $brand1; 
+    color: white;
+  }
+
+}
+
+
+.card-social.visible {
+  animation-duration: 500ms;
+  animation-delay: 250ms;
+  animation-fill-mode: both;
+  animation-name: zoomIn;
+  opacity: 1;
+
+}
+
+
+#say_hello {
+  color: $brand1_d3;
+  animation-name: jackInTheBox;
+  animation-duration: 1000ms;
+  animation-fill-mode: both;
+  animation-delay: 500ms
+}
+

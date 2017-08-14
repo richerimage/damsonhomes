@@ -1,0 +1,19 @@
+
+/* Slider */
+
+.meta-wrap {
+  padding-top: 0.75em;
+  border-top: dotted 1px $gray_l;
+  margin-top: 0.25em;
+}
+
+.entry-meta {
+  opacity: 0;
+  margin: 0.25em 0.5em 0.25em 0;
+  display: inline-block;
+
+  & li {
+    margin: 0;
+  }
+
+}

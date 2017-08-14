@@ -1,0 +1,42 @@
+.pagation-wrap {
+  margin-top: 2em;
+  padding: 0 1.5em;
+}
+
+.pagation-nav {
+  background: url($xv) $body;
+  padding: 1em 1em 0;
+  border: solid 1px $gray_l;
+
+  & .page-numbers {
+    display: inline-block;
+    padding: 0.25em 0.5em;
+    color: $text1;
+    margin-bottom: 1em;
+
+  }
+
+  & a.page-numbers {
+    background: white;
+    text-decoration: none;
+    border: solid 1px $gray_m;
+    border-radius: 2px;
+
+    &:hover,
+    &:focus {
+      background-color: $brand2;
+      border-color: $brand1_d2;
+      color: white;
+    }
+  }
+
+}
+
+.pagation-intro {
+  font-weight: bold;
+  font-style: italic;
+  color: $brand1;
+}  
+
+
+

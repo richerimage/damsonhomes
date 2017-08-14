@@ -1,0 +1,175 @@
+/*-------------------------------------------------------------
+
+Critical Front Page Styles: TABLE OF CONTENTS:
+
+# links and inputs
+# typography
+# bits
+# grid
+# sections
+# header
+# main nav
+
+# footer
+
+# key frames
+
+--------------------------------------------------------------*/
+@import "../sass/-variables/variables-site";
+@import "../sass/-mixins/mixins-master";
+
+.sites-area {
+
+  padding: 2em 0;
+
+  & .slick-slider {
+    margin-top: 1em;
+
+    & .slick-list {
+      padding: 1em 0.5em;
+    }
+  }
+
+  & .card-site {
+    padding: 0 0.5em;
+  }
+
+  & .slick-dots {
+    width: calc(100% - 6em);
+    margin-top: -1.5em;
+  }
+
+  & .slick-prev, 
+  & .slick-next {
+    bottom: -1em;
+  }
+
+  & .slick-next {
+    right: 1em;
+  }
+
+  & .slick-prev {
+    left: 1em;
+  }
+
+}
+
+.hero-footer {
+  margin-top: 1em;
+}
+
+
+.latest-posts {
+  margin-top: 2em;
+}
+
+
+
+.front-card {
+
+  margin-bottom: 1em;
+
+  & .block-link {
+    padding: 0.5em;
+    max-width: 35em;
+
+    & *:last-child {
+      margin-bottom: 0;
+    }
+
+    & img {
+      float: left;
+      width: 64px;
+      margin-right: 1em;
+      display: block;
+    }
+  }
+}
+
+
+
+
+.feature-links {
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 2em;
+  margin-top: 2em;
+  border-top: solid 1px $gray_ll;
+
+  & *:last-child {
+    margin: 0;
+  }
+
+  & .block-link {
+    margin: 0.5em 0.5em 1em;
+    display: inline-block;
+    width: 8em;
+    padding: 0.25em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    & p {
+      font-weight: bold;
+      font-size: 0.8em;
+      line-height: 1.2em;
+      margin-top: 0.25em;
+      color: $brand1;
+    }
+  }
+}
+
+
+@include mq(momma) {
+
+  .site-main .headline-area {
+    margin-bottom: 2em;
+  }
+
+  .site-main .page {
+    display: flex;
+    flex-wrap: wrap;
+
+    & .post-content,
+    & .content-right {
+      display: flex;
+      flex-direction: column;
+
+
+      & *:last-child {
+        margin-top: auto;
+        margin-bottom: 0;
+      }
+
+    }
+
+
+
+  }
+
+  .latest-posts {
+    margin-top: 0;
+  }
+
+}
+
+
+@include mq(pappa) {
+
+  .sites-area .slick-next {
+    right: -2em;
+    margin-top: 1em;
+  }
+
+  .sites-area .slick-prev {
+    left: -2em;
+    margin-top: 1em;
+  }
+
+  .hero-footer {
+    margin-top: 0em;
+  }
+
+}

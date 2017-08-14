@@ -1,0 +1,62 @@
+/* Text meant only for screen readers. */
+
+a {
+  @include trans;
+
+  &.block-link:hover,
+  &.block-link:focus {
+    border-color: $gray_m;
+    @include grow;
+  }
+
+} // end 'a'
+
+
+input[type],
+textarea {
+  &:focus {
+    color: $text1;
+    border-color: $brand1;
+    outline: none;
+  }
+}
+
+a.button,
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  background-image: linear-gradient(-180deg, $brand2 0, $brand2_d2 100%);
+  text-shadow: 0 -1px 0.5px rgba(0,0,0,0.25);
+
+  &:hover, &:focus {
+    color: white;
+    background-color: $brand2_d1;
+    background-image: linear-gradient(-180deg, $brand2_l1 0, $brand2 50%, $brand2_d2 100%);
+  }
+
+  &:active {
+    color: white;
+  }
+}
+
+a.sub,
+input[type="reset"] {
+  background-image: linear-gradient(-180deg, $gray_m 0, $gray_d 100%);
+
+  &:hover,
+  &:focus {
+    background-image: linear-gradient(-180deg, $gray_l 0, $gray_m 50%, $gray_d 100%);
+  }
+}
+
+
+a.cta,
+input[type="submit"] {
+  background-image: linear-gradient(-180deg, $brand1 0, $brand1_d2 100%);
+
+  &:hover,
+  &:focus {
+    background-image: linear-gradient(-180deg, $brand1_l1 0, $brand1 50%, $brand1_d2 100%);
+  }
+}

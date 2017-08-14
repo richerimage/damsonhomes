@@ -1,0 +1,19 @@
+body {
+  background: url($xv) $body;
+  -webkit-font-smoothing: antialiased;
+}
+
+
+// header
+@import "defer_header";
+
+// Hero
+@import "defer_hero";
+
+// Content
+@import "defer_content";
+
+// Footer
+@import "defer_footer";
+
+

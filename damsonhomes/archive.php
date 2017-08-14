@@ -7,44 +7,70 @@
  * @package Damson_Homes
  */
 
-get_header(); ?>
+get_header(); 
 
-	<section id="primary" class="content-area">
-		<main id="main" class="site-main container" role="main">
+global $wp;
 
-		<?php if ( have_posts() ) : ?>
+$counter 	= 0; 
 
-			<header class="page-header">
-				<?php
-					the_archive_title( '<h1 class="page-title">', '</h1>' );
-					the_archive_description( '<div class="archive-description">', '</div>' );
-				?>
-			</header><!-- .page-header -->
+$type 	 	= 'page';
 
-			<?php
-			/* Start the Loop */
-			while ( have_posts() ) : the_post();
+$url 			= home_url('/') . $wp->request;
 
-				/*
-				 * Include the Post-Format-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-				 */
-				
-				get_template_part( 'template-parts/content-archive', get_post_format() );
+?>
 
-			endwhile;
+<?php if ( have_posts() ) : ?>
 
-			the_posts_navigation();
+<section id="hero_area" class="hero-area hero-fly-in">
+	<div class="row hero-box">
+		<div class="hero-left six columns">
+			<header class="headline-area">
+				<?php the_archive_title( '<h1 class="headline archive-headline h2">', '</h1>' ); ?>
+			</header>
+				<div class="post-content archive-description">
+					<?php the_archive_description(); ?>
+					<p>Join <span class="brand1"><strong>over 4,200</strong></span> fellow readers by <a href="/subscribe/" target="_blank">subscribing today</a>!</p>
+			</div>
+			<?php dh_social_share($type, $url); ?>
+		</div>
+	</div><!-- .page-header -->
+</section>
 
-		else :
+<section id="primary" class="content-area">
+	<main id="main_content" class="main-content row listings" role="main">
 
-			get_template_part( 'template-parts/content', 'none' );
+		<?php /* Start the Loop */ while ( have_posts() ) : the_post();
 
-		endif; ?>
+			$counter ++;
 
-		</main>
+			$classes = array('columns', 'card', 'card-' . $counter);
 
-	</section>
+			/*
+			 * Include the Post-Format-specific template for the content.
+			 * If you want to override this in a child theme, then include a file
+			 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+			 */
+			
+			//get_template_part( 'template-parts/content-archive', get_post_format() ); ?>
+
+			<article id="post-<?php the_ID(); ?>" <?php post_class($classes); ?>>
+				<a class="block-link xv" href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark">
+					<?php get_template_part( 'templates/template-parts/modules/card-post', get_post_format() ); ?>
+				</a>
+			</article><!-- #post-## -->
+
+		<?php endwhile; 
+
+	else :
+
+		get_template_part( 'template-parts/content', 'none' );
+
+	endif; ?>
+
+	</main>
+
+	<?php $class = 'row hide-critical'; dh_pagation($class); ?>
+
+</section>
 
 <?php get_footer();

@@ -12,9 +12,9 @@
 global $post; ?>
 
 	<footer id="colophon" class="footer-area" role="contentinfo">
-		<div class="footer container aside">
+		<div class="footer row aside">
 
-      <div class="left-menus columns">
+      <div class="left-menus three columns">
         <h5 class="ntm">Current New Home Sites</h5>
         <?php if (false === ($live_site_query = get_transient( 'live_site_query' ))) {
           
@@ -39,11 +39,11 @@ global $post; ?>
           echo "<ul class=\"no-style\">\n";
           while ( $live_site_query->have_posts() ) {
             $live_site_query->the_post();
-            echo "    <li><a href=\"" . get_the_permalink() . "\" title=\"" . get_the_title() . "\">" . get_post_meta($post->ID, 'site-name', true) . "</a></li>\n";
+            echo "    <li><a href=\"" . get_the_permalink() . "\" title=\"" . get_the_title() . "\">" . get_post_meta($post->ID, 'dh_site_name', true) . "</a></li>\n";
           }
           echo "  </ul>\n";
         } else {
-          echo "<p class=\"nbm\">Sorry, there are no available New Home developments at this moment. <a href=\"/subscribe/\">Subscribe to get priority notification</a> of our next release which is coming soon.</p>\n";
+          echo "<p class=\"nbm\">Sorry, there are no available New Home developments at this moment. <a href=\"/coming-soon/\">Visit the Coming Soon Page</a> to see our forthcoming new home developments.</p>\n";
         }
         
         wp_reset_postdata(); // Restore original Post Data
@@ -79,17 +79,17 @@ global $post; ?>
         if ( $past_site_query->have_posts() ) {
 
           echo "<ul class=\"no-style\">\n".
-               "    <li><a href=\"/portfolio/\" title=\"Past New Home Developments Portfolio\">Portfolio Homepage</a></li>\n";
+               "    <li><a href=\"/portfolio/\" title=\"Past New Home Developments Portfolio\"><strong>Portfolio Homepage</strong></a></li>\n";
 
           while ( $past_site_query->have_posts() ) {
             $past_site_query->the_post();
-            echo "    <li><a href=\"" . get_the_permalink() . "\" title=\"" . get_the_title() . "\">" . get_post_meta($post->ID, 'site-name', true) . "</a></li>\n";
+            echo "    <li><a href=\"" . get_the_permalink() . "\" title=\"" . get_the_title() . "\">" . get_post_meta($post->ID, 'dh_site_name', true) . "</a></li>\n";
 
             $counter++;
 
-            if( $counter === 8 ) { 
+            if( $counter === 5 ) { 
               echo 
-              "    <span class=\"dna-reveal-wrap\">\n" .
+              "    <span class=\"dh-reveal-wrap\">\n" .
               "    <li><a href=\"#\" class=\"reveal\" title=\"See the rest of our past developements\">More...</a></li>\n" .
               "    <span class=\"reveal-box\" style=\"display: none;\">\n";
 
@@ -105,7 +105,7 @@ global $post; ?>
 
       </div>
 
-      <div class="right-menus columns">
+      <div class="left-center-menus three columns">
 
         <h5 class="ntm">New Homes in&hellip;</h5>
         <ul class="no-style">
@@ -130,17 +130,35 @@ global $post; ?>
         </ul>
       </div>
 
-      <div class="footer-contact columns">
+      <div class="footer-right six columns">
         <h5 class="ntm">Be the 1st to hear about our latest New Home developments</h5>
         <p><a href="/subscribe/">Subscribe Today</a></p>
         <h5>Get in Touch</h5>
         <p><span>0121 709 0539</span> <span><?php echo do_shortcode('[email mailto="enquiries@damsonhomes.net"]')?></span></p>
-        <address class="grmb">Damson Homes, Damson Court, Westley Road Birmingham B27 7UQ</address>
+        <address class="grmb">Damson Homes, Damson Court, 87 Westley Road, Birmingham, B27 7UQ</address>
         <p><a href="/privacy-policy/">Privacy Policy</a> | <a href="/terms/">Terms</a></p>
       </div>
 
 		</div><!-- .footer.page -->
 	</footer><!-- #colophon -->
+
+
+  <aside class="dna-credits-box row">
+    <div class="dna-copyright-date six columns aside aux">
+      <p>© 2004&ndash;<?php echo date('Y') ; ?> Damson Homes</p>
+    </div>
+    <div class="dna-studio-link six columns aside aux">
+      <p><a href="/privacy/" target="_blank">Privacy</a> | <a href="/terms/" target="_blank">Terms and Conditions</a></p>
+    </div>
+  </aside>
+
+  <aside class="row legal-footer">
+    <div class="dh-legal-footer twelve columns aside aux">
+      <p>Damson Properties Ltd &amp; Damson New Build Ltd t/a <span class="ilb">Damson Homes</span><br>
+      Registered Address: Shah &amp; Co, Cash’s Business Centre, Widdrington Road, Coventry, CV1 4PB<br>
+      Damson Properties Ltd Reg No: 04888424 | Damson New Build Ltd Reg No: 06436944</p>
+    </div>
+  </aside>
 
 <?php wp_footer(); ?>
 

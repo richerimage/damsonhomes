@@ -7,14 +7,29 @@
   @else if $break == toddler {
     @media only screen and (min-width: 501px) { @content; }
   }
+  @else if $break == goldie {
+    @media only screen and (min-width: 635px) { @content; }
+  }
+  @else if $break == goldiePlus {
+    @media only screen and (min-width: 736px) { @content; }
+  }
   @else if $break == momma{
     @media only screen and (min-width: 768px) { @content; }
+  }
+  @else if $break == grandma {
+    @media only screen and (min-width: 960px) { @content; }
   }
   @else if $break == pappa {
     @media only screen and (min-width: 1024px) { @content; }
   }
   @else if $break == grampa {
     @media only screen and (min-width: 1300px) { @content; }
+  }
+  @else if $break == grampaPlus {
+    @media only screen and (min-width: 1600px) { @content; }
+  }
+  @else if $break == hodor {
+    @media only screen and (min-width: 2000px) { @content; }
   }
 }
 
@@ -36,7 +51,7 @@
           animation-delay: $val;
 }
 
-@mixin grow ($valx: 1.15, $valy: 1.15) {
+@mixin grow ($valx: 1.05, $valy: 1.05) {
 
   -webkit-transform: scale($valx , $valy);
           transform: scale($valx , $valy);
