@@ -10,7 +10,8 @@ function dh_conversion_content() {
     'register', 
     'reserve',  
     'subscribe',
-    'viewing'
+    'viewing',
+    'badh'
   );
 
 
@@ -83,7 +84,8 @@ function dh_load_critical_conversion_css() {
     'register', 
     'reserve',  
     'subscribe',
-    'viewing'
+    'viewing',
+    'badh'
   );
 
   if(is_page($pages)) { 

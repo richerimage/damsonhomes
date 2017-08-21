@@ -34,7 +34,8 @@ require_once get_template_directory() . '/inc/modules/dh_logo.php'; ?>
       'reserve',  
       'subscribe',
       'viewing',
-      'contact'
+      'contact',
+      'badh'
     );
 
   if (is_page($load_on_page)) {

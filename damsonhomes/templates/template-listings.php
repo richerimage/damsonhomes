@@ -54,12 +54,15 @@ $hero_class = (!empty($hero) ? ' ' . $hero : '');
       $tax = '';
     }
 
+    $current_page = get_query_var('paged');
+
 
     $args = array(
       'dnh_site_status_taxonomy' => $tax,
       'orderby' => 'menu_order',
       'order'   => 'ASC',
-      'posts_per_page' => 100
+      'posts_per_page' => 8,
+      'paged'   => $current_page
     );
 
     // The Query
@@ -74,20 +77,11 @@ $hero_class = (!empty($hero) ? ' ' . $hero : '');
 
         get_template_part( 'templates/template-parts/modules/card-site', get_post_format() );
 
-      }
+      } ?>
 
-      if ($query->max_num_pages > 1) { // check if the max number of pages is greater than 1  ?>
-        <nav class="prev-next-posts">
-          <div class="prev-posts-link">
-            <?php echo get_next_posts_link( 'Older Entries', $query->max_num_pages ); // display older posts link ?>
-          </div>
-          <div class="next-posts-link">
-            <?php echo get_previous_posts_link( 'Newer Entries' ); // display newer posts link ?>
-          </div>
-        </nav>
-      <?php }
 
-    } else { 
+
+    <?php } else { 
 
 
       if (is_page('for-sale')) { ?>
@@ -116,9 +110,21 @@ $hero_class = (!empty($hero) ? ' ' . $hero : '');
     // Restore original Post Data
     wp_reset_postdata();
     do_action('dh_main_content_bottom'); ?>
+
+
   </main>
 
-  <?php $class = 'row hide-critical'; dh_pagation($class); ?>
+  <?php if ($query->max_num_pages > 1) { ?>
+
+  <div class="pagation-wrap row">
+    <nav class="pagation-nav twelve columns">
+    <?php echo paginate_links(array('total' => $query->max_num_pages)); ?>
+    </nav>
+  </div>
+
+  <?php } ?>
+
+  
   <?php do_action('dh_after_main_content'); ?>
 
 </section>
@@ -126,7 +132,7 @@ $hero_class = (!empty($hero) ? ' ' . $hero : '');
 
 if (!is_page('coming-soon')) { ?>
 
-  <div id="dh_map" class="site-map"></div>
+  <div id="dh_map" class="site-map listings-map"></div>
 
 <?php }
 

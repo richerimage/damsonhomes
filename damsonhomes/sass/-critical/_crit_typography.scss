@@ -139,7 +139,7 @@ li {
 }
 
 .ftr-section {
-  background-color: $gray_ll; 
+  background-color: $body; 
   padding: 1em; 
   margin-bottom: 1.5em;
 
@@ -149,14 +149,20 @@ li {
 }
 
 .text-columns {
-  column-width: 18em;
+  column-width: 22em;
   column-gap: 1.5em;
 }
 
 
 @include mq(momma) {
 
-  body {font-size: 1.5rem;}
+  body {
+    font-size: 1.5rem;
+  }
+
+  .text-columns {
+    column-gap: 2em;
+  }
 
 }
 

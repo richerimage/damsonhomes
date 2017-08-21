@@ -102,6 +102,7 @@ if ($status == 'live') {
   $badge       = '<span class="badge badge-sold-out hide-critical">' . (!empty($flash) ? $flash : 'Sold Out') . '</span>';
 }
 
+
  
 ?>
 

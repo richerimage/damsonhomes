@@ -43,8 +43,7 @@ if(is_page('contact')) {
 
         <div class="six columns">
 
-          <?php require get_template_directory() . '/templates/template-parts/modules/dh_address.php';
-          dh_address(); ?>
+          <?php $version = 'compact'; dh_address($version); ?>
 
           <div id="dh_map" class="site-map frame"></div>
 

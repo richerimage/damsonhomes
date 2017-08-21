@@ -5,6 +5,8 @@
 .aftercare-grid {
 
   padding: 1.5em;
+
+  margin-top: 1em;
   
   & ul {
     margin: 0;
@@ -12,14 +14,14 @@
     
     &:before,
     &:after {
-    content: "";
-    top: 0;
-    bottom: 0;
-    width: 1px;
-    right: auto;
-    background: $gray_l;
-    position: absolute;
-    display: block;
+      content: "";
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      right: auto;
+      background: $gray_l;
+      position: absolute;
+      display: block;
     }
     
     &:before {
@@ -42,7 +44,7 @@
     & span {
       background-color: $brand2;
       position: absolute;
-      bottom: 0;
+      bottom: -1px;
       top: auto;
       left: 0;
       height: 5px;

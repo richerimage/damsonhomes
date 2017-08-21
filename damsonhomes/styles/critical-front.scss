@@ -28,6 +28,10 @@ Critical Front Page Styles: TABLE OF CONTENTS:
     & .slick-list {
       padding: 1em 0.5em;
     }
+
+    & .slick-slide {
+      background-color: transparent;
+    }
   }
 
   & .card-site {
@@ -124,7 +128,7 @@ Critical Front Page Styles: TABLE OF CONTENTS:
 
 @include mq(momma) {
 
-  .site-main .headline-area {
+  #primary .headline-area {
     margin-bottom: 2em;
   }
 

@@ -6,3 +6,81 @@
 @import "-defer-modules/tabs";
 
 
+.single-post {
+
+  & .entry-footer {
+    border-top: dotted 1px $gray_l;
+    margin-top: 1em;
+    padding-top: 1em;
+  }
+
+}
+
+.blog-navigation {
+  padding: 1em;
+  border: solid 1px $gray_m;
+
+  & h4 {
+    font-style: italic;
+  }
+
+  & p {
+
+    color: $text1;
+
+  }
+
+  & a {
+    background: white;
+    text-decoration: none;
+    border: solid 1px $gray_m;
+    border-radius: 2px;
+    color: $brand2;
+    padding: 0.275em 0.5em 0.2em;
+    min-width: 7em;
+    display: inline-block;
+
+    &:hover,
+    &:focus {
+      background-color: $brand2;
+      border-color: $brand1_d2;
+      color: white;
+    }
+
+  }
+
+  & .this-cat {
+    margin-bottom: 1em;
+    padding-bottom: 1em;
+    border-bottom: solid 2px white;
+  }
+}
+
+
+@include mq(toddler) {
+
+  .blog-navigation {
+
+    padding-bottom: 2em;
+
+    & .six {
+      width: 50%;
+      float: left;
+    }
+
+    & .this-cat {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+      border-right: solid 1px white;
+    }
+
+    & .all-cats {
+      border-left: solid 1px white;
+    }
+
+  }
+
+}
+
+

@@ -21,7 +21,7 @@ $url 			= home_url('/') . $wp->request;
 
 <?php if ( have_posts() ) : ?>
 
-<section id="hero_area" class="hero-area hero-fly-in">
+<section id="hero_area" class="hero-area bg-white hero-fly-in">
 	<div class="row hero-box">
 		<div class="hero-left six columns">
 			<header class="headline-area">
@@ -54,7 +54,7 @@ $url 			= home_url('/') . $wp->request;
 			//get_template_part( 'template-parts/content-archive', get_post_format() ); ?>
 
 			<article id="post-<?php the_ID(); ?>" <?php post_class($classes); ?>>
-				<a class="block-link xv" href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark">
+				<a class="block-link" href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark">
 					<?php get_template_part( 'templates/template-parts/modules/card-post', get_post_format() ); ?>
 				</a>
 			</article><!-- #post-## -->

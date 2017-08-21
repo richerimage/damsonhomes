@@ -9,13 +9,25 @@
  * @package Damson_Homes
  */
 
-global $post; ?>
+global $post; 
 
-	<footer id="colophon" class="footer-area" role="contentinfo">
+$footer_class = '';
+
+if ( (is_archive()) || (is_home()) || (is_page('coming-soon')) ) {
+
+  $footer_class = ' footer-border-top';
+
+}
+
+
+
+
+?>
+
+	<footer id="colophon" class="footer-area<?php echo $footer_class; ?>" role="contentinfo">
 		<div class="footer row aside">
 
       <div class="left-menus three columns">
-        <h5 class="ntm">Current New Home Sites</h5>
         <?php if (false === ($live_site_query = get_transient( 'live_site_query' ))) {
           
             // No Transient?, Lets regenerate the data and save the transient
@@ -32,25 +44,61 @@ global $post; ?>
 
             set_transient( 'live_site_query', $live_site_query, 60*60*12); // Store for 12 hrs
 
-          }
+          } 
 
         // The Loop
         if ( $live_site_query->have_posts() ) {
-          echo "<ul class=\"no-style\">\n";
+          echo "<h5 class=\"ntm\"><a href=\"/for-sale/\">New Homes For Sale</a></h5>\n".
+               "<ul class=\"no-style site-nav\">\n";
           while ( $live_site_query->have_posts() ) {
             $live_site_query->the_post();
             echo "    <li><a href=\"" . get_the_permalink() . "\" title=\"" . get_the_title() . "\">" . get_post_meta($post->ID, 'dh_site_name', true) . "</a></li>\n";
           }
           echo "  </ul>\n";
-        } else {
-          echo "<p class=\"nbm\">Sorry, there are no available New Home developments at this moment. <a href=\"/coming-soon/\">Visit the Coming Soon Page</a> to see our forthcoming new home developments.</p>\n";
-        }
+        } else { }
+        
+        wp_reset_postdata(); // Restore original Post Data
+
+        
+
+
+        if (false === ($soon_site_query = get_transient( 'soon_site_query' ))) {
+          
+            // No Transient?, Lets regenerate the data and save the transient
+
+            $args = array(
+              'tax_query' => array(
+                array(
+                  'taxonomy' => 'dnh_site_status_taxonomy',
+                  'field'    => 'slug',
+                  'terms'    => 'coming-soon',
+                )));
+            
+            $soon_site_query = new WP_Query($args); // The Query
+
+            set_transient( 'soon_site_query', $soon_site_query, 60*60*12); // Store for 12 hrs
+
+          } 
+
+        // The Loop
+        if ( $soon_site_query->have_posts() ) {
+          echo "<h5 class=\"ntm\"><a href=\"/coming-soon/\">Comong Soon</a></h5>\n".
+               "<ul class=\"no-style site-nav\">\n";
+          while ( $soon_site_query->have_posts() ) {
+            $soon_site_query->the_post();
+            echo "    <li><a href=\"" . get_the_permalink() . "\" title=\"" . get_the_title() . "\">" . get_post_meta($post->ID, 'dh_site_name', true) . "</a></li>\n";
+          }
+          echo "  </ul>\n";
+        } else { }
         
         wp_reset_postdata(); // Restore original Post Data
 
         ?>
 
-        <h5>Past Sites Portfolio</h5>
+
+
+
+        <h5><a href="\portfolio\">Past Sites Portfolio</a></h5>
         <?php
 
           $counter = '';
@@ -78,8 +126,7 @@ global $post; ?>
         // The Loop
         if ( $past_site_query->have_posts() ) {
 
-          echo "<ul class=\"no-style\">\n".
-               "    <li><a href=\"/portfolio/\" title=\"Past New Home Developments Portfolio\"><strong>Portfolio Homepage</strong></a></li>\n";
+          echo "<ul class=\"no-style site-nav\">\n";
 
           while ( $past_site_query->have_posts() ) {
             $past_site_query->the_post();
@@ -131,12 +178,37 @@ global $post; ?>
       </div>
 
       <div class="footer-right six columns">
-        <h5 class="ntm">Be the 1st to hear about our latest New Home developments</h5>
-        <p><a href="/subscribe/">Subscribe Today</a></p>
-        <h5>Get in Touch</h5>
-        <p><span>0121 709 0539</span> <span><?php echo do_shortcode('[email mailto="enquiries@damsonhomes.net"]')?></span></p>
-        <address class="grmb">Damson Homes, Damson Court, 87 Westley Road, Birmingham, B27 7UQ</address>
-        <p><a href="/privacy-policy/">Privacy Policy</a> | <a href="/terms/">Terms</a></p>
+        <div class="get-in-touch">
+          <h4 class="ntm">Get in Touch</h4>
+          <?php dh_address(); ?>
+          <p class="portal-login nbm has-icon"><?php echo dh_get_svg(array('icon' => 'client')); ?> <a href="http://portal.damsonhomes.net/" class="icon-alone" title="Log in to the Client Portal" target="_blank">Client Portal</a></p>
+        </div>
+        <div class="subscribe-today">
+          <h4 class="ntm">Be first to hear about our latest New Homes</h4>
+          <p class="nbm"><a class="button" href="/subscribe/?dh_source=<?php the_permalink(); ?>">Subscribe Today</a></p>
+        </div>
+        <div class="social-channels">
+          <h4 class="nbm">Follow us</h4>
+          <p>For live updates on your favoutite Social Channels.</p>
+            <ul class="dna-social-wrapper clearfix nbm">
+              <li class="dna_sm_facebook">
+                <a href="https://facebook.com/damsonnewbuild/" class="icon-alone" title="Like us on Facebook" target="_blank">
+                  <?php echo dh_get_svg(array('icon' => 'facebook')); ?>
+                </a>
+              </li>
+              <li class="dna_sm_twitter">
+                <a href="https://twitter.com/damsonhomes/" class="icon-alone" title="Follow us on Twitter" target="_blank">
+                  <?php echo dh_get_svg(array('icon' => 'twitter')); ?>
+                </a>
+                </a>
+              </li>
+              <li class="dna_sm_instagram">
+                <a href="https://instagram.com/damsonhomes/" class="icon-alone" title="Follow us on Instagram" target="_blank">
+                  <?php echo dh_get_svg(array('icon' => 'instagram')); ?>
+                </a>
+              </li>
+            </ul>
+        </div>
       </div>
 
 		</div><!-- .footer.page -->

@@ -1,0 +1,49 @@
+@import "../../../sass/-variables/variables-site";
+@import "../../../sass/-mixins/mixins-master";
+
+.main-hero-image {
+  background-size: cover;
+  background-position: 50% bottom;
+}
+
+
+.main-hero-image {
+  background-image: url('http://damsonhomes.staging.wpengine.com/wp-content/uploads/2017/08/Wentworth-Grange-HD-170601-021-600x338.jpg');
+}
+
+@include mq(momma) {
+  .main-hero-image {
+    background-image: url('http://damsonhomes.staging.wpengine.com/wp-content/uploads/2017/08/Wentworth-Grange-HD-170601-021-900x506.jpg');
+  }
+
+}
+
+@include mq(grandma) {
+  .main-hero-image {
+    background-image: url('http://damsonhomes.staging.wpengine.com/wp-content/uploads/2017/08/Wentworth-Grange-HD-170601-021-1200x675.jpg');
+  }
+
+}
+
+@include mq(pappa) {
+  .main-hero-image {
+    background-image: url('http://damsonhomes.staging.wpengine.com/wp-content/uploads/2017/08/Wentworth-Grange-HD-170601-021-1600x900.jpg');
+  }
+
+}
+
+// @include mq(grampaPlus) {
+//   .main-hero-image {
+//     background-image: url('http://damsonhomes.staging.wpengine.com/wp-content/uploads/2017/08/Wentworth-Grange-HD-170601-021-1920x1280.jpg');
+//   }
+
+// }
+
+
+.hero-content .block-link:hover,
+.hero-content .block-link:focus {
+   border:none;
+   box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+

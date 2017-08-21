@@ -1,5 +1,7 @@
-.xv {
-  background: url($xv);
+.xv,
+.ftr-section {
+  background-image: url($xv);
+  background-repeat: repeat;
 }
 
 .hide-critical {

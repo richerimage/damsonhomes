@@ -680,14 +680,14 @@ li.fancybox-thumbs-loading {
 
 /* MY Edits */
 
-.fancybox-slide.fancybox-slide--video {
-  padding: 4em 1em;
+.fancybox-slide.fancybox-slide--video{
+    padding: 1em 3em;
 }
 
 
 
 
-.fancybox-slide--video .fancybox-content  {
+.fancybox-slide--video .fancybox-content {
     display: inline-block; // let it be styled thusly 
     padding: 0;            // get rid of pre-styling 
     margin: 0;

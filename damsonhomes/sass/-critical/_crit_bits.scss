@@ -109,3 +109,17 @@ svg.icon {
     color: $brand2;
   }
 }
+
+
+.address-part:after {content: ", ";}
+.address-part:last-child:after {content: "";}
+.address-part:first-of-type {
+  display: block;
+  &:after {
+    content: "";
+  }
+}
+
+.address-part:last-child {
+  display: inline-block;
+}

@@ -1,29 +1,133 @@
 .footer-area {
   padding: 2em 0;
+
+  & h5 {
+    font-family: $main_ff;
+    color: $text2;}
+
+  &.footer-border-top {
+    padding-top: 0;
+
+    & .footer {
+      padding-top: 2em;
+      border-top: dotted 1px $gray;
+    }
+  }
 }
 
 
 .footer {
-
   
   padding-top: 2em;
 
   & ul {
     margin: 0 0 1em;
+
+    &.site-nav {
+      border-bottom: solid 2px white;
+      padding-bottom: 1em;
+      margin-bottom: 1em;
+    }
   }
 
   & a {
     color: $text2;
     text-decoration: none;
     @include trans;
-    border-bottom: dotted 1px transparent;
+    border-bottom: dotted 1px $text2;
 
     &:hover,
     &:focus {
-      padding-left: 0.5em;
-      border-bottom-color: $gray_m;
+      color: $brand1;
+      border-bottom-color: $brand1;
+    }
+
+    &.button {
+      color: white;
     }
   }
+
+  & .get-in-touch,
+  & .subscribe-today {
+      border-bottom: solid 2px white;
+      padding-bottom: 1em;
+      margin-bottom: 1em;
+
+  }
+
+  & .dna-social-wrapper {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    text-align: left;
+    width: 100%;
+    margin-bottom: 0;
+
+    & li {
+      font-size: 1.5em;
+      margin: 0 0.5em 0 0;
+
+      & a {
+        background-color: $brand1;
+        color: white;
+        text-decoration: none;
+        border: solid 1px transparent;
+
+        &:hover,
+        &:focus {
+          border-color: $brand1;
+          opacity: 1;
+        }
+      }
+
+      &.dna_sm_facebook a {
+        background-color: $fb_brand1;
+
+        &:hover,
+        &:focus {
+          border-color: $fb_brand1;
+        }
+      }
+
+      &.dna_sm_twitter a {
+        background-color: $tw_brand1;
+
+        &:hover,
+        &:focus {
+          border-color: $tw_brand1;
+        }
+      }
+
+      &.dna_sm_instagram a {
+        background-color: #1400c8;
+        background-image: linear-gradient(-135deg,#1400c8,#b900b4,#f50000);
+        border-color: #1400c8;
+
+        &:hover,
+        &:focus {
+          border-color: #1400c8;
+        }
+      }
+
+
+
+              
+
+
+    }
+  }
+}
+
+
+.has-icon .address-phone .icon,
+.has-icon.portal-login .icon {
+  @include square(1.25em);
+  left: 0.125em;
+}
+
+.has-icon .address-email .icon {
+  @include square(1em);
+  left: 0.25em;
 }
 
 .dna-credits-box {
@@ -32,7 +136,7 @@
   color: $text1;
 }
 
-.dna-copyright-date {color: $brand1;}
+.dna-copyright-date {color: $text1; font-weight: bold;}
 
 @include mq(momma) {
 
@@ -50,4 +154,12 @@
   .footer li {
     margin-bottom: 0;
   }
+}
+
+
+@media only screen and (min-width: 450px) and (max-width: 767px) {
+  .left-center-menus,
+  .left-menus {width: 50%;}
+  .left-center-menus {padding-left: 2em;}
+  .footer-right {clear: both;}
 }

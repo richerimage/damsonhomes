@@ -42,40 +42,50 @@ if ( ! function_exists( 'damsonhomes_posted_on' ) ) {
 
 }
 
-if ( ! function_exists( 'damsonhomes_entry_footer' ) ) {
-
-  /**
-   * Prints HTML with meta information for the categories, tags and comments.
-   */
-
-  function damsonhomes_entry_footer() {
-  	// Hide category and tag text for pages.
-  	if ( 'post' === get_post_type() ) {
-  		/* translators: used between list items, there is a space after the comma */
-  		$categories_list = get_the_category_list( esc_html__( ', ', 'damsonhomes' ) );
-  		if ( $categories_list && damsonhomes_categorized_blog() ) {
-  			printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'damsonhomes' ) . '</span>', $categories_list ); // WPCS: XSS OK.
-  		}
-
-  		/* translators: used between list items, there is a space after the comma */
-  		$tags_list = get_the_tag_list( '', esc_html__( ', ', 'damsonhomes' ) );
-  		if ( $tags_list ) {
-  			printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'damsonhomes' ) . '</span>', $tags_list ); // WPCS: XSS OK.
-  		}
-  	}
 
 
-  	edit_post_link(
-  		sprintf(
-  			/* translators: %s: Name of current post */
-  			esc_html__( 'Edit %s', 'damsonhomes' ),
-  			the_title( '<span class="screen-reader-text">"', '"</span>', false )
-  		),
-  		'<span class="edit-link">',
-  		'</span>'
-  	);
-  }
+function damsonhomes_entry_footer() {
+	// Hide category and tag text for pages.
+  if ( 'post' === get_post_type() ) { ?>
+
+    <div class="blog-navigation clearfix xv text-center aside">
+      <h4 class="twelve columns ntm">More from the Blog</h4>
+      <div class="six columns this-cat">
+        <p>More from this development</p>
+        <?php next_post_link( '%link', 'Next', TRUE ); ?>
+        <?php previous_post_link( '%link', 'Previously', TRUE ); ?>
+      </div>
+      <div class="six columns all-cats">
+        <p>From the rest of the Blog</p>
+        <?php next_post_link( '%link', 'Next Up'); ?>
+        <?php previous_post_link( '%link', 'Go Back'); ?>
+      </div>
+    </div>
+
+
+  <?php 
+
+    /* translators: used between list items, there is a space after the comma */
+    // $categories_list = get_the_category_list( esc_html__( ', ', 'damsonhomes' ) );
+    // if ( $categories_list && damsonhomes_categorized_blog() ) {
+    //   printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'damsonhomes' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+    // }
+
+    //  translators: used between list items, there is a space after the comma 
+    // $tags_list = get_the_tag_list( '', esc_html__( ', ', 'damsonhomes' ) );
+    // if ( $tags_list ) {
+    //   printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'damsonhomes' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+    // }
+
+
+
+
+   }
+
+
+
 }
+
 
 
 /**
