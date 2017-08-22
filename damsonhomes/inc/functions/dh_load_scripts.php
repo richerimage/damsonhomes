@@ -132,3 +132,206 @@ function dh_add_to_footer_script_handle() {
 }
 
 add_action( 'dh_footer_doc_ready', 'dh_add_to_footer_script_handle');
+
+
+
+
+add_action('wp_footer', 'dh_site_landing_tab_script', 50);
+
+function dh_site_landing_tab_script() {
+
+  // https://css-tricks.com/snippets/javascript/get-url-variables/ 
+
+  if (is_page_template('templates/template-site.php')){ ?>
+
+    <script id="dh_site_landing_tab_script">
+    
+      jQuery(document).ready(function($) {
+
+        function getQueryVariable(variable) {
+          var query = window.location.search.substring(1);
+          var vars = query.split("&");
+          for (var i=0;i<vars.length;i++) {
+            var pair = vars[i].split("=");
+            if(pair[0] == variable){return pair[1];}
+           }
+         return(false);
+        }
+
+        var tab      = decodeURIComponent(getQueryVariable('tab'));
+
+        if (tab !== 'false') {
+
+          if (tab == 'plots') {
+
+            if ($('#tab2').length) {
+
+              $('#tab1').removeClass('tab-top').addClass('tab-bottom');
+              $('#tab1_trigger').removeClass('active');
+              $('#tab2').removeClass('tab-bottom').addClass('tab-top');
+              $('#tab2_trigger').addClass('active');
+
+            } else { }
+
+
+          } 
+
+          if (tab == 'gallery') {
+
+            if ($('#tab3').length) {
+
+              $('#tab1').removeClass('tab-top').addClass('tab-bottom');
+              $('#tab1_trigger').removeClass('active');
+              $('#tab3').removeClass('tab-bottom').addClass('tab-top');
+              $('#tab3_trigger').addClass('active');
+
+            } else { }
+
+          }
+
+          if (tab == 'spec') {
+
+            if ($('#tab4').length) {
+
+              $('#tab1').removeClass('tab-top').addClass('tab-bottom');
+              $('#tab1_trigger').removeClass('active');
+              $('#tab4').removeClass('tab-bottom').addClass('tab-top');
+              $('#tab4_trigger').addClass('active');
+
+            } else { }
+
+          }
+
+          if (tab == 'location') {
+
+            if ($('#tab5').length) {
+
+              $('#tab1').removeClass('tab-top').addClass('tab-bottom');
+              $('#tab1_trigger').removeClass('active');
+              $('#tab5').removeClass('tab-bottom').addClass('tab-top');
+              $('#tab5_trigger').addClass('active');
+
+            } else { }
+
+          }
+
+          if (tab == 'updates') {
+
+            if ($('#tab6').length) {
+
+              $('#tab1').removeClass('tab-top').addClass('tab-bottom');
+              $('#tab1_trigger').removeClass('active');
+              $('#tab6').removeClass('tab-bottom').addClass('tab-top');
+              $('#tab6_trigger').addClass('active');
+
+            } else { }
+
+          }
+
+          if (tab == 'enquire') {
+
+            if ($('#tab7').length) {
+
+              $('#tab1').removeClass('tab-top').addClass('tab-bottom');
+              $('#tab1_trigger').removeClass('active');
+              $('#tab7').removeClass('tab-bottom').addClass('tab-top');
+              $('#tab7_trigger').addClass('active');
+
+            } else { }
+
+          }
+
+
+
+
+        }
+
+
+      });
+
+    </script>
+
+ <?php }
+
+}
+
+
+
+
+add_action('wp_footer', 'dh_about_page_tab_script', 50);
+
+function dh_about_page_tab_script() {
+
+  // https://css-tricks.com/snippets/javascript/get-url-variables/ 
+
+  if (is_page('about-us')){ ?>
+
+    <script id="dh_about_page_tab_script">
+    
+      jQuery(document).ready(function($) {
+
+        function getQueryVariable(variable) {
+          var query = window.location.search.substring(1);
+          var vars = query.split("&");
+          for (var i=0;i<vars.length;i++) {
+            var pair = vars[i].split("=");
+            if(pair[0] == variable){return pair[1];}
+           }
+         return(false);
+        }
+
+        var tab      = decodeURIComponent(getQueryVariable('tab'));
+
+        if (tab !== 'false') {
+
+          if (tab == 'team') {
+
+            if ($('#tab2').length) {
+
+              $('#tab1').removeClass('tab-top').addClass('tab-bottom');
+              $('#tab1_trigger').removeClass('active');
+              $('#tab2').removeClass('tab-bottom').addClass('tab-top');
+              $('#tab2_trigger').addClass('active');
+
+            } else { }
+
+
+          } 
+
+          if (tab == 'community') {
+
+            if ($('#tab3').length) {
+
+              $('#tab1').removeClass('tab-top').addClass('tab-bottom');
+              $('#tab1_trigger').removeClass('active');
+              $('#tab3').removeClass('tab-bottom').addClass('tab-top');
+              $('#tab3_trigger').addClass('active');
+
+            } else { }
+
+          }
+
+          if (tab == 'gallery') {
+
+            if ($('#tab4').length) {
+
+              $('#tab1').removeClass('tab-top').addClass('tab-bottom');
+              $('#tab1_trigger').removeClass('active');
+              $('#tab4').removeClass('tab-bottom').addClass('tab-top');
+              $('#tab4_trigger').addClass('active');
+
+            } else { }
+
+          }
+
+        }
+
+
+      });
+
+    </script>
+
+ <?php }
+
+}
+

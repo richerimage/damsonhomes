@@ -7,6 +7,9 @@
  * @package Damson_Homes
  */
 
+
+
+
 get_header(); 
 do_action('dh_after_header');
 do_action('dh_before_main_content_area'); ?>
@@ -20,9 +23,15 @@ do_action('dh_before_main_content_area'); ?>
       /* Start the Loop */
       while ( have_posts() ) : the_post();
 
-        get_template_part( 'templates/template-parts/content');
+        get_template_part( 'templates/template-parts/content'); 
 
-        the_posts_navigation();
+        
+
+
+
+
+
+        // the_posts_navigation();
 
       endwhile;
 

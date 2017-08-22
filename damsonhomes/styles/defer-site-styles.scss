@@ -83,6 +83,9 @@ Deferred Global Styles: TABLE OF CONTENTS:
 
 .plot-availability {
 
+  padding-left: 1em;
+  padding-right: 1em;
+
   & .block-list li.available {
   padding: 0;
   border: none;
@@ -130,6 +133,18 @@ Deferred Global Styles: TABLE OF CONTENTS:
 
   & .sold .icon {
     color: $brand1_d1;
+  }
+
+}
+
+.plot-img-wrap {
+  height: 100%;
+  margin-bottom: 1em;
+
+  &:after {
+  content: "";
+  @include abs(0,1em,0,1em);
+  background: url($xv);
   }
 
 }
@@ -183,6 +198,9 @@ Deferred Global Styles: TABLE OF CONTENTS:
   }
   .hero-footer {
     margin-top: 2em;
+  }
+  .plot-img-wrap {
+  margin-bottom: 0;
   }
 }
 

@@ -11,7 +11,6 @@ function dh_available_plots(&$site_meta=array(), &$link_to=array()) {
   $res_buyer    = get_post_meta($post->ID, 'dh_show_reserve_buyer', true) ? get_post_meta($post->ID, 'dh_show_reserve_buyer', true) : '';
   $dh_htb       = get_post_meta($post->ID, 'dh_h2b_available', true) ? get_post_meta($post->ID, 'dh_h2b_available', true) : '';
 
-
   $count = count($dh_plots);
 
   if ($count <= 4) { $size = 'small'; }
@@ -30,7 +29,7 @@ function dh_available_plots(&$site_meta=array(), &$link_to=array()) {
 <div class="plot-plan eight columns">
 
   <?php if (!empty($plot_map_id)) { 
-    echo wp_get_attachment_image( $plot_map_id, 'full', '', array( 'class' => 'plot-map' )); 
+    echo '<div class="plot-img-wrap">' . wp_get_attachment_image( $plot_map_id, 'full', '', array( 'class' => 'plot-map' )) . '</div>'; 
   } ?>
 
 </div>

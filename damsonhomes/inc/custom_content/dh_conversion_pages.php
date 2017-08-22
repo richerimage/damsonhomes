@@ -198,6 +198,8 @@ function dh_brochure_link_script() {
 
               $('#site_intro_wrap').append('<div class="alert"><h4 class="ntm">Please let us know if you missed out on your favourite plot in ' + name + '.</h4><p>Drop in your contact details below and should the sale, for any reason, not go through, we will contact you before offering it out to the open market.</p></div>');
               $('#default_content').hide();
+
+
             } else {
 
               $('#site_intro_wrap').append('<div class="alert box xv"><h4 class="ntm">Interested in our upcoming new home development, ' + name + '?</h4><p>Subscribe for pre-release information and opportunities by entering your name and email into the form below.</p><p><strong>Subscribing is the smartest way to get your choice of the best plots!</strong> As with our other developments, we will be contacting our subscribers before offering ' + name + ' to the open market.</p></div>');

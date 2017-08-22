@@ -31,6 +31,7 @@
 
 	$type = 'page';
 
+
 	if (is_single()) {
 		$type = 'post';
 	}
@@ -85,11 +86,33 @@
 	} ?>
 
 	<div id="post_content" class="post-content">
-		<?php the_content(); ?>
+		<?php the_content(); 
+
+		if (is_single()) {
+
+			$cta_id = get_post_meta($post->ID, 'dh_cta', true) ? get_post_meta($post->ID, 'dh_cta', true) : '';
+
+			if (!empty($cta_id)) {
+
+				$dh_cta_class = WP_PLUGIN_DIR . '/dh-custom-functions/inc/classes/dh_cta.php';
+				require_once $dh_cta_class;
+				
+				$cta 		= new dh_cta($cta_id);
+
+				echo $cta->new_cta();  
+
+			}
+
+    } ?>
+
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
+
+
 		<?php damsonhomes_entry_footer(); ?>
+
+
 	</footer><!-- .entry-footer -->
 
 </article><!-- #post-## -->

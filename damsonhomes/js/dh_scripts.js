@@ -143,29 +143,29 @@ jQuery(document).ready(function($) {
 	});
 
   // Start > Smart Resposive Objects
-  var smartRwdo = function() {
-    $('.sro').each(function() {
-      var width = $(this).innerWidth();
-      $(this).removeClass('sro-tiny sro-small sro-med sro-large sro-omg');
-      if (width < 249) {
-        $(this).addClass('sro-tiny').removeClass('sro-small sro-med sro-large sro-omg');
-      } else if (width >= 250 && width < 499) {
-        $(this).addClass('sro-tiny sro-small').removeClass('sro-med sro-large sro-omg');
-      } else if (width >= 500 && width < 649) {
-        $(this).addClass('sro-tiny sro-small sro-med').removeClass('sro-large sro-omg');
-      } else if (width >= 650 && width < 999) {
-        $(this).addClass('sro-tiny sro-small sro-med sro-large').removeClass('sro-omg');
-      } else if (width >= 1000) {
-        $(this).addClass('sro-tiny sro-small sro-med sro-large sro-omg');
-      }
-    });
-  }
-  $(document).ready(function($) {
-    smartRwdo();
-  });
-  $(window).resize(function(){
-    smartRwdo();
-  });
+  // var smartRwdo = function() {
+  //   $('.sro').each(function() {
+  //     var width = $(this).innerWidth();
+  //     $(this).removeClass('sro-tiny sro-small sro-med sro-large sro-omg');
+  //     if (width < 249) {
+  //       $(this).addClass('sro-tiny').removeClass('sro-small sro-med sro-large sro-omg');
+  //     } else if (width >= 250 && width < 499) {
+  //       $(this).addClass('sro-tiny sro-small').removeClass('sro-med sro-large sro-omg');
+  //     } else if (width >= 500 && width < 649) {
+  //       $(this).addClass('sro-tiny sro-small sro-med').removeClass('sro-large sro-omg');
+  //     } else if (width >= 650 && width < 999) {
+  //       $(this).addClass('sro-tiny sro-small sro-med sro-large').removeClass('sro-omg');
+  //     } else if (width >= 1000) {
+  //       $(this).addClass('sro-tiny sro-small sro-med sro-large sro-omg');
+  //     }
+  //   });
+  // }
+  // $(document).ready(function($) {
+  //   smartRwdo();
+  // });
+  // $(window).resize(function(){
+  //   smartRwdo();
+  // });
 
 	//Start > Social Share Display Switch
 	$('.ss-switch').on('click', function(){

@@ -46,7 +46,7 @@ $site_logo_src      = wp_get_attachment_image_src($site_logo_id, 'thumbnail');
 $site_logo_url      = $site_logo_src['0'];
 
 $brochure_img_id    = get_post_meta($post->ID, 'dh_site_brochure_img_id', true) ? get_post_meta($post->ID, 'dh_site_brochure_img_id', true) : ''; 
-$brochure_src       = wp_get_attachment_image_src($brochure_img_id, 'Letterbox 16:9');
+$brochure_src       = wp_get_attachment_image_src($brochure_img_id, 'letterbox-small');
 $brochure_url       = $brochure_src['0'];
 
 $slug = get_permalink();

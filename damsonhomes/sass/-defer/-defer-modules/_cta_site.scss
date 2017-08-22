@@ -1,0 +1,83 @@
+.dh-cta {
+  border: solid 1px $brand1;
+  padding: 1em 1em 0;
+  text-align: center;
+
+  & .cta-banner {
+    background-color: $brand1;
+    color: white;
+    text-align: center;
+    margin: -1em -1em 1em -1em;
+    width: calc(100% + 2em);
+    padding: 0.25em 1em;
+  }
+
+  & .cta-headline {
+    margin: 0.75em 0 0.25em;
+  }
+
+  & .cta-buttons {
+    margin-bottom: 0;
+
+    & a.button {
+      margin-bottom: 1em;
+    }
+  }
+}
+
+#new_site_cta {margin-bottom: 1.5em;}
+
+
+@media only screen and (min-width: 600px) {
+  
+  .dh-cta {
+    padding: 1em;
+    text-align: left;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    & .cta-logo-wrap {
+      width: 20%;
+
+      & img {
+        display: block;
+        width: 100%;
+        max-width: 150px;
+      }
+
+    }
+
+    & .cta-content {
+      width: 80%;
+      padding-left: 1em;
+      align-self: center;
+      margin-top: -0.5em;
+
+      & .cta-headline {
+        margin-top: 0;
+      }
+
+      & .cta-buttons {
+
+      margin-bottom: 0;
+
+      }
+
+      & a.button {
+        margin-bottom: 0;
+      }
+
+    }
+
+  }
+
+}
+
+@include mq(grandma) {
+
+  .dh-cta .cta-content {
+    padding-left: 2em;
+  }
+
+}
