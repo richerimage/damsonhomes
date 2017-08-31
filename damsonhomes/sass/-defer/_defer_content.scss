@@ -57,6 +57,74 @@
 }
 
 
+
+.fb-comments-wrap {
+  border-top: solid 2px $fb_brand1;
+  margin-top: 3em; 
+  padding-top: 2em;
+  position: relative;
+
+  & .fb-logo {
+    position: absolute;
+    top: -1em;
+    height: 2em;
+    width: 9em;
+    background: $fb_brand1;
+    border-radius: 4px;
+    color: white;
+    line-height: 2em;
+
+    & .icon {
+
+      height: 2em;
+      width: 2em;
+      padding: 0.25em;
+      display: inline-block;
+    }
+
+    & p {
+      display: inline-block;
+      margin: 0;
+      line-height: 2em;
+      position: absolute;
+      left: 2.5em;
+    }
+
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: -0.4em;
+    right: 0;
+    height: 0.7em;
+    width: 0.7em;
+    background-color: $fb_brand1;
+    border-radius: 2px;
+  }
+}
+
+
+.fb-follow-wrap {
+  position: relative;
+  border-top: solid 2px $fb_brand2;
+  margin-top: 2em; 
+  padding-top: 1.5em;
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: -0.4em;
+    right: 0;
+    height: 0.7em;
+    width: 0.7em;
+    background-color: $fb_brand2;
+    border-radius: 2px;
+  }
+
+}
+
+
 @include mq(toddler) {
 
   .blog-navigation {

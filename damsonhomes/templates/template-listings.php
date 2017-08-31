@@ -42,19 +42,26 @@ $hero_class = (!empty($hero) ? ' ' . $hero : '');
 <?php do_action('dh_before_main_content'); ?>
 <section id="primary" class="content-area">
   <main id="main_content" class="main-content row listings" role="main">
+
     <?php do_action('dh_main_content_top');
 
     if (is_page('for-sale')) {
       $tax = 'live';
     } elseif (is_page('coming-soon')) {
-      $tax = 'coming-soon';
-    } elseif (is_page('portfolio')) {
+      $tax = 'coming-soon'; ?>
+
+      <p class="disclaimer aside twelve columns"><em>Please note: These new home developments are still in early stages of design and development. The information on this page should be considered in broad terms only as some factors may be subject to change, such as size, number of bedrooms, style of property, etc.</em></p>
+
+
+    <?php } elseif (is_page('portfolio')) {
       $tax = 'portfolio';
     } else {
       $tax = '';
     }
 
     $current_page = get_query_var('paged');
+
+
 
 
     $args = array(

@@ -21,9 +21,9 @@ if ( ! function_exists( 'damsonhomes_posted_on' ) ) {
 
     $time_string = sprintf( $time_string,
     	esc_attr( get_the_date( 'c' ) ),
-    	esc_html( get_the_date() ),
+    	esc_html( get_the_date('jS M Y') ),
     	esc_attr( get_the_modified_date( 'c' ) ),
-    	esc_html( get_the_modified_date() )
+    	esc_html( get_the_modified_date('jS M Y') )
     );
 
     $last = (!empty($last) ? "<li class=\"read-on\">$last</li>\n" : '');
@@ -80,11 +80,16 @@ function damsonhomes_entry_footer() {
 
 
 
-   }
+   } ?>
+
+
+   <div class="fb-follow-wrap">
+        <div class="fb-follow" data-href="https://www.facebook.com/damsonnewbuild" data-layout="standard" data-size="large" data-show-faces="true"></div>
+      </div>
 
 
 
-}
+<?php }
 
 
 

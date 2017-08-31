@@ -53,12 +53,24 @@ if(is_page('spec')) {
             // The Loop
             if ( $query->have_posts() ) { while ( $query->have_posts() ) { $query->the_post(); ?>
 
-            <div class="xv box clearfix mb">
+            <div class="xv spec-box clearfix mb">
               <div class="headline-wrapper twelve columns">
                 <?php the_title( '<h2 class="headline h3">', '</h2>' ); ?>
               </div>
-              <?php echo get_the_post_thumbnail( $spec->ID, 'letterbox-medium',  array( 'class' => 'six columns spec-img mb' )); ?> 
-              <div class="post-excerpt six columns aside">
+              <?php 
+
+                $img_id = get_post_thumbnail_id();
+        
+        $slide_att = wp_get_attachment_image_src($img_id, 'letterbox-small');
+        
+        echo '<img class="attachment-letterbox-small size-letterbox-small wp-post-image attachment-id-' . $img_id . ' six columns spec-img" src="' . $slide_att[0] . '" width="' . $slide_att[1] . '" height="' . $slide_att[2] . '">';
+
+
+
+              //echo get_the_post_thumbnail( $spec->ID, 'letterbox-medium',  array( 'class' => 'six columns spec-img mb' )); 
+
+        ?> 
+              <div class="post-content six columns aside">
                 <?php the_content(); ?>
               </div>
             </div>  

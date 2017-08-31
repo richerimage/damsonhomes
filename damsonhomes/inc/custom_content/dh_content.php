@@ -9,4 +9,6 @@ require $cp . 'about.php';
 require $cp . 'spec.php';
 require $cp . 'contact.php';
 require $cp . 'test.php';
+require $cp . 'together.php';
+
 require get_template_directory() . '/inc/custom_content/dh_conversion_pages.php';

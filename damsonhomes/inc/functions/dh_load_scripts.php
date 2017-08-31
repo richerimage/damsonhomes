@@ -46,15 +46,21 @@ function dh_load_scripts(){
   wp_register_script( 'dh-scripts', get_template_directory_uri() . '/js/dh_scripts.js', 'jquery', false, true );
   wp_register_script( 'dh-fancybox', get_template_directory_uri() . '/js/jquery.fancybox.min.js', 'jquery', false, true );
   wp_register_script( 'dh-slick', get_template_directory_uri() . '/js/slick.min.js', 'jquery', false, true );
+  wp_register_script( 'dh-blazy', get_template_directory_uri() . '/js/blazy.min.js', '', false, true );
 
   wp_enqueue_script( 'dh-modernizr' );
   wp_enqueue_script( 'dh-scripts' );
   wp_enqueue_script( 'dh-fancybox' );
   wp_enqueue_script( 'dh-slick' );
+  wp_enqueue_script( 'dh-blazy' );
 
   if ( (is_page_template(array ('templates/template-site.php', 'templates/template-listings.php'))) || (is_page('contact')) ) {
     wp_enqueue_script( 'google-maps', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyC2MEUHYicgbIvLGyU2o0GZJ_R9vluTJP8&extension=.js', '', false, true);
   }
+
+  
+    
+
   
 }
 
@@ -64,12 +70,18 @@ function dh_load_scripts(){
 
 function dh_add_to_footer_script_handle() {
 
-  echo "\t\$('.card-social').viewportChecker({\n".
-         "\t\toffset: 100\n".
-         "\t});\n";
+  echo "var bLazy = new Blazy({ });\n";
 
   if (is_home()) { 
 
+    
+
+
+    echo "\t\$('.card-social').viewportChecker({\n".
+           "\t\toffset: 100\n".
+           "\t});\n";
+
+    
     echo "\tvar greeting = [
       'Easy, Tiger!', 
       'Hey There!',
@@ -83,10 +95,6 @@ function dh_add_to_footer_script_handle() {
 
     \tvar randomGreeting = Math.floor(Math.random() * greeting.length);\n";
 
-  }
-
-  if (is_home()) {
-
     echo "\t$('#say_hello').text(greeting[randomGreeting]).addClass('say-hello');\n";
 
   } elseif (is_single()) {
@@ -99,6 +107,10 @@ function dh_add_to_footer_script_handle() {
   if (is_page_template('templates/template-site.php')) {
 
     echo 
+
+    "\t\$('#tab6_trigger').click(function(){ console.log('clicked');\n".
+    "\t\tvar bLazy = new Blazy(); \n".
+    "\t});\n".
 
     "\t\$( document ).ready(function() { moveThis(); });\n".
     "\t\$( window ).resize( function() { moveThis(); });\n".
@@ -264,7 +276,7 @@ function dh_about_page_tab_script() {
 
   // https://css-tricks.com/snippets/javascript/get-url-variables/ 
 
-  if (is_page('about-us')){ ?>
+  if (is_page('about')){ ?>
 
     <script id="dh_about_page_tab_script">
     
@@ -298,7 +310,7 @@ function dh_about_page_tab_script() {
 
           } 
 
-          if (tab == 'community') {
+          if (tab == 'together') {
 
             if ($('#tab3').length) {
 

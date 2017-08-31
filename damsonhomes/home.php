@@ -15,6 +15,9 @@ $type 	 = 'page';
 
 $url     = home_url() . '/blog/';
 
+
+
+
 ?>
 
 <?php if ( have_posts() ) : ?>
@@ -48,6 +51,10 @@ $url     = home_url() . '/blog/';
 			$twitter_class 		= array('columns', 'card', 'card-social', 'card-twitter');
 			$instagram_class 	= array('columns', 'card', 'card-social', 'card-instagram');
 
+			$link_to = get_post_meta($post->ID, 'dh_link_to_url', true) ? get_post_meta($post->ID, 'dh_link_to_url', true) : get_permalink();
+
+
+
 			/*
 			 * Include the Post-Format-specific template for the content.
 			 * If you want to override this in a child theme, then include a file
@@ -57,7 +64,8 @@ $url     = home_url() . '/blog/';
 			//get_template_part( 'template-parts/content-archive', get_post_format() ); ?>
 
 			<article id="post-<?php the_ID(); ?>" <?php post_class($classes); ?>>
-				<a class="block-link" href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark">
+
+				<a class="block-link" href="<?php echo esc_url( $link_to ); ?>" rel="bookmark">
 
 				<?php get_template_part( 'templates/template-parts/modules/card-post', get_post_format() ); ?>
 				

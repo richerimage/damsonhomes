@@ -18,6 +18,22 @@
 
   & .headline-area {
     background-color: white;
+    position: relative;
+
+  }
+
+  &.format-link .headline-area .icon {
+    @include abs(0.25em, 0.25em, auto, auto);
+    @include square(0.75em);
+    color: $gray_l;
+
+  }
+
+  &.sticky .headline-area .icon {
+    @include abs(0.25em, 0.25em, auto, auto);
+    @include square(1em);
+    color: $alert;
+
   }
 
   & .post-content {

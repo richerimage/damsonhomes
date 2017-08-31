@@ -61,10 +61,12 @@ if( has_term( 'live', 'dnh_site_status_taxonomy' ) ) {
   $status = 'live';
 } elseif ( has_term( 'coming-soon', 'dnh_site_status_taxonomy' ) ) {
   $status = 'coming_soon';
+  $hero_bg = ' bg-white graphy';
 } elseif ( has_term( 'portfolio', 'dnh_site_status_taxonomy' ) ) {
   $status = 'portfolio';
 } else {
   $status = '';
+  $hero_bg = '';
 }
 
 
@@ -107,7 +109,7 @@ if ($status == 'live') {
 ?>
 
 
-<section id="hero_area" class="hero-area site-hero">
+<section id="hero_area" class="hero-area site-hero<?php echo $hero_bg; ?>">
   <header class="page-header row hero-box">
 
         <div class="site-intro-wrap">
@@ -138,7 +140,7 @@ if ($status == 'live') {
         } elseif ($status == 'portfolio') {
           echo (!empty($due_date) ? '<li>' . dh_get_svg(array('icon' => 'key')) . ' <span class="screen-reader-text">Completed in</span>' . $due_date . '</li>' : '');
         } else {} ?>  
-        <li><a class="button cta" target="_blank" href="<?php dh_link($site_meta, $button_link); ?>"><?php echo $button_text; ?></a></li>
+        <li><a class="button cta" href="<?php dh_link($site_meta, $button_link); ?>"><?php echo $button_text; ?></a></li>
       </ul>
       <div class="archive-description post-content">
           <p><?php echo $intro; ?></p>
@@ -154,7 +156,15 @@ if ($status == 'live') {
       echo '<img class="wp-post-image nbm" src="' . get_template_directory_uri() . '/images/coming-soon.jpg' . '" width="900" height="506">';
     } ?>
     </div>
-    <div id="on_momma" class="hero-footer twelve columns text-center"></div>
+    <div id="on_momma" class="hero-footer twelve columns text-center">
+      <?php if ($status == 'coming_soon') { ?>
+
+        <p class="disclaimer aside"><em><?php echo $name; ?> is still in early stages of design and development. The information on this page should be considered in broad terms only as some factors may be subject to change, such as size, number of bedrooms, style of property, etc.</em></p>
+
+      <?php } ?>
+
+
+    </div>
   </header><!-- END .page-header -->
 </section>
 
@@ -162,11 +172,11 @@ if ($status == 'live') {
 
 
   $tab_desc     = '<li><a id="tab1_trigger" href="#tab1" class="active">Description</a></li>';
-  $tab_avail    = ($status == 'live') ? '<li><a id="tab2_trigger" href="#tab2" class="">Availability</a></li>' : '';
+  $tab_avail    = ($status == 'live') ? '<li><a id="tab2_trigger" href="#tab2" class="">Plots</a></li>' : '';
   $tab_gallery  = !empty($gallery) ? '<li><a id="tab3_trigger" href="#tab3" class="">Gallery</a></li>' : '';
   $tab_spec     = ($status == 'live') ? '<li><a id="tab4_trigger" href="#tab4" class="">Spec</a></li>' : '';
   $tab_location = ($status != 'coming_soon') ? '<li><a id="tab5_trigger" href="#tab5" class="">Location</a></li>' : '';
-  $tab_updates  = '<li><a id="tab6_trigger" href="#tab6" class="">Updates</a></li>';
+  $tab_updates  = !empty($cat_id) ? '<li><a id="tab6_trigger" href="#tab6" class="">Updates</a></li>' : '';
   $tab_enquire  = ($status == 'live') ? '<li><a id="tab7_trigger" href="#tab7" class="">Enquire</a></li>' : '';
 
   if (($status != 'coming_soon') || ( is_user_logged_in() )) { ?>
@@ -186,6 +196,7 @@ if ($status == 'live') {
           <?php while ( have_posts() ) : the_post();
               the_content();
           endwhile; // End of the loop. ?>
+
         </div>
 
         <?php if ($status == 'live') { ?>
@@ -210,7 +221,7 @@ if ($status == 'live') {
 
         if ($status == 'live') { ?>
 
-        <div id="tab4" class="tab-content tab4 tab-spec tab-bottom ten columns centered">
+        <div id="tab4" class="tab-content tab4 tab-spec tab-bottom twelve columns centered">
           <div class="headline-wrapper">
             <h2>Our 5 &times; Award Winning Signature Specification</h2>
           </div>
@@ -227,12 +238,16 @@ if ($status == 'live') {
           dh_location($name, $address, $area_id);  ?>
         </div>
 
-        <div id="tab6" class="tab-content tab6 tab-updates post-results tab-bottom clearfix listings">
-          <?php require get_template_directory() . '/templates/template-parts/modules/dh_build_updates.php';
-          dh_build_updates($name, $cat_id, $site_logo_id, $brochure);  ?>
-        </div>
+        <?php if (!empty($cat_id)) { ?>
 
-        <?php if ($status == 'live') { ?>
+          <div id="tab6" class="tab-content tab6 tab-updates post-results tab-bottom clearfix listings">
+            <?php require get_template_directory() . '/templates/template-parts/modules/dh_build_updates.php';
+            dh_build_updates($name, $cat_id, $site_logo_id, $brochure);  ?>
+          </div>
+
+        <?php }
+
+        if ($status == 'live') { ?>
 
         <div id="tab7" class="tab-content tab7 tab-enquire tab-bottom clearfix">
           <?php require get_template_directory() . '/templates/template-parts/modules/dh_enquire.php';
@@ -240,6 +255,17 @@ if ($status == 'live') {
         </div>
 
         <?php } ?>
+
+        <div class="fb-site-box post-content ten columns centered">
+          <div class="fb-comments-wrap"><span class="fb-logo">
+            <?php echo dh_get_svg(array('icon' => 'facebook')); ?> <p>Chat Away&hellip;</p></span>
+            <div class="fb-comments" data-href="<?php echo the_permalink(); ?>" data-width="100%" data-numposts="10"></div>
+          </div>
+
+          <div class="fb-follow-wrap">
+            <div class="fb-follow" data-href="https://www.facebook.com/damsonnewbuild" data-layout="standard" data-size="large" data-show-faces="true"></div>
+          </div>
+        </div>
 
       </main>
 

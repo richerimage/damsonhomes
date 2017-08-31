@@ -59,7 +59,17 @@ if( has_term( 'live', 'dnh_site_status_taxonomy' ) ) {
 
       <?php if (has_post_thumbnail()) {
 
-        the_post_thumbnail('letterbox-small');
+        $img_id = get_post_thumbnail_id();
+        $slide_att = wp_get_attachment_image_src($img_id, 'letterbox-small');
+        // $slide_src = $slide_att[0];
+        // $slide_wth = $slide_att[1];
+        // $slide_hgt = $slide_att[2];
+
+        // var_dump($slide_att[0]);
+
+        echo '<img class="b-lazy attachment-letterbox-small size-letterbox-small wp-post-image attachment-id-' . $img_id . '" src="' . $slide_att[0] . '" width="' . $slide_att[1] . '" height="' . $slide_att[2] . '">';
+
+        // the_post_thumbnail('letterbox-small');
 
       } else { ?>
 

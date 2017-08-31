@@ -120,6 +120,24 @@ li {
   &:last-child {margin-bottom: 0;}
 }
 
+.post-content ul {list-style: none;}
+
+blockquote {
+  background-color: $brand2_l4;
+  padding: 1.5em 1.5em 1.5em 4em;
+  margin: 0 0 1.5em 0;
+  font-style: italic;
+  position: relative;
+
+  &:before {
+    content: "\201C";
+    color: white;
+    @include abs(0.25em, auto, auto, 0.25em);
+    font-size: 4em;
+    line-height: 1em;
+  }
+}
+
 
 .intro {
   font-size: 1.2em; 
@@ -151,6 +169,28 @@ li {
 .text-columns {
   column-width: 22em;
   column-gap: 1.5em;
+}
+
+
+hr {
+  margin: 2em 0;
+  clear: both;
+  border: none;
+  height: 2px;
+  background-color: $brand2;
+  position: relative;
+
+  &:before {
+    content: "";
+    width: 0.6em;
+    height: 0.6em;
+    background-color: $brand2;
+    display: block;
+    border-radius: 0.3em;
+    position: absolute;
+    left: calc(50% - 0.3em);
+    top: calc(50% - 0.3em);
+  }
 }
 
 

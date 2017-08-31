@@ -17,6 +17,10 @@
 
     & .card {
       flex: 1 1 calc(50% - 1em);
+
+      &.sticky {
+        flex: 1 1 calc(100% - 1em);
+      }
     }
 
     & .block-link {
@@ -35,6 +39,10 @@
     max-width: calc(50% - 1em);
   }
 
+  .flexbox .listings .card.sticky {
+    max-width: calc(100% - 1em);
+  }
+
 }
 
 
@@ -42,6 +50,10 @@
 
   .listings .card {
     flex: 1 1 calc(33.333% - 1em);
+
+    &.sticky {
+      flex: 1 1 calc(66.667% - 1em);
+    }
   }
 
 }
@@ -51,6 +63,10 @@
 
   .listings .card {
     flex: 1 1 calc(25% - 1em);
+
+    &.sticky {
+      flex: 1 1 calc(50% - 1em);
+    }
   }
 
 }

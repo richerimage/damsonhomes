@@ -22,7 +22,7 @@ function dh_available_plots(&$site_meta=array(), &$link_to=array()) {
 <div class="headline-wrapper twelve columns">
   <h2 class="headline h2 ntm">Plot Plan and Availability</h2>
   <div class="action-box mb-large">
-    <a class="button large" target="_blank" href="<?php dh_link($site_meta, $link_to['viewing']); ?>">Arrange a Viewing</a><a class="button large" target="_blank" href="<?php dh_link($site_meta, $link_to['brochure']); ?>">View Brochure</a>
+    <a class="button large" href="<?php dh_link($site_meta, $link_to['viewing']); ?>">Arrange a Viewing</a><a class="button large" href="<?php dh_link($site_meta, $link_to['brochure']); ?>">View Brochure</a>
   </div>
 </div>
 
@@ -55,7 +55,7 @@ function dh_available_plots(&$site_meta=array(), &$link_to=array()) {
 
   ?>
 
-  <p class="aux res-buyer-prompt"><a class="button cta" target="_blank" href="<?php dh_link($site_meta, $link_to['register'], $option); ?>"><strong>Favourite Plot Reserved?</strong> Tell us here and we will let you know first if it becomes available again.</a></p>
+  <p class="aux res-buyer-prompt"><a class="button cta" href="<?php dh_link($site_meta, $link_to['register'], $option); ?>"><strong>Favourite Plot Reserved?</strong> Tell us here and we will let you know first if it becomes available again.</a></p>
 
 <?php } ?>
 

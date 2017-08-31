@@ -245,61 +245,31 @@ $bar-spacing: 4px;
 }
 
 
-// @include mq(goldie) {
+.breadcrumb {
+  padding: 0 0 1.5em 0em;
+  margin: 0;
 
-//   .nav-box ul {
-//     width: auto;
-//     display: inline-block;
-//   }
+  & li {
+    padding-right: 0.25em;
+    position: relative;
+    list-style: none;
+    display: inline-block;
 
-//   .dna-nav {
-//     opacity: 1; 
-//     height: auto; 
-//     overflow: visible;
-//   }
+    & a {
+      color: $text2;
+    }
 
-//   .primary-menu .burger-holder {
-//     display: none;
-//   }
+    &:first-child {
+      list-style: square;
+    }
 
-//   #side_menu_trigger {
-//     & .more-text {display: none;}
-//     & .hamburger-menu {display: block;}
-//   }
+    &:after {
+      content: " \276D ";
+      color: $brand2_l1;
+    }
 
-
-// }
-
-
-// @include mq(goldiePlus) {
-
-//   .nav-box ul {
-//     width: 50%;
-//     display: block;
-
-//     &.primary-menu {
-//       float: left;
-//       padding-right: 3rem;
-//     }
-
-//     &.dna-nav {
-//       float: right;
-//       text-align: right;
-//       padding-left: 3rem;
-//     }
-//   }
-
-
-// }
-
-// @include mq(momma) {
-
-//   .nav-area .nav-box {
-//     padding: 0 1em;
-
-//     & a {
-//       padding: 0.6em 1.2em;
-//     }
-//   }
-
-// }
+    &:last-child:after {
+      content: none;
+    }
+  } 
+}

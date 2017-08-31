@@ -26,7 +26,8 @@ function dh_load_critical_css() {
     (is_archive()) || 
     (is_page_template('templates/template-listings.php')) || 
     (is_page_template('templates/template-site.php')) || 
-    (is_singular('dnh_cpt_team')) 
+    (is_singular('dnh_cpt_team')) ||
+    (is_singular('dnh_cpt_together')) 
 
   ) {
 

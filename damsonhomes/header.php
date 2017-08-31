@@ -50,8 +50,8 @@ wp_head(); ?>
   <link rel="apple-touch-icon" sizes="120x120" href="<?php echo get_template_directory_uri(); ?>/images/favicons/apple-touch-icon-120x120.png">
   <link rel="apple-touch-icon" sizes="152x152" href="<?php echo get_template_directory_uri(); ?>/images/favicons/apple-touch-icon-152x152.png">
   <link rel="apple-touch-icon" sizes="180x180" href="<?php echo get_template_directory_uri(); ?>/images/favicons/apple-touch-icon-180x180.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/<?php echo get_template_directory_uri(); ?>images/favicons/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/<?php echo get_template_directory_uri(); ?>images/favicons/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="<?php echo get_template_directory_uri(); ?>/images/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="<?php echo get_template_directory_uri(); ?>/images/favicons/favicon-16x16.png">
   <link rel="manifest" href="<?php echo get_template_directory_uri(); ?>/images/favicons/manifest.json">
   <link rel="mask-icon" href="<?php echo get_template_directory_uri(); ?>/images/favicons/safari-pinned-tab.svg" color="#7b7b7b">
   <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/images/favicons/favicon.ico">
@@ -59,10 +59,10 @@ wp_head(); ?>
   <meta name="msapplication-TileImage" content="<?php echo get_template_directory_uri(); ?>/images/favicons/mstile-144x144.png">
   <meta name="msapplication-config" content="<?php echo get_template_directory_uri(); ?>/images/favicons/browserconfig.xml">
   <meta name="theme-color" content="#502c5a">
-
+<?php do_action('dh_head_bottom'); ?>
 </head>
-
 <body <?php body_class('xv');?>>
+<?php do_action('dh_body_top'); ?>
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'damsonhomes' ); ?></a>
 	<header id="masthead" class="header-area" role="banner">
 		<div class="header row">

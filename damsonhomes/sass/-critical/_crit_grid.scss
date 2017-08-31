@@ -5,7 +5,14 @@
   padding-left: 1em;
   padding-right: 1em;
   position: relative;
+
 }
+
+
+
+
+
+
 .row, .dna-nav, .clearfix {
   *zoom: 1;
 }
@@ -258,6 +265,16 @@
   .twelve,
   .row .twelve {
     width: 100%;
+  }
+
+}
+
+
+
+
+@include mq(baby) {
+  .row.main-content {
+    overflow-x: hidden;
   }
 
 }

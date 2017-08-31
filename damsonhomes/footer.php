@@ -82,7 +82,7 @@ if ( (is_archive()) || (is_home()) || (is_page('coming-soon')) ) {
 
         // The Loop
         if ( $soon_site_query->have_posts() ) {
-          echo "<h5 class=\"ntm\"><a href=\"/coming-soon/\">Comong Soon</a></h5>\n".
+          echo "<h5 class=\"ntm\"><a href=\"/coming-soon/\">Coming Soon</a></h5>\n".
                "<ul class=\"no-style site-nav\">\n";
           while ( $soon_site_query->have_posts() ) {
             $soon_site_query->the_post();
@@ -164,16 +164,15 @@ if ( (is_archive()) || (is_home()) || (is_page('coming-soon')) ) {
 
         <h5 class="ntm">Popular Pages</h5>
         <ul class="no-style">
-          <li><a href="/coming-soon/">Coming Soon</a></li>
-          <li><a href="/opendays/">Open Days</a></li>
-          <li><a href="/helptobuy/">Help to Buy</a></li>
-          <li><a href="/land/">Selling your land</a></li>
-          <li><a href="/lapland/">Lapland</a></li>
-          <li><a href="/hearthouse/">The Heart House</a></li>
           <li><a href="/spec/">Our Spec</a></li>
-          <li><a href="/aftercare/">After Care</a></li>
-          <li><a href="/buyers-faq/">Buying FAQ</a></li>
-          <li><a href="/awards/">Awards</a></li>
+          <li><a href="/aftercare/">Aftercare</a></li>
+          <li><a href="/opendays/">Open Days</a></li>
+          <li><a href="/land/">Selling your land</a></li>
+          <li><a href="/together/">Damson Together</a></li>
+          <li><a href="/together/heart/"> &ndash; Heart Breakfast</a></li>
+          <li><a href="/together/heart/lapland-2016/"> &ndash; Lapland</a></li>
+          <li><a href="/together/heart/hearthouse/"> &ndash; The Heart House</a></li>
+          <li><a href="/helptobuy/">Help to Buy</a></li>
         </ul>
       </div>
 
@@ -189,7 +188,7 @@ if ( (is_archive()) || (is_home()) || (is_page('coming-soon')) ) {
         </div>
         <div class="social-channels">
           <h4 class="nbm">Follow us</h4>
-          <p>For live updates on your favoutite Social Channels.</p>
+          <p>On your favourite Social Media Channels for live updates.</p>
             <ul class="dna-social-wrapper clearfix nbm">
               <li class="dna_sm_facebook">
                 <a href="https://facebook.com/damsonnewbuild/" class="icon-alone" title="Like us on Facebook" target="_blank">

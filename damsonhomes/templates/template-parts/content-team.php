@@ -24,7 +24,7 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class($post_class); ?>>
-	<header class="headline-area">
+	<header class="headline-area twelve columns">
 
 			<div class="headline-wrapper">
 				<h3 id="say_hello" class="pre-head">Meet&hellip;</h3>

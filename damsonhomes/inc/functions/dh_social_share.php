@@ -12,7 +12,17 @@ function dh_social_share(&$type = 'blog!', &$url='', &$id='') {
   $cache_key  = 'dh_social_share_' . get_the_ID();
   $count      = get_transient( $cache_key ); // try to get value from Wordpress cache
 
-  $base_count = get_post_meta($post->ID, 'dh_share_count_base', true) ? get_post_meta($post->ID, 'dh_share_count_base', true) : ''; 
+  $blog_id    = get_option( 'page_for_posts' );
+
+  if (is_home()) {
+
+    $base_count = get_post_meta($blog_id, 'dh_share_count_base', true) ? get_post_meta($blog_id, 'dh_share_count_base', true) : ''; 
+
+  } else {
+
+    $base_count = get_post_meta($post->ID, 'dh_share_count_base', true) ? get_post_meta($post->ID, 'dh_share_count_base', true) : ''; 
+
+  }
 
 
   echo "<div {$id}class=\"dh-social-share-box aside\">\n";

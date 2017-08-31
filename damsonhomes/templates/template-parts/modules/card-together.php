@@ -9,22 +9,10 @@
 
 global $post;
 
-if (has_post_format('link')) {
-  $post_icon = 'chain';
-} elseif (is_sticky()) {
-  $post_icon = 'thumb-tack';
-} else {
-  $post_icon = '';
-}
-
 ?>
 
 <header class="headline-area">
-  <?php the_title( '<h2 class="headline h4 ntm">', '</h2>' ); 
-
-  if (!empty($post_icon)) {
-    echo dh_get_svg(array('icon' => $post_icon));
-  } ?>
+  <?php the_title( '<h2 class="headline h4 ntm">', '</h2>' ); ?>
 </header>
 
 <?php if (has_post_thumbnail()) {
@@ -45,10 +33,12 @@ if (has_post_format('link')) {
 
 } ?>
 
-<div class="post-content aside">
+<div class="post-content aside ">
   <?php the_excerpt(); ?>
 </div>
 
 <footer class="card-footer entry-footer aside aux hide-critical">
-  <?php $last = 'Continue Reading &rarr;'; damsonhomes_posted_on($last); ?>
+  <ul data-content="entry_meta" class="entry-meta no-style hide-critical">
+    <li class="read-on">Continue Reading &rarr;</li>
+</ul>
 </footer>

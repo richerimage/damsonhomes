@@ -52,3 +52,41 @@
   font-weight: bold;
   font-style: italic;
 }
+
+.spec-box {
+
+  padding: 1em;
+
+  & .columns {
+    padding: 0;
+  }
+
+  & .headline {
+    margin-top: 0;
+  } 
+
+  & .wp-post-image {
+    margin-bottom: 1em;
+  }
+
+  & .post-content *:last-child{
+    margin-bottom: 0;
+  }
+}
+
+@include mq(momma) {
+
+  .spec-box {
+
+    padding: 2em;
+
+    & .wp-post-image {
+      margin-bottom: 0;
+    }
+
+    & .post-content {
+      padding-left: 2em;
+    }
+  }
+
+}

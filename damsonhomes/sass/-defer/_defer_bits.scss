@@ -4,6 +4,10 @@
   background-repeat: repeat;
 }
 
+.graphy {
+  background-image: url($graphy);
+}
+
 .hide-critical {
   opacity: 1;
 }
