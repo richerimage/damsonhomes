@@ -92,7 +92,7 @@ wp_head(); ?>
           </a>
         </li>
         <li class="dna_sm_telephone">
-          <a href="+441217090539" class="icon-alone" title="Call us" target="_blank">
+          <a href="tel:+441217090539" class="icon-alone" title="Call us" target="_blank">
             <?php echo dh_get_svg(array('icon' => 'phone')); ?>
             <span class="screen-reader-text mobile-hide">0121 709 0539</span>
           </a>

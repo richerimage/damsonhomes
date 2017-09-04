@@ -7,58 +7,65 @@
  * @package Damson_Homes
  */
 
-get_header(); ?>
+get_header(); 
+do_action('dh_after_header'); ?>
+<style>
+	.content-area {
+		position: relative;
+		padding: 7em 0 5em 0;
+	}
+	.content-area:before {
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+		content: "";
+		position: absolute;
+		top: 0; right: 0; bottom: 0; left: 0;
+		background: url('https://damsonhomes.net/wp-content/uploads/2017/08/Lakeside-170809-011.jpg') no-repeat 50%;
+		background-size: cover;
+		opacity: 0.2;
+	}
 
-			<section class="error-404 not-found">
-				<header class="page-header">
-					<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'damsonhomes' ); ?></h1>
-				</header><!-- .page-header -->
+	.emoji {
+		font-size: 3em;
+		margin-bottom: 1em;
+	}
+</style>
+<section id="content_area" class="content-area bg-white">
+  <?php do_action('dh_before_main_content'); ?>
+  <main id="main" class="row main-content" role="main">
+    <?php do_action('dh_main_content_top'); ?>
 
-				<div class="page-content">
-					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'damsonhomes' ); ?></p>
+    	<div id="post_404" class="twelve columns centered page type-page page-404">
+				<header class="headline-area">
+					<div class="headline-wrapper">
+						<p class="text-center emoji">😧</p>
+						<h1 class="headline h2 ntm text-center">Oh no! The page you're looking for doesn't exist!!</h1>
+					</div>
+				</header>
 
-					<?php
-						get_search_form();
+				<div class="post-content text-center">
+					<p><strong style="color: black;">Have you typed in the correct url? Or is this our fault? (Sorry!)</strong></p>
+					<p><strong style="color: black;">These buttons should get you on track&hellip;</strong></p>
+					<ul class="no-style inline">
+<li><a class="button" href="/">Head to the Homepage &rarr;</a></li>
+<li><a class="button" href="/for-sale/">See our For Sale page &rarr;</a></li>
+<li><a class="button" href="/coming-soon/">See Coming Soon page &rarr;</a></li>
+<li><a class="button" href="/blog/">Visit the Blog &rarr;</a></li>
+<li><a class="button" href="/portfolio/">See our Past Developments &rarr;</a></li>
+<li><a class="button" href="https://facebook.com/damsonnewbuild/">See Our Facebook Page &rarr;</a></li>
+<li><a class="button" href="/contact/">Contact us with your enquiry &rarr;</a></li>
+					</ul>
+				</div>
 
-						the_widget( 'WP_Widget_Recent_Posts' );
+				<footer class="entry-footer"></footer>
 
-						// Only show the widget if site has multiple categories.
-						if ( damsonhomes_categorized_blog() ) :
-					?>
 
-					<div class="widget widget_categories">
-						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'damsonhomes' ); ?></h2>
-						<ul>
-						<?php
-							wp_list_categories( array(
-								'orderby'    => 'count',
-								'order'      => 'DESC',
-								'show_count' => 1,
-								'title_li'   => '',
-								'number'     => 10,
-							) );
-						?>
-						</ul>
-					</div><!-- .widget -->
+    	</div>
 
-					<?php
-						endif;
+    <?php do_action('dh_main_content_bottom'); ?>
+  </main>
+  <?php do_action('dh_after_main_content'); ?>
+</section><!-- #content_area -->
 
-						/* translators: %1$s: smiley */
-						$archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'damsonhomes' ), convert_smilies( ':)' ) ) . '</p>';
-						the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" );
+<?php do_action('dh_before_footer');
 
-						the_widget( 'WP_Widget_Tag_Cloud' );
-					?>
-
-				</div><!-- .page-content -->
-			</section><!-- .error-404 -->
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
-
-<?php
 get_footer();

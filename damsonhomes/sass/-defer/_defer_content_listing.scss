@@ -1,7 +1,7 @@
 
-// @import "-defer-modules/content_meta";
+/* @import "-defer-modules/content_meta";*/
 
-// @import "-defer-modules/cards";
+/* @import "-defer-modules/cards";*/
 
 @import "-defer-modules/pagation";
 
@@ -9,17 +9,24 @@
 @include mq(toddler) {
 
   .listings {
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: stretch;
-    justify-content: center;
+    -ms-flex-direction: row;
+        flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -ms-flex-align: stretch;
+        align-items: stretch;
+    -ms-flex-pack: center;
+        justify-content: center;
 
     & .card {
-      flex: 1 1 calc(50% - 1em);
+      -ms-flex: 1 1 calc(50% - 1em);
+          flex: 1 1 calc(50% - 1em);
 
       &.sticky {
-        flex: 1 1 calc(100% - 1em);
+        -ms-flex: 1 1 calc(100% - 1em);
+            flex: 1 1 calc(100% - 1em);
       }
     }
 
@@ -39,6 +46,11 @@
     max-width: calc(50% - 1em);
   }
 
+  .flexbox .listings .card.card-social {
+    -ms-flex: 0 1 calc(50% - 1em);
+        flex: 0 1 calc(50% - 1em);
+  }
+
   .flexbox .listings .card.sticky {
     max-width: calc(100% - 1em);
   }
@@ -49,11 +61,18 @@
 @include mq(goldie) {
 
   .listings .card {
-    flex: 1 1 calc(33.333% - 1em);
+    -ms-flex: 1 1 calc(33.333% - 1em);
+        flex: 1 1 calc(33.333% - 1em);
 
     &.sticky {
-      flex: 1 1 calc(66.667% - 1em);
+      -ms-flex: 1 1 calc(66.667% - 1em);
+          flex: 1 1 calc(66.667% - 1em);
     }
+  }
+
+  .flexbox .listings .card.card-social {
+    -ms-flex: 0 1 calc(33.333% - 1em);
+        flex: 0 1 calc(33.333% - 1em);
   }
 
 }
@@ -62,11 +81,18 @@
 @include mq(grampa) {
 
   .listings .card {
-    flex: 1 1 calc(25% - 1em);
+    -ms-flex: 1 1 calc(25% - 1em);
+        flex: 1 1 calc(25% - 1em);
 
     &.sticky {
-      flex: 1 1 calc(50% - 1em);
+      -ms-flex: 1 1 calc(50% - 1em);
+          flex: 1 1 calc(50% - 1em);
     }
+  }
+
+  .flexbox .listings .card.card-social {
+    -ms-flex: 0 1 calc(25% - 1em);
+        flex: 0 1 calc(25% - 1em);
   }
 
 }
@@ -75,14 +101,19 @@
 .card-social {
 
   width: 100%;
-  flex: 1;
+  -ms-flex: 1;
+      flex: 1;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -ms-flex-direction: column;
+      flex-direction: column;
   margin-bottom: 1.5em;
 
   & a.block-link {
-    align-items: center; 
-    justify-content: center; 
+    -ms-flex-align: center;
+        align-items: center; 
+    -ms-flex-pack: center; 
+        justify-content: center; 
     padding: 2em; 
     text-align: center;
     border-width: 0;
@@ -91,6 +122,7 @@
   & .dh-svg {
     width: 7em; 
     height: 7em; 
+    display: -ms-inline-flexbox; 
     display: inline-flex;
   }
 
@@ -114,25 +146,25 @@
 }
 
 
-.listings .card   {order: 10;}
-.listings .card-1 {order: 1;}
-.listings .card-2 {order: 2;}
-.listings .card-3 {order: 3;}
-.listings .card-4 {order: 4;}
-.listings .card-5 {order: 5;}
-.listings .card-6 {order: 6;}
-.listings .card-7 {order: 7;}
-.listings .card-8 {order: 8;}
-.listings .card-9 {order: 9;}
-.listings .card-10 {order: 10;}
-.listings .card-11 {order: 11;}
-.listings .card-11 {order: 12;}
+.listings .card   {-ms-flex-order: 10;order: 10;}
+.listings .card-1 {-ms-flex-order: 1;order: 1;}
+.listings .card-2 {-ms-flex-order: 2;order: 2;}
+.listings .card-3 {-ms-flex-order: 3;order: 3;}
+.listings .card-4 {-ms-flex-order: 4;order: 4;}
+.listings .card-5 {-ms-flex-order: 5;order: 5;}
+.listings .card-6 {-ms-flex-order: 6;order: 6;}
+.listings .card-7 {-ms-flex-order: 7;order: 7;}
+.listings .card-8 {-ms-flex-order: 8;order: 8;}
+.listings .card-9 {-ms-flex-order: 9;order: 9;}
+.listings .card-10 {-ms-flex-order: 10;order: 10;}
+.listings .card-11 {-ms-flex-order: 11;order: 11;}
+.listings .card-11 {-ms-flex-order: 12;order: 12;}
 
-.listings .card-facebook  {order: 2;}
-.listings .card-instagram   {order: 5;}
-.listings .card-twitter {order: 11;}
+.listings .card-facebook  {-ms-flex-order: 2;order: 2;}
+.listings .card-instagram   {-ms-flex-order: 5;order: 5;}
+.listings .card-twitter {-ms-flex-order: 11;order: 11;}
 
-.listings .card-subscribe {order: 8;}
+.listings .card-subscribe {-ms-flex-order: 8;order: 8;}
 
 
 .card-facebook a.block-link {
@@ -164,10 +196,14 @@
 
 
 .card-social.visible {
-  animation-duration: 500ms;
-  animation-delay: 250ms;
-  animation-fill-mode: both;
-  animation-name: zoomIn;
+  -webkit-animation-duration: 500ms;
+          animation-duration: 500ms;
+  -webkit-animation-delay: 250ms;
+          animation-delay: 250ms;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation-name: zoomIn;
+          animation-name: zoomIn;
   opacity: 1;
 
 }
@@ -175,9 +211,13 @@
 
 #say_hello {
   color: $brand1_d3;
-  animation-name: jackInTheBox;
-  animation-duration: 1000ms;
-  animation-fill-mode: both;
-  animation-delay: 500ms
+  -webkit-animation-name: jackInTheBox;
+          animation-name: jackInTheBox;
+  -webkit-animation-duration: 1000ms;
+          animation-duration: 1000ms;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation-delay: 500ms;
+          animation-delay: 500ms
 }
 

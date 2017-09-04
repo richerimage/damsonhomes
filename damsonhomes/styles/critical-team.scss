@@ -31,7 +31,9 @@
 @include mq(goldie) {
   .listings.footer-listings .card {
 
-    flex: 1 1 calc(25% - 0.5em);
+    -ms-flex: 1 1 calc(25% - 0.5em);
+
+        flex: 1 1 calc(25% - 0.5em);
     margin: 0em 0 1em;
 
   }

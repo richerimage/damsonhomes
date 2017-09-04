@@ -149,7 +149,7 @@ function dh_load_critical_css() {
       "@media only screen and (min-width: 1600px) { ".
       ".hero-fly-in:before {background-image: url(" . $portfolio_2 . $img_lge . ");}}\n";
     
-    } else if ( (is_single()) || (is_page()) || (is_front()) ) {
+    } else if ( (is_single()) || (is_page()) || (is_front_page()) ) {
 
         if ( ($hero_img === 'hero-fly-in') && (has_post_thumbnail()) ) {
 

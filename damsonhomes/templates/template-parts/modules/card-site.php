@@ -67,7 +67,7 @@ if( has_term( 'live', 'dnh_site_status_taxonomy' ) ) {
 
         // var_dump($slide_att[0]);
 
-        echo '<img class="b-lazy attachment-letterbox-small size-letterbox-small wp-post-image attachment-id-' . $img_id . '" src="' . $slide_att[0] . '" width="' . $slide_att[1] . '" height="' . $slide_att[2] . '">';
+        echo '<img class="attachment-letterbox-small size-letterbox-small wp-post-image attachment-id-' . $img_id . '" src="' . $slide_att[0] . '" width="' . $slide_att[1] . '" height="' . $slide_att[2] . '">';
 
         // the_post_thumbnail('letterbox-small');
 

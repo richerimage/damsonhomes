@@ -20,7 +20,8 @@ Critical Listings
   display: block;
   width: 100%;
   clear: both;
-  order: 1000;
+  -ms-flex-order: 1000;
+      order: 1000;
 }
 
 .card-social {

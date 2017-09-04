@@ -57,7 +57,7 @@ if(is_page($pages)) {
     <section class="ftr-nav-area">
       <div class="tabgroup row">
         <ul class="tabs clearfix aside" data-tabgroup="primary">
-          <?php echo $tab_1 . $tab_2 . $tab_3 . $tab_4; ?>
+          <?php echo $tab_1 . $tab_2 . $tab_3; ?>
         </ul>
       </div>
     </section>
@@ -124,14 +124,7 @@ if(is_page($pages)) {
           </div>
         </div>
 
-        <div id="tab4" class="tab-content tab4 tab-gallery tab-bottom">
-          <div class="headline-wrapper twelve columns text-center">
-            <h2 class="headline h2 ntm">Gallery</h2>
-          </div>
-          <div class="post-content twelve columns">
-            <?php echo wpautop(do_shortcode($tab_4_cont)); ?>
-          </div>
-        </div>
+        
 
       </main>
 

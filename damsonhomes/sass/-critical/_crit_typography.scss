@@ -1,5 +1,5 @@
-// http://type-scale.com/
-// Typography Scale: 1.12 (Minor Third)
+/* http://type-scale.com/*/
+/* Typography Scale: 1.12 (Minor Third)*/
 
 body {font-size: 1.5rem;}
 
@@ -167,8 +167,10 @@ blockquote {
 }
 
 .text-columns {
-  column-width: 22em;
-  column-gap: 1.5em;
+  -webkit-column-width: 22em;
+          column-width: 22em;
+  -webkit-column-gap: 1.5em;
+          column-gap: 1.5em;
 }
 
 
@@ -201,7 +203,8 @@ hr {
   }
 
   .text-columns {
-    column-gap: 2em;
+    -webkit-column-gap: 2em;
+            column-gap: 2em;
   }
 
 }
@@ -212,7 +215,7 @@ hr {
     font-size: 1.6rem;
   }
 
-  // Typography Scale: 1.333 (Perfect Fourth)
+  /* Typography Scale: 1.333 (Perfect Fourth)*/
 
   h1, .h1 {
     font-size: 2.441em; 

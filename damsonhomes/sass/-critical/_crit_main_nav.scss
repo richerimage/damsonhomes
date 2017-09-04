@@ -111,65 +111,65 @@
 
 
 
-// .nav-area {
+/* .nav-area {*/
   
-//   background-color: $brand1;
+/*   background-color: $brand1;*/
 
-//   & .nav-box {
+/*   & .nav-box {*/
 
-//     padding: 0;
+/*     padding: 0;*/
     
-//   }
+/*   }*/
 
-//   & .menu {
+/*   & .menu {*/
 
-//     list-style: none;
-//     margin: 0;
+/*     list-style: none;*/
+/*     margin: 0;*/
 
-//   }
+/*   }*/
 
-//   & a {
+/*   & a {*/
   
-//     color: white;
-//     text-decoration: none;
-//     padding: 0.5em 1.4rem;
-//     display: block;
+/*     color: white;*/
+/*     text-decoration: none;*/
+/*     padding: 0.5em 1.4rem;*/
+/*     display: block;*/
 
-//   }
+/*   }*/
 
-//   & li {
+/*   & li {*/
 
-//     display: inline-block;
-//     vertical-align: middle;
-//     margin: 0;
-//     padding: 0;
+/*     display: inline-block;*/
+/*     vertical-align: middle;*/
+/*     margin: 0;*/
+/*     padding: 0;*/
 
-//   }
+/*   }*/
 
-//   & .burger-holder {
-//     padding-left: 1em;
-//   }
+/*   & .burger-holder {*/
+/*     padding-left: 1em;*/
+/*   }*/
 
-// }
+/* }*/
 
-// .dna-nav {
-//   opacity: 0; 
-//   height: 0; 
-//   overflow: hidden;
+/* .dna-nav {*/
+/*   opacity: 0; */
+/*   height: 0; */
+/*   overflow: hidden;*/
 
-// }
+/* }*/
 
 
-// #side_menu_trigger {
-//   padding-left: 0;
+/* #side_menu_trigger {*/
+/*   padding-left: 0;*/
 
-//   & .hamburger-menu {
+/*   & .hamburger-menu {*/
 
-//     display: none;
+/*     display: none;*/
 
-//   }
+/*   }*/
 
-// }
+/* }*/
 
 
 .fly-out-menu {
@@ -185,7 +185,7 @@
  *  http://codepen.io/husnimun/pen/pJvEeL
  */
 
-//  .burger-holder {padding-left: 1em;}
+/*  .burger-holder {padding-left: 1em;}*/
 
 
 $bar-width: 1em;
@@ -206,7 +206,8 @@ $bar-spacing: 4px;
 
   & .bar {
     position: relative;
-    transform: translateY($bar-spacing);
+    -webkit-transform: translateY($bar-spacing);
+            transform: translateY($bar-spacing);
     background: $gray_ll;
     &.active {
       background: transparent; 

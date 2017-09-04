@@ -108,7 +108,11 @@ function dh_add_to_footer_script_handle() {
 
     echo 
 
-    "\t\$('#tab6_trigger').click(function(){ console.log('clicked');\n".
+    "\t\$('#tab6_trigger').click(function(){\n".
+    "\t\tvar bLazy = new Blazy(); \n".
+    "\t});\n".
+
+    "\t\$('#tab4_trigger').click(function(){\n".
     "\t\tvar bLazy = new Blazy(); \n".
     "\t});\n".
 

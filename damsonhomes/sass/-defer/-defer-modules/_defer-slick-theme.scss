@@ -16,9 +16,6 @@
 .slick-slider .slick-track,
 .slick-slider .slick-list {
   -webkit-transform: translate3d(0, 0, 0);
-  -moz-transform: translate3d(0, 0, 0);
-  -ms-transform: translate3d(0, 0, 0);
-  -o-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
 
@@ -49,6 +46,7 @@
 
   float: left;
   height: 100%;
+  height: auto;
   min-height: 1px;
   background-color: #f0f0f0;
 
@@ -64,7 +62,7 @@
     display: none;
   }
 
-  // display: none;
+  /* display: none;*/
 
   .slick-initialized & {
       display: block;
@@ -94,10 +92,10 @@
 
 
 
-// Default Variables
+/* Default Variables*/
 
 $slick-loader-path: "https://damsondev.wpengine.com/wp-content/themes/damsonhomes/images/" !default;
-// $slick-loader-path: "/" !default;
+/* $slick-loader-path: "/" !default;*/
 $slick-arrow-color: white !default;
 $slick-dot-color: $brand2;
 $slick-dot-color-active: $slick-dot-color !default;
@@ -139,7 +137,6 @@ $slick-opacity-not-active: 0.25 !default;
   cursor: pointer;
   color: white;
   -webkit-transform: translate(0, -50%);
-  -ms-transform: translate(0, -50%);
   transform: translate(0, -50%);
   padding: 0;
   border: solid 1px white;

@@ -95,9 +95,12 @@ Critical Front Page Styles: TABLE OF CONTENTS:
 
 .feature-links {
   text-align: center;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: center;
+      justify-content: center;
   padding-top: 2em;
   margin-top: 2em;
   border-top: solid 1px $gray_ll;
@@ -111,9 +114,12 @@ Critical Front Page Styles: TABLE OF CONTENTS:
     display: inline-block;
     width: 8em;
     padding: 0.25em;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    -ms-flex-direction: column;
+        flex-direction: column;
+    -ms-flex-pack: justify;
+        justify-content: space-between;
 
     & p {
       font-weight: bold;
@@ -133,13 +139,17 @@ Critical Front Page Styles: TABLE OF CONTENTS:
   }
 
   .site-main .page {
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
 
     & .post-content,
     & .content-right {
+      display: -ms-flexbox;
       display: flex;
-      flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
 
 
       & *:last-child {

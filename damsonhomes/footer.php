@@ -180,7 +180,7 @@ if ( (is_archive()) || (is_home()) || (is_page('coming-soon')) ) {
         <div class="get-in-touch">
           <h4 class="ntm">Get in Touch</h4>
           <?php dh_address(); ?>
-          <p class="portal-login nbm has-icon"><?php echo dh_get_svg(array('icon' => 'client')); ?> <a href="http://portal.damsonhomes.net/" class="icon-alone" title="Log in to the Client Portal" target="_blank">Client Portal</a></p>
+          <p class="portal-login nbm has-icon"><?php echo dh_get_svg(array('icon' => 'client')); ?> <a href="https://portal.damsonhomes.net/" class="icon-alone" title="Log in to the Client Portal" target="_blank">Client Portal</a></p>
         </div>
         <div class="subscribe-today">
           <h4 class="ntm">Be first to hear about our latest New Homes</h4>

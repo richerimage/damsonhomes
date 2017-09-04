@@ -1,5 +1,4 @@
-// Standard trasnsition
-
+/* Standard trasnsition*/
 @mixin mq($break) {
   @if $break == baby {
     @media only screen and (max-width: 500px) { @content; }
@@ -36,33 +35,26 @@
 @mixin rotate($val: 180deg) {
 
   -webkit-transform: rotate($val);
-          transform: rotate($val);
 }
 
 @mixin trans($val: 0350ms) {
-  -webkit-transition: all $val ease-in-out; 
-  -moz-transition: all $val ease-in-out; 
-  -o-transition: all $val ease-in-out; 
   transition: all $val ease-in-out;
 }
 
 @mixin delay ($val: 0.250ms) {
-  -webkit-animation-delay: $val;
           animation-delay: $val;
 }
 
 @mixin grow ($valx: 1.05, $valy: 1.05) {
 
-  -webkit-transform: scale($valx , $valy);
           transform: scale($valx , $valy);
 
 }
 
 
-// Rem output with px fallback
+/* Rem output with px fallback*/
 @mixin font-size($sizeValue: 1) {
-	font-size: ($sizeValue * 16) * 1px;
-	font-size: $sizeValue * 1rem;
+  font-size: ($sizeValue * 16) * 1px;
 }
 
 
@@ -79,21 +71,21 @@
   left: $left;
 }
 
-// Center block
+/* Center block*/
 @mixin center-block {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-// Clearfix
+/* Clearfix*/
 @mixin clearfix() {
-	content: "";
-	display: table;
-	table-layout: fixed;
+  content: "";
+  display: table;
+  table-layout: fixed;
 }
 
-// Clear after (not all clearfix need this also)
+/* Clear after (not all clearfix need this also)*/
 @mixin clearfix-after() {
-	clear: both;
+  clear: both;
 }

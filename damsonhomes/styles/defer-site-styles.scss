@@ -76,8 +76,10 @@ Deferred Global Styles: TABLE OF CONTENTS:
 }
 
 .tab-plots {
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 

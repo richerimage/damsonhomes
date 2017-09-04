@@ -72,31 +72,41 @@ $url     = home_url() . '/blog/';
 				</a>
 			</article><!-- #post-## -->
 
-		<?php endwhile; ?>
+		<?php endwhile; 
 
-			<article id="facebook_link" class="hentry columns card card-social card-facebook">
-				<a class="block-link" href="https://facebook.com/damsonnewbuild/" target="_blank" rel="bookmark">
-					<?php get_template_part( 'templates/template-parts/modules/card-facebook', get_post_format() ); ?>
-				</a>
-			</article><!-- #post-## -->
+					
+					// $ua = htmlentities($_SERVER['HTTP_USER_AGENT'], ENT_QUOTES, 'UTF-8');
+					// if (preg_match('~MSIE|Internet Explorer~i', $ua) || (strpos($ua, 'Trident/7.0; rv:11.0') !== false)) {
+					// 	// do stuff for IE
+					// }
 
-			<article id="twitter_link" class="hentry columns card card-social card-twitter">
-					<a class="block-link" href="https://twitter.com/damsonhomes/" target="_blank" rel="bookmark">
-						<?php get_template_part( 'templates/template-parts/modules/card-twitter', get_post_format() ); ?>
-					</a>
-				</article><!-- #post-## -->
+?>
 
-			<article id="instagram_link" class="hentry columns card card-social card-instagram">
-				<a class="block-link" href="https://instagram.com/damsonhomes/" target="_blank" rel="bookmark">
-					<?php get_template_part( 'templates/template-parts/modules/card-instagram', get_post_format() ); ?>
-				</a>
-			</article><!-- #instagram_link -->
+					<article id="facebook_link" class="hentry columns card card-social card-facebook">
+						<a class="block-link" href="https://facebook.com/damsonnewbuild/" target="_blank" rel="bookmark">
+							<?php get_template_part( 'templates/template-parts/modules/card-facebook', get_post_format() ); ?>
+						</a>
+					</article><!-- #post-## -->
 
-			<article id="subscibe_link" class="hentry columns card card-social card-subscribe">
-				<a class="block-link modal-launch" href="#0">
-					<?php get_template_part( 'templates/template-parts/modules/card-subscribe', get_post_format() ); ?>
-				</a>
-			</article><!-- #instagram_link -->
+					<article id="twitter_link" class="hentry columns card card-social card-twitter">
+							<a class="block-link" href="https://twitter.com/damsonhomes/" target="_blank" rel="bookmark">
+								<?php get_template_part( 'templates/template-parts/modules/card-twitter', get_post_format() ); ?>
+							</a>
+						</article><!-- #post-## -->
+
+					<article id="instagram_link" class="hentry columns card card-social card-instagram">
+						<a class="block-link" href="https://instagram.com/damsonhomes/" target="_blank" rel="bookmark">
+							<?php get_template_part( 'templates/template-parts/modules/card-instagram', get_post_format() ); ?>
+						</a>
+					</article><!-- #instagram_link -->
+
+					<article id="subscibe_link" class="hentry columns card card-social card-subscribe">
+						<a class="block-link modal-launch" href="#0">
+							<?php get_template_part( 'templates/template-parts/modules/card-subscribe', get_post_format() ); ?>
+						</a>
+					</article><!-- #instagram_link -->
+
+				
 
 		<?php 
 

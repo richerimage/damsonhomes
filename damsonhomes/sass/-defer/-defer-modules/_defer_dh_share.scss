@@ -3,10 +3,14 @@
   background-color: white;
   padding: 0.5em 1em;
   margin: 0.25em 0;
-  animation-name: gambole;
-  animation-duration: 1000ms;
-  animation-fill-mode: both;
-  animation-delay: 1500ms;
+  -webkit-animation-name: gambole;
+          animation-name: gambole;
+  -webkit-animation-duration: 1000ms;
+          animation-duration: 1000ms;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation-delay: 1500ms;
+          animation-delay: 1500ms;
   max-width: 30em;
   vertical-align: middle;
   border: solid 1px $brand1}
@@ -75,9 +79,13 @@ a.share-btn-email {
 
 @include mq(goldiePlus) {
   .meta-wrap {
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+    -ms-flex-direction: row;
+        flex-direction: row;
+    -ms-flex-pack: justify;
+        justify-content: space-between;
+    -ms-flex-align: center;
+        align-items: center;
   }
 }

@@ -28,8 +28,8 @@
 
 
 .tab-top {
-  // -webkit-transform: translate(0%, 0);
-  //         transform: translate(0%, 0);
+  /* -webkit-transform: translate(0%, 0);*/
+  /*         transform: translate(0%, 0);*/
   height: auto; 
   visibility: visible;
 }
@@ -37,8 +37,8 @@
 .tab-bottom {
   /* transform: translate(-110%, 0); // Slide in from left*/
   /* transform: translate(110%, 0); // Slide in from right*/
-  // -webkit-transform: translate(0%, -100%);
-  //         transform: translate(0%, -100%); /* Slide in from top*/
+  /* -webkit-transform: translate(0%, -100%);*/
+  /*         transform: translate(0%, -100%); *//* Slide in from top*//**/
   opacity: 0;
   height: 0; 
   visibility: hidden; 

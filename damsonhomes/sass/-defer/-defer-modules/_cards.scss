@@ -4,9 +4,13 @@
 
 .card .block-link {
 
+    display: -ms-flexbox;
+
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+    -ms-flex-direction: column;
+        flex-direction: column;
+    -ms-flex-pack: start;
+        justify-content: flex-start;
 
 }
 
